@@ -1,0 +1,1020 @@
+fileFormatVersion: 2
+guid: 355decf00a5b84948bece6c66f9398f9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7847352745967436865
+    second: Lizard Jump_Alternative_0
+  - first:
+      213: 74914879880671308
+    second: Lizard Jump_Alternative_1
+  - first:
+      213: -5411413670330208197
+    second: Lizard Jump_Alternative_2
+  - first:
+      213: 4450238241710529417
+    second: Lizard Jump_Alternative_3
+  - first:
+      213: 3884829582276218575
+    second: Lizard Jump_Alternative_4
+  - first:
+      213: -4715688694783558725
+    second: Lizard Jump_Alternative_5
+  - first:
+      213: -2875352679030358649
+    second: Lizard Jump_Alternative_6
+  - first:
+      213: 7581938841593635686
+    second: Lizard Jump_Alternative_7
+  - first:
+      213: 1762280930269340541
+    second: Lizard Jump_Alternative_8
+  - first:
+      213: -6040420967729527024
+    second: Lizard Jump_Alternative_9
+  - first:
+      213: -6342498382410807885
+    second: Lizard Jump_Alternative_10
+  - first:
+      213: -7586848591929363289
+    second: Lizard Jump_Alternative_11
+  - first:
+      213: -7857471465414480260
+    second: Lizard Jump_Alternative_12
+  - first:
+      213: 9180329603190857642
+    second: Lizard Jump_Alternative_13
+  - first:
+      213: -2132041640800375256
+    second: Lizard Jump_Alternative_14
+  - first:
+      213: 835738660073492726
+    second: Lizard Jump_Alternative_15
+  - first:
+      213: 6798854478770128538
+    second: Lizard Jump_Alternative_16
+  - first:
+      213: -8480502192009557669
+    second: Lizard Jump_Alternative_17
+  - first:
+      213: 7018125474739101078
+    second: Lizard Jump_Alternative_18
+  - first:
+      213: -739740620525500270
+    second: Lizard Jump_Alternative_19
+  - first:
+      213: 3079307732154716191
+    second: Lizard Jump_Alternative_20
+  - first:
+      213: -1196884959683905557
+    second: Lizard Jump_Alternative_21
+  - first:
+      213: 5513459779763654935
+    second: Lizard Jump_Alternative_22
+  - first:
+      213: -2405308842801378820
+    second: Lizard Jump_Alternative_23
+  - first:
+      213: 5503903617051734526
+    second: Lizard Jump_Alternative_24
+  - first:
+      213: -913606210621381096
+    second: Lizard Jump_Alternative_0
+  - first:
+      213: 7027603578952942161
+    second: Lizard Jump_Alternative_1
+  - first:
+      213: -4495684681867726849
+    second: Lizard Jump_Alternative_2
+  - first:
+      213: -3532766114802890692
+    second: Lizard Jump_Alternative_3
+  - first:
+      213: 3961049281867512565
+    second: Lizard Jump_Alternative_4
+  - first:
+      213: -2914517478508209181
+    second: Lizard Jump_Alternative_5
+  - first:
+      213: 7722060650766925080
+    second: Lizard Jump_Alternative_6
+  - first:
+      213: -3532416594161981796
+    second: Lizard Jump_Alternative_7
+  - first:
+      213: -8577410465760652852
+    second: Lizard Jump_Alternative_8
+  - first:
+      213: -619554278690669257
+    second: Lizard Jump_Alternative_9
+  - first:
+      213: -316535962348165313
+    second: Lizard Jump_Alternative_10
+  - first:
+      213: 1274758130945604707
+    second: Lizard Jump_Alternative_11
+  - first:
+      213: 8647277177102951019
+    second: Lizard Jump_Alternative_12
+  - first:
+      213: -6589658765249210231
+    second: Lizard Jump_Alternative_13
+  - first:
+      213: -163527160813649428
+    second: Lizard Jump_Alternative_14
+  - first:
+      213: -6170090532914507742
+    second: Lizard Jump_Alternative_15
+  - first:
+      213: 3322612933430723407
+    second: Lizard Jump_Alternative_16
+  - first:
+      213: 6046325049406354100
+    second: Lizard Jump_Alternative_17
+  - first:
+      213: -9002665680849941564
+    second: Lizard Jump_Alternative_18
+  - first:
+      213: -6710791569975681201
+    second: Lizard Jump_Alternative_19
+  - first:
+      213: -1835649579743119607
+    second: Lizard Jump_Alternative_20
+  - first:
+      213: 3271840034997402973
+    second: Lizard Jump_Alternative_21
+  - first:
+      213: 3049738923287600249
+    second: Lizard Jump_Alternative_22
+  - first:
+      213: -7901233685032351305
+    second: Lizard Jump_Alternative_23
+  - first:
+      213: -7489396213615620718
+    second: Lizard Jump_Alternative_24
+  - first:
+      213: 6430609167560579499
+    second: Lizard Jump_Alternative_25
+  - first:
+      213: -7155538822416647573
+    second: Lizard Jump_Alternative_26
+  - first:
+      213: -7468197133321132504
+    second: Lizard Jump_Alternative_27
+  - first:
+      213: -2775561711743546508
+    second: Lizard Jump_Alternative_28
+  - first:
+      213: -4649329211712037065
+    second: Lizard Jump_Alternative_29
+  - first:
+      213: -6997657476887570238
+    second: Lizard Jump_Alternative_30
+  - first:
+      213: 7822561531147625923
+    second: Lizard Jump_Alternative_31
+  - first:
+      213: -4743796052494762948
+    second: Lizard Jump_Alternative_32
+  - first:
+      213: -6928259461611296083
+    second: Lizard Jump_Alternative_33
+  - first:
+      213: 7230058650582520495
+    second: Lizard Jump_Alternative_34
+  - first:
+      213: 1461693633918265283
+    second: Lizard Jump_Alternative_35
+  - first:
+      213: 5282859376703308623
+    second: Lizard Jump_Alternative_36
+  - first:
+      213: -4275722336973741175
+    second: Lizard Jump_Alternative_37
+  - first:
+      213: -6456002785167746779
+    second: Lizard Jump_Alternative_38
+  - first:
+      213: 7597038805483878857
+    second: Lizard Jump_Alternative_39
+  - first:
+      213: -3056461903344835543
+    second: Lizard Jump_Alternative_40
+  - first:
+      213: -8612721965900281213
+    second: Lizard Jump_Alternative_41
+  - first:
+      213: 5605304087573500839
+    second: Lizard Jump_Alternative_42
+  - first:
+      213: 6839744046122198021
+    second: Lizard Jump_Alternative_43
+  - first:
+      213: 5590636159107986948
+    second: Lizard Jump_Alternative_44
+  - first:
+      213: 7381742606789042349
+    second: Lizard Jump_Alternative_45
+  - first:
+      213: -6037048710828530287
+    second: Lizard Jump_Alternative_46
+  - first:
+      213: -5941533226672402506
+    second: Lizard Jump_Alternative_47
+  - first:
+      213: -2895191526814763873
+    second: Lizard Jump_Alternative_48
+  - first:
+      213: -2002905963709328430
+    second: Lizard Jump_Alternative_49
+  - first:
+      213: -8807316473143436916
+    second: Lizard Jump_Alternative_50
+  - first:
+      213: 2856760023799284868
+    second: Lizard Jump_Alternative_51
+  - first:
+      213: -3662864528852648909
+    second: Lizard Jump_Alternative_52
+  - first:
+      213: 6134453430820414055
+    second: Lizard Jump_Alternative_53
+  - first:
+      213: 6100800840859191336
+    second: Lizard Jump_Alternative_54
+  - first:
+      213: -827535733593169989
+    second: Lizard Jump_Alternative_55
+  - first:
+      213: -93338291267873285
+    second: Lizard Jump_Alternative_56
+  - first:
+      213: -7430112747958616151
+    second: Lizard Jump_Alternative_57
+  - first:
+      213: 3581342648556854097
+    second: Lizard Jump_Alternative_58
+  - first:
+      213: -6235526797650272297
+    second: Lizard Jump_Alternative_59
+  - first:
+      213: 1927966415528362486
+    second: Lizard Jump_Alternative_60
+  - first:
+      213: -9015717300053715024
+    second: Lizard Jump_Alternative_61
+  - first:
+      213: 942953507951630829
+    second: Lizard Jump_Alternative_62
+  - first:
+      213: 155685940717472995
+    second: Lizard Jump_Alternative_63
+  - first:
+      213: -3163800304847896142
+    second: Lizard Jump_Alternative_64
+  - first:
+      213: -7737535094237080810
+    second: Lizard Jump_Alternative_65
+  - first:
+      213: 8767107769245901288
+    second: Lizard Jump_Alternative_66
+  - first:
+      213: 2366093688499577102
+    second: Lizard Jump_Alternative_67
+  - first:
+      213: -7448827070630540924
+    second: Lizard Jump_Alternative_68
+  - first:
+      213: -8659936706813981601
+    second: Lizard Jump_Alternative_69
+  - first:
+      213: -6753221231005662471
+    second: Lizard Jump_Alternative_70
+  - first:
+      213: 4415095686807814001
+    second: Lizard Jump_Alternative_71
+  - first:
+      213: -2715943783154543574
+    second: Lizard Jump_Alternative_72
+  - first:
+      213: 5491220006904497039
+    second: Lizard Jump_Alternative_73
+  - first:
+      213: -2475955230662094052
+    second: Lizard Jump_Alternative_74
+  - first:
+      213: -1082684605007605167
+    second: Lizard Jump_Alternative_75
+  - first:
+      213: -5327081737241802065
+    second: Lizard Jump_Alternative_76
+  - first:
+      213: -8260057512652092187
+    second: Lizard Jump_Alternative_77
+  - first:
+      213: 4424825273171047573
+    second: Lizard Jump_Alternative_78
+  - first:
+      213: -1212189620230848912
+    second: Lizard Jump_Alternative_79
+  - first:
+      213: 8357596227015709633
+    second: Lizard Jump_Alternative_80
+  - first:
+      213: 1057607529202164566
+    second: Lizard Jump_Alternative_81
+  - first:
+      213: 6497701787200937786
+    second: Lizard Jump_Alternative_82
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1488
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816625fedf73253f0800000000000000
+      internalID: 7847352745967436865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_1
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 1488
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15201c1a830178160800000000000000
+      internalID: 74914879880671308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_2
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1488
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fffeb1bd99e1c91c0800000000000000
+      internalID: -5411413670330208197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1302
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3803ac9fe719fec0800000000000000
+      internalID: 4450238241710529417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_4
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 1302
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa7787d55978f630800000000000000
+      internalID: 3884829582276218575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_5
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1302
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ebd9d98bcd8d87d0800000000000000
+      internalID: -4715688694783558725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1116
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81dfbf6af354a2b60800000000000000
+      internalID: -2875352679030358649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_7
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 1116
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c96a74ab2d55afec0800000000000000
+      internalID: 7581938841593635686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_8
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1116
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc15e9f50aae6f880800000000000000
+      internalID: 1762280930269340541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 930
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73db1938aa6e667f0800000000000000
+      internalID: -6040420967729527024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_10
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 930
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37e99528307b9bf0800000000000000
+      internalID: -6342498382410807885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_11
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 930
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36cbd8124c9d0b110800000000000000
+      internalID: -7586848591929363289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 744
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b62609ff6cc410870800000000000000
+      internalID: -7857471465414480260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_13
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 744
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 988184a3444dc84a0800000000000000
+      internalID: 9180329603190857642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_14
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 744
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce10394e9e80bbdf0800000000000000
+      internalID: -2132041640800375256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 558
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22051a1d95f6f5aa0800000000000000
+      internalID: 835738660073492726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_16
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 558
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43c147ebda4c1e20800000000000000
+      internalID: 6798854478770128538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_17
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 558
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2796ef89cd8e350800000000000000
+      internalID: -8480502192009557669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 372
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cbc65de24b101380800000000000000
+      internalID: 7018125474739101078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_19
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 372
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4fd9e55f9a7ed2a0800000000000000
+      internalID: -739740620525500270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_20
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 372
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907f053de667686e0800000000000000
+      internalID: 3079307732154716191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 186
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5dfbe74d29e76d20800000000000000
+      internalID: -1196884959683905557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_22
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 186
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c5d3c7469d25a20800000000000000
+      internalID: 5513459779763654935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_23
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 186
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9cb4473dd295290800000000000000
+      internalID: -2405308842801378820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard Jump_Alternative_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 251
+        height: 186
+      alignment: 9
+      pivot: {x: 0.3, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d094103d1501890800000000000000
+      internalID: 5503903617051734526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Lizard Jump_Alternative_11: -7586848591929363289
+      Lizard Jump_Alternative_20: 3079307732154716191
+      Lizard Jump_Alternative_14: -2132041640800375256
+      Lizard Jump_Alternative_2: -5411413670330208197
+      Lizard Jump_Alternative_19: -739740620525500270
+      Lizard Jump_Alternative_3: 4450238241710529417
+      Lizard Jump_Alternative_15: 835738660073492726
+      Lizard Jump_Alternative_10: -6342498382410807885
+      Lizard Jump_Alternative_8: 1762280930269340541
+      Lizard Jump_Alternative_1: 74914879880671308
+      Lizard Jump_Alternative_13: 9180329603190857642
+      Lizard Jump_Alternative_7: 7581938841593635686
+      Lizard Jump_Alternative_9: -6040420967729527024
+      Lizard Jump_Alternative_4: 3884829582276218575
+      Lizard Jump_Alternative_23: -2405308842801378820
+      Lizard Jump_Alternative_22: 5513459779763654935
+      Lizard Jump_Alternative_6: -2875352679030358649
+      Lizard Jump_Alternative_21: -1196884959683905557
+      Lizard Jump_Alternative_12: -7857471465414480260
+      Lizard Jump_Alternative_17: -8480502192009557669
+      Lizard Jump_Alternative_0: 7847352745967436865
+      Lizard Jump_Alternative_24: 5503903617051734526
+      Lizard Jump_Alternative_18: 7018125474739101078
+      Lizard Jump_Alternative_16: 6798854478770128538
+      Lizard Jump_Alternative_5: -4715688694783558725
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

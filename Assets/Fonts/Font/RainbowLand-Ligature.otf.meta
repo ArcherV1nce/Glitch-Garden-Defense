@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: cd216e8ab45d55145b252dde93bd3393
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Rainbow Land
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: da712064aa3879d4fb53d1288cc49ed6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,594 @@
+fileFormatVersion: 2
+guid: fa8b1f0ee3f31da48ae4077726493601
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2259096578566421360
+    second: npc_juju_black_move_left_0
+  - first:
+      213: 6363689226164459610
+    second: npc_juju_black_move_left_1
+  - first:
+      213: 6378626949779886946
+    second: npc_juju_black_move_left_2
+  - first:
+      213: 2015483536836746311
+    second: npc_juju_black_move_left_3
+  - first:
+      213: -9103721541169241049
+    second: npc_juju_black_move_left_4
+  - first:
+      213: 4709451102710092121
+    second: npc_juju_black_move_left_5
+  - first:
+      213: 3053774655891289728
+    second: npc_juju_black_move_left_6
+  - first:
+      213: -519270950879983832
+    second: npc_juju_black_move_left_7
+  - first:
+      213: 8862690036559068894
+    second: npc_juju_black_move_left_7
+  - first:
+      213: -6939747560803022604
+    second: npc_juju_black_move_left_8
+  - first:
+      213: -6180664066487102761
+    second: npc_juju_black_move_left_9
+  - first:
+      213: -8080734981533216905
+    second: npc_juju_black_move_left_10
+  - first:
+      213: 899156085334283116
+    second: npc_juju_black_move_left_11
+  - first:
+      213: -8367990408888744254
+    second: npc_juju_black_move_left_12
+  - first:
+      213: 8437185254104955742
+    second: npc_juju_black_move_left_13
+  - first:
+      213: 4002425702518589058
+    second: npc_juju_black_move_left_14
+  - first:
+      213: -6076163172985466101
+    second: npc_juju_black_move_left_0
+  - first:
+      213: 6730133006979982773
+    second: npc_juju_black_move_left_1
+  - first:
+      213: -1468128222686173575
+    second: npc_juju_black_move_left_2
+  - first:
+      213: 2670519579191942675
+    second: npc_juju_black_move_left_3
+  - first:
+      213: -2168675573210996729
+    second: npc_juju_black_move_left_4
+  - first:
+      213: 7142966322463242038
+    second: npc_juju_black_move_left_5
+  - first:
+      213: 1914510307947148241
+    second: npc_juju_black_move_left_6
+  - first:
+      213: 7985002649796799024
+    second: npc_juju_black_move_left_7
+  - first:
+      213: -3386199976397054439
+    second: npc_juju_black_move_left_8
+  - first:
+      213: -2840053586933934662
+    second: npc_juju_black_move_left_9
+  - first:
+      213: -7054808823054584154
+    second: npc_juju_black_move_left_10
+  - first:
+      213: -3802080434231856230
+    second: npc_juju_black_move_left_11
+  - first:
+      213: -3305834281210175000
+    second: npc_juju_black_move_left_12
+  - first:
+      213: 6346626672624004518
+    second: npc_juju_black_move_left_13
+  - first:
+      213: 6140759434953522253
+    second: npc_juju_black_move_left_14
+  - first:
+      213: 1982012834455242916
+    second: npc_juju_black_move_left_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 117
+        width: 61
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0314ec79c12daba0800000000000000
+      internalID: 2259096578566421360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_1
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 115
+        width: 61
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b56c24ef4c366d50800000000000000
+      internalID: 6363689226164459610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_2
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 116
+        width: 60
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976a012f82920abe0800000000000000
+      internalID: 6378626949779886946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_3
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 114
+        width: 61
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e167388679f0520800000000000000
+      internalID: 2015483536836746311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_4
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 112
+        width: 62
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70021b96e0157e1e0800000000000000
+      internalID: -9103721541169241049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 114
+        width: 68
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637fff4760ae02360800000000000000
+      internalID: 4709451102710092121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_6
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 115
+        width: 77
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d373084bf4b19a10800000000000000
+      internalID: 3053774655891289728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_7
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 117
+        width: 80
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03ae0b78a9d60de60800000000000000
+      internalID: -519270950879983832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_8
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 3
+        width: 83
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91eda64ff0dc101d0800000000000000
+      internalID: -6939747560803022604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_9
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 3
+        width: 80
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab59ab75f4a1698d0800000000000000
+      internalID: -6180664066487102761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_10
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 3
+        width: 78
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a63a8fd0c8481e90800000000000000
+      internalID: -8080734981533216905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_11
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 3
+        width: 69
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93b5264dfb4c3bc0800000000000000
+      internalID: 899156085334283116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_12
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 3
+        width: 61
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e1a82e7c315f12d0800000000000000
+      internalID: -8367990408888744254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_13
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 6
+        width: 60
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ade5c7355fb31850800000000000000
+      internalID: 8437185254104955742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_14
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 6
+        width: 61
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c7883cb2c583550800000000000000
+      internalID: 4002425702518589058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_juju_black_move_left_15
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 6
+        width: 61
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a848f9fb26818b10800000000000000
+      internalID: 1982012834455242916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      npc_juju_black_move_left_13: 8437185254104955742
+      npc_juju_black_move_left_2: 6378626949779886946
+      npc_juju_black_move_left_11: 899156085334283116
+      npc_juju_black_move_left_1: 6363689226164459610
+      npc_juju_black_move_left_14: 4002425702518589058
+      npc_juju_black_move_left_7: -519270950879983832
+      npc_juju_black_move_left_10: -8080734981533216905
+      npc_juju_black_move_left_8: -6939747560803022604
+      npc_juju_black_move_left_12: -8367990408888744254
+      npc_juju_black_move_left_6: 3053774655891289728
+      npc_juju_black_move_left_15: 1982012834455242916
+      npc_juju_black_move_left_0: 2259096578566421360
+      npc_juju_black_move_left_4: -9103721541169241049
+      npc_juju_black_move_left_3: 2015483536836746311
+      npc_juju_black_move_left_5: 4709451102710092121
+      npc_juju_black_move_left_9: -6180664066487102761
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
