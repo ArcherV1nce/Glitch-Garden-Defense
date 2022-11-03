@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
 public class DefenderButton : MonoBehaviour
 {
-    [SerializeField] Defender _defender;
-    [SerializeField] DefenderSelect _select;
+    [SerializeField] private Defender _defender;
 
     private Button _button;
+
+    public UnityAction<Defender> DefenderSelected;
 
     public Resources DefenderPrice => _defender.Price;
 
@@ -26,6 +28,12 @@ public class DefenderButton : MonoBehaviour
         UnsubscribeFromButtonClick();
     }
 
+    public void SendDefender()
+    {
+        if (_defender != null)
+            DefenderSelected?.Invoke(_defender);
+    }
+
     private void Setup()
     {
         _button = GetComponent<Button>();
@@ -33,19 +41,11 @@ public class DefenderButton : MonoBehaviour
 
     private void SubscribeToButtonClick()
     {
-        _button.onClick?.AddListener(SetDefender);
+        _button.onClick?.AddListener(SendDefender);
     }
 
     private void UnsubscribeFromButtonClick()
     {
-        _button.onClick?.RemoveListener(SetDefender);
-    }
-
-    private void SetDefender ()
-    {
-        if (_defender == null)
-            return;
-
-        _select.SetDefender(_defender);
+        _button.onClick?.RemoveListener(SendDefender);
     }
 }

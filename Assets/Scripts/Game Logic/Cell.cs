@@ -9,7 +9,7 @@ public class Cell : MonoBehaviour
     [SerializeField] private float _size;
     [SerializeField] private Character _character;
 
-    private Collider2D _trigger;
+    private Collider2D _collider;
     private Line _line;
 
     public UnityEvent FillChanged;
@@ -19,7 +19,7 @@ public class Cell : MonoBehaviour
 
     private void Awake()
     {
-        _trigger = GetComponent<Collider2D>();
+        _collider = GetComponent<Collider2D>();
     }
 
     private void OnEnable()

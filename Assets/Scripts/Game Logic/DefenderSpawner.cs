@@ -7,7 +7,7 @@ public class DefenderSpawner : MonoBehaviour
 
     private Defender _selectedDefender;
 
-    public void SetActiveDefender (Defender defender)
+    public void SetSelectedDefender (Defender defender)
     {
         _selectedDefender = defender;
     }

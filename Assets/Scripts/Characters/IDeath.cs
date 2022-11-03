@@ -1,4 +1,4 @@
-public interface ICanDie
+public interface IDeath
 {
     public bool CheckDeath();
 }

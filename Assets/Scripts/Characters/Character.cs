@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class Character : MonoBehaviour, ICanDie
+public abstract class Character : MonoBehaviour, IDeath
 {
     [SerializeField] private Health _health;
 

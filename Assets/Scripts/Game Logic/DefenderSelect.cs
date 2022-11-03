@@ -1,12 +1,34 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class DefenderSelect : MonoBehaviour
 {
-    public UnityEvent<Defender> DefenderSelected;
+    [SerializeField] private List<DefenderButton> _buttons;
+    [SerializeField] private DefenderSpawner _spawner;
 
-    public void SetDefender(Defender defender)
+    private void OnEnable()
     {
-        DefenderSelected?.Invoke(defender);
+        SubscribeOnButtonEvents();
+    }
+
+    private void OnDisable()
+    {
+        UnsubscribeFromButtonEvents();
+    }
+
+    private void SubscribeOnButtonEvents()
+    {
+        foreach (DefenderButton button in _buttons)
+        {
+            button.DefenderSelected += _spawner.SetSelectedDefender;
+        }
+    }
+
+    private void UnsubscribeFromButtonEvents()
+    {
+        foreach (DefenderButton button in _buttons)
+        {
+            button.DefenderSelected += _spawner.SetSelectedDefender;
+        }
     }
 }
