@@ -1,20 +1,46 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CellSelect), typeof(DefenderSelect))]
+[RequireComponent(typeof(CellSelect))]
 public class DefenderSpawner : MonoBehaviour
 {
     [SerializeField] private PlayerResources _money;
 
     private Defender _selectedDefender;
+    private CellSelect _cellSelect;
 
-    public void SetSelectedDefender (Defender defender)
+    private void Awake()
+    {
+        Setup();
+    }
+
+    private void OnEnable()
+    {
+        SubscribeOnSelection();
+    }
+
+    private void OnDisable()
+    {
+        UnsubscribeFromSelection();
+    }
+
+    public void SetSelectedDefender(Defender defender)
     {
         _selectedDefender = defender;
     }
 
-    public bool TrySpawnDefender (Cell cell)
+    private void Setup()
     {
-        if (_selectedDefender == null)
+        _cellSelect = GetComponent<CellSelect>();
+    }
+
+    private void OnCellClicked(Cell cell)
+    {
+        TrySpawnDefender(cell);
+    }
+
+    private bool TrySpawnDefender(Cell cell)
+    {
+        if (_selectedDefender == null || cell.IsFree == false)
         {
             return false;
         }
@@ -30,5 +56,15 @@ public class DefenderSpawner : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void SubscribeOnSelection()
+    {
+        _cellSelect.CellClicked += OnCellClicked;
+    }
+
+    private void UnsubscribeFromSelection()
+    {
+        _cellSelect.CellClicked -= OnCellClicked;
     }
 }

@@ -1,10 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(DefenderSpawner))]
 public class DefenderSelect : MonoBehaviour
 {
     [SerializeField] private List<DefenderButton> _buttons;
-    [SerializeField] private DefenderSpawner _spawner;
+    
+    private DefenderSpawner _spawner;
+
+    private void Awake()
+    {
+        Setup();
+    }
 
     private void OnEnable()
     {
@@ -30,5 +37,10 @@ public class DefenderSelect : MonoBehaviour
         {
             button.DefenderSelected += _spawner.SetSelectedDefender;
         }
+    }
+
+    private void Setup()
+    {
+        _spawner = GetComponent<DefenderSpawner>();
     }
 }

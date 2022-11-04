@@ -14,7 +14,7 @@ public class Cell : MonoBehaviour
 
     public UnityEvent FillChanged;
     public float Size => _size;
-    public bool IsFree => _character != null;
+    public bool IsFree => _character == null;
     public Character Character => _character;
 
     private void Awake()

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerResources : MonoBehaviour
 {
-    private Resources _money;
+    [SerializeField] private Resources _money;
 
     public bool TrySpendResources(Defender defender)
     {
