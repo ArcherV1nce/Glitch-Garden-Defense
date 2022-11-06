@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Line))]
-public class LineCells : MonoBehaviour
+public class LineCellsGenerator : MonoBehaviour
 {
     [SerializeField] private Cell _template;
     [SerializeField] private int _cellsCount;
@@ -12,28 +12,25 @@ public class LineCells : MonoBehaviour
 
     private Line _line;
 
-    private void Awake()
+    private void OnValidate()
     {
         Setup();
     }
 
     public void GenerateCells()
     {
-        int startingCellNumber = 0;
+        int startingCellNumber;
 
-        if (_cells == null)
-        {
-            _cells = new List<Cell>();
-        }
+        _cells ??= new List<Cell>();
 
-        else if (_cellsCount > _cells.Count)
+        if (_cellsCount > _cells.Count)
         {
             startingCellNumber = _cells.Count;
 
             for (int i = startingCellNumber; i < _cellsCount; i++)
             {
                 Vector3 lastCellPosition = TryGetLastCellPosition();
-                Vector3 newCellPosition = new Vector3(lastCellPosition.x + _template.Size, lastCellPosition.y, lastCellPosition.z);
+                Vector3 newCellPosition = new(lastCellPosition.x + _template.Size, lastCellPosition.y, lastCellPosition.z);
                 Cell newCell = Instantiate(_template, newCellPosition, Quaternion.identity, gameObject.transform);
                 newCell.SetLine(_line);
                 _cells.Add(newCell);
@@ -53,7 +50,10 @@ public class LineCells : MonoBehaviour
 
     private void Setup()
     {
-        _line = GetComponent<Line>();
+        if (_line == null)
+        {
+            _line = GetComponent<Line>();
+        }
     }
 
     private Vector3 TryGetLastCellPosition()

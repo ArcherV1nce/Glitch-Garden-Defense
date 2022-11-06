@@ -13,12 +13,20 @@ public class CellVisual : MonoBehaviour
 
     private void OnEnable()
     {
-        _cell.FillChanged.AddListener(OnFillChanged);
+        _cell.FillChanged += OnFillChanged;
     }
 
     private void OnDisable()
     {
-        _cell.FillChanged.RemoveListener(OnFillChanged);
+        _cell.FillChanged -=OnFillChanged;
+    }
+
+    private void OnValidate()
+    {
+        if (_cell == null || _spriteRenderer == null)
+        {
+            Setup();
+        }
     }
 
     private void Setup()
@@ -29,14 +37,7 @@ public class CellVisual : MonoBehaviour
 
     private void OnFillChanged()
     {
-        if (_cell.IsFree)
-        {
-            _spriteRenderer.enabled = true;
-        }
-
-        else
-        {
-            _spriteRenderer.enabled = false;
-        }
+        Debug.Log($"Cell status is: \nCell[{_cell}] is free: {_cell.IsFree}.");
+        _spriteRenderer.enabled = _cell.IsFree;
     }
 }

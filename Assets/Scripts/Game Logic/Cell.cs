@@ -9,18 +9,12 @@ public class Cell : MonoBehaviour
     [SerializeField] private float _size;
     [SerializeField] private Character _character;
 
-    private Collider2D _collider;
     private Line _line;
 
-    public UnityEvent FillChanged;
+    public event UnityAction FillChanged;
     public float Size => _size;
     public bool IsFree => _character == null;
     public Character Character => _character;
-
-    private void Awake()
-    {
-        _collider = GetComponent<Collider2D>();
-    }
 
     private void OnEnable()
     {
@@ -32,14 +26,10 @@ public class Cell : MonoBehaviour
         UnsubscribeFromCharacterDeath();
     }
 
-    private void OnDestroy()
-    {
-        RemoveCharacter(_character);
-    }
-
     private void OnValidate()
     {
         ValidateSize();
+        ValidateLine();
     }
 
     public bool TryAddCharacter (Character character)
@@ -47,6 +37,7 @@ public class Cell : MonoBehaviour
         if (IsFree)
         {
             _character = character;
+            _line.AddCharacter(_character);
             TrySubscribeOnCharacterDeath();
             FillChanged.Invoke();
             return true;
@@ -76,11 +67,29 @@ public class Cell : MonoBehaviour
         }
     }
 
+    private void ValidateLine()
+    {
+        if (_line == null)
+        {
+            _line = gameObject.GetComponentInParent<Line>();
+        }
+    }
+
     private bool TrySubscribeOnCharacterDeath()
     {
         if (_character != null)
         {
-            _character.Died += (RemoveCharacter);
+            if (_character is Defender defender)
+            {
+                defender.Died += RemoveCharacter;
+            }
+
+            else if (_character is Attacker attacker)
+            {
+                attacker.Died += RemoveCharacter;
+            }
+
+            Debug.Log($"Subscribed on death of: {_character.name}");
             return true;
         }
 
@@ -94,7 +103,15 @@ public class Cell : MonoBehaviour
     {
         if (_character != null)
         {
-            _character.Died -= (RemoveCharacter);
+            if (_character is Defender defender)
+            {
+                defender.Died -= RemoveCharacter;
+            }
+
+            else if (_character is Attacker attacker)
+            {
+                attacker.Died -= RemoveCharacter;
+            }
         }
     }
 
@@ -102,7 +119,7 @@ public class Cell : MonoBehaviour
     {
         if (character != null && character == _character)
         {
-            _line.RemoveCharacter(character);
+            Debug.Log($"Removed: {_character.name} from cell: {this.name}");
             UnsubscribeFromCharacterDeath();
             Clear();
             FillChanged.Invoke();

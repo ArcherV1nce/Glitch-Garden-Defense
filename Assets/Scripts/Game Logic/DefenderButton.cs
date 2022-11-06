@@ -11,7 +11,7 @@ public class DefenderButton : MonoBehaviour
 
     public UnityAction<Defender> DefenderSelected;
 
-    public Resources DefenderPrice => _defender.Price;
+    public int DefenderPrice => _defender.Price.Stars;
 
     private void Awake()
     {

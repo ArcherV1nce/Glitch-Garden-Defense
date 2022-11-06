@@ -7,8 +7,8 @@ public class Line : MonoBehaviour
     [SerializeField] private List<Defender> _defenders;
     [SerializeField] private List<Attacker> _attackers;
 
-    public UnityEvent AttackStopped;
-    public UnityEvent AttackStarted;
+    public event UnityAction AttackStopped;
+    public event UnityAction AttackStarted;
 
     private void Awake()
     {
@@ -59,36 +59,30 @@ public class Line : MonoBehaviour
 
     private void Setup()
     {
-        if (_defenders == null)
-        {
-            _defenders = new List<Defender>();
-        }
+        _defenders ??= new List<Defender>();
 
-        if (_attackers == null)
-        {
-            _attackers = new List<Attacker>();
-        }
+        _attackers ??= new List<Attacker>();
     }
 
     private void AddDefenderSubscriptions(Defender defender)
     {
-        defender.Died += (RemoveCharacter);
-        AttackStarted.AddListener(defender.SetAttacked);
-        AttackStopped.AddListener(defender.SetIdle);
+        defender.Died += RemoveCharacter;
+        AttackStarted += defender.SetAttacked;
+        AttackStopped += defender.SetIdle;
     }
 
     private void RemoveDefenderSubscriptions(Defender defender)
     {
-        defender.Died -= (RemoveCharacter);
-        AttackStarted.RemoveListener(defender.SetAttacked);
-        AttackStopped.RemoveListener(defender.SetIdle);
+        defender.Died -= RemoveCharacter;
+        AttackStarted -= defender.SetAttacked;
+        AttackStopped -= defender.SetIdle;
     }
 
     private void AddAttacker(Attacker attacker)
     {
         AlertAttack();
         _attackers.Add(attacker);
-        attacker.Died += (RemoveCharacter);
+        attacker.Died += RemoveCharacter;
     }
 
     private void AddDefender(Defender defender)

@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(LineCells))]
+[CustomEditor(typeof(LineCellsGenerator))]
 public class LineCellsEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
 
-        LineCells lineCells = (LineCells)target;
+        LineCellsGenerator lineCells = (LineCellsGenerator)target;
 
         if (GUILayout.Button("Generate cells"))
         {
@@ -18,6 +18,12 @@ public class LineCellsEditor : Editor
         if (GUILayout.Button("Destroy cells"))
         {
             lineCells.DestroyCells();
+        }
+
+        if (GUILayout.Button("Regenerate cells"))
+        {
+            lineCells.DestroyCells();
+            lineCells.GenerateCells();
         }
     }
 }

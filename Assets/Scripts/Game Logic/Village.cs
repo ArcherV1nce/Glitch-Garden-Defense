@@ -9,7 +9,10 @@ public class Village : MonoBehaviour
 
     private Collider2D _trigger;
 
+    public event UnityAction HealthChanged;
     public UnityEvent VillageDestroyed;
+
+    public int Health => _health.Value;
 
     private void Awake()
     {
@@ -37,6 +40,7 @@ public class Village : MonoBehaviour
     private void DealWithAttacker (Attacker attacker)
     {
         _health.ApplyDamage(attacker.Damage);
+        HealthChanged?.Invoke();
         attacker.Die();
 
         if (_health.IsAlive == false)
