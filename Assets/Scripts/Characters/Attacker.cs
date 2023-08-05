@@ -9,7 +9,6 @@ public class Attacker : Character
 
     private bool _isAttacking = false;
     private bool _isSpawned = false;
-    private AttackerMovement _movement;
     private Defender _currentTarget = null;
 
     public new event UnityAction<Attacker> Died;
@@ -18,11 +17,7 @@ public class Attacker : Character
     public bool IsAttacking => _isAttacking;
     public bool IsSpawned => _isSpawned;
     public Damage Damage => _damage;
-
-    private void Awake ()
-    {
-        Setup();
-    }
+    public Resources Reward => _reward;
 
     protected virtual void OnEnable()
     {
@@ -82,11 +77,6 @@ public class Attacker : Character
     {
         _isAttacking = true;
         AttackStateChanged?.Invoke(_isAttacking);
-    }
-
-    private void Setup ()
-    {
-        _movement = GetComponent<AttackerMovement>();
     }
 
     private void ClearTarget(Character character)

@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CellSelect : MonoBehaviour
+public class CellSelection : MonoBehaviour
 {
+    [SerializeField] private LayerMask _contactFilter;
+    
     private Camera _camera;
 
     public UnityAction<Cell> CellClicked;
@@ -31,7 +33,7 @@ public class CellSelect : MonoBehaviour
     private bool CheckCellDetection(out Cell cell)
     {
         Vector3 mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-        Collider2D target = Physics2D.OverlapPoint(mousePosition);
+        Collider2D target = Physics2D.OverlapPoint(mousePosition, _contactFilter);
 
         if (target != null && target.TryGetComponent<Cell>(out cell))
         {

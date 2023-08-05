@@ -38,6 +38,12 @@ public class LevelLoader : MonoBehaviour
         }
     }
 
+    public void RestartLevel()
+    {
+        _levelName = SceneManager.GetActiveScene().name;
+        LoadLevel();
+    }
+
     private IEnumerator LoadLevelWithDelay()
     {
         yield return new WaitForSeconds(_timeToWait);
@@ -52,7 +58,7 @@ public class LevelLoader : MonoBehaviour
 
     private IEnumerator LoadScreenOperationProcess()
     {
-        AsyncOperation tempOp = SceneManager.LoadSceneAsync(_loadingScreenName);
+        SceneManager.LoadSceneAsync(_loadingScreenName);
         while(SceneManager.GetActiveScene().name != _loadingScreenName)
         {
             yield return new WaitForEndOfFrame();
@@ -69,7 +75,8 @@ public class LevelLoader : MonoBehaviour
         }
 
         yield return new WaitForEndOfFrame();
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, Time.deltaTime);
+        StopLoadingCoroutines();
     }
 
     public bool GetLoadLevelStatus()
@@ -79,9 +86,16 @@ public class LevelLoader : MonoBehaviour
 
     private void StopLoadingCoroutines()
     {
-        StopCoroutine(_loader);
-        StopCoroutine(_loadVisualizer);
-        _loader = null;
-        _loadVisualizer = null;
+        if (_loader != null)
+        {
+            StopCoroutine(_loader);
+            _loader = null;
+        }
+        
+        if (_loadVisualizer != null)
+        { 
+            StopCoroutine(_loadVisualizer);
+            _loadVisualizer = null;
+        }
     }
 }

@@ -1,11 +1,11 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Cactus))]
+[RequireComponent(typeof(ShootingDefender))]
 public class CactusAnimationControl : AnimationControl
 {
     private const string ShootingState = "isShooting";
 
-    private Cactus _cactus;
+    private ShootingDefender _cactus;
 
     private void OnEnable()
     {
@@ -25,7 +25,7 @@ public class CactusAnimationControl : AnimationControl
     protected override void Setup()
     {
         base.Setup();
-        _cactus = GetComponent<Cactus>();
+        _cactus = GetComponent<ShootingDefender>();
     }
 
     private void SubscribeToCactus()

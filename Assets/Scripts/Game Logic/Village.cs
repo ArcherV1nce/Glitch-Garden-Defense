@@ -7,10 +7,11 @@ public class Village : MonoBehaviour
     [SerializeField] private DefenderSpawner _defenderSpawner;
     [SerializeField] private Health _health;
 
+    private PlayerResources _resources;
     private Collider2D _trigger;
 
     public event UnityAction HealthChanged;
-    public UnityEvent VillageDestroyed;
+    public event UnityAction Destroyed;
 
     public int Health => _health.Value;
 
@@ -29,6 +30,11 @@ public class Village : MonoBehaviour
         CheckTrespasser(collision);
     }
 
+    public void AddResources (Resources resources)
+    {
+        _resources.AddResources(resources);
+    }
+
     private void CheckTrespasser(Collider2D trespasser)
     {
         if (trespasser.TryGetComponent(out Attacker attacker))
@@ -45,13 +51,14 @@ public class Village : MonoBehaviour
 
         if (_health.IsAlive == false)
         {
-            VillageDestroyed?.Invoke();
+            Destroyed?.Invoke();
         }
     }
 
     private void Setup()
     {
         ValidateTrigger();
+        _resources = GetComponent<PlayerResources>();
     }
 
     private void ValidateTrigger()

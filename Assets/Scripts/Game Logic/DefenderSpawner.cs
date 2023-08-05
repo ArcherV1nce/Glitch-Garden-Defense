@@ -1,12 +1,12 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CellSelect))]
+[RequireComponent(typeof(CellSelection))]
 public class DefenderSpawner : MonoBehaviour
 {
     [SerializeField] private PlayerResources _money;
 
     private Defender _selectedDefender;
-    private CellSelect _cellSelect;
+    private CellSelection _cellSelect;
 
     private void Awake()
     {
@@ -30,7 +30,7 @@ public class DefenderSpawner : MonoBehaviour
 
     private void Setup()
     {
-        _cellSelect = GetComponent<CellSelect>();
+        _cellSelect = GetComponent<CellSelection>();
     }
 
     private void OnCellClicked(Cell cell)

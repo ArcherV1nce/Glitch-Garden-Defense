@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3528502867800321011}
   - component: {fileID: 3528502867800321015}
   m_Layer: 5
-  m_Name: Cactus Button
+  m_Name: Gravestone Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b23e6e03a5b81428068a837faef19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defender: {fileID: 52048741179631147, guid: d363afcac422fd24a90844c0e42a3562, type: 3}
+  _defender: {fileID: 2420700543952908621, guid: 330866da13f5a9f4d9d7cd5b33441adc, type: 3}
 --- !u!114 &486373705261049408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc18175dfc183c4482614dc7bf22e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defenderImage: {fileID: -613669871504447759, guid: 225e5302df5b92542861a2914d34d3eb, type: 3}
+  _defenderImage: {fileID: 21300000, guid: bbf4bebf786e3904784ec6f676dd803a, type: 3}
   _priceText: {fileID: 3528502868333798972}
 --- !u!114 &3528502867800321011
 MonoBehaviour:
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -613669871504447759, guid: 225e5302df5b92542861a2914d34d3eb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bbf4bebf786e3904784ec6f676dd803a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

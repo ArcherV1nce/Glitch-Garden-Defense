@@ -4,11 +4,15 @@ using UnityEngine.Events;
 
 public class Line : MonoBehaviour
 {
+    [SerializeField] private Village _village;
     [SerializeField] private List<Defender> _defenders;
     [SerializeField] private List<Attacker> _attackers;
 
     public event UnityAction AttackStopped;
     public event UnityAction AttackStarted;
+
+    public bool IsDefended => _defenders.Count > 0;
+    public bool IsAttacked => _attackers.Count > 0;
 
     private void Awake()
     {
@@ -26,9 +30,6 @@ public class Line : MonoBehaviour
         UnsubscribeFromAllAttackersDeath();
         RemoveAllDefendersSubscriptions();
     }
-
-    public bool IsDefended => _defenders.Count > 0;
-    public bool IsAttacked => _attackers.Count > 0;
 
     public void AddCharacter(Character character)
     {
@@ -99,6 +100,7 @@ public class Line : MonoBehaviour
     private void RemoveAttacker(Attacker attacker)
     {
         _attackers.Remove(attacker);
+        _village.AddResources(attacker.Reward);
 
         CheckAttackFinished();
     }

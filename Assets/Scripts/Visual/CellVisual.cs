@@ -37,7 +37,6 @@ public class CellVisual : MonoBehaviour
 
     private void OnFillChanged()
     {
-        Debug.Log($"Cell status is: \nCell[{_cell}] is free: {_cell.IsFree}.");
         _spriteRenderer.enabled = _cell.IsFree;
     }
 }

@@ -131,9 +131,6 @@ MonoBehaviour:
     _value: 25
   _reward:
     _stars: 5
-  Died:
-    m_PersistentCalls:
-      m_Calls: []
   AttackStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -166,7 +163,7 @@ MonoBehaviour:
   _direction: {x: -1, y: 0}
 --- !u!95 &6354451872651126820
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -183,7 +180,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!50 &5411812155570756133
 Rigidbody2D:
   serializedVersion: 4
@@ -229,7 +227,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.65, y: 0.78}
+  m_Size: {x: 0.45, y: 0.78}
   m_EdgeRadius: 0
 --- !u!1 &8871911305791364020
 GameObject:

@@ -39,7 +39,7 @@ TextureImporter:
       213: -1414849632348080125
     second: Gnome Hop_11
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -99,6 +99,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -150,6 +151,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -426,18 +439,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gnome Hop_6: -2024161416504286770
       Gnome Hop_0: 8532853575984537022
-      Gnome Hop_9: 471822915718253400
-      Gnome Hop_3: 2316559351308807121
+      Gnome Hop_1: -5672886484280828777
       Gnome Hop_10: -7122136188106420382
-      Gnome Hop_2: 657327705973076454
-      Gnome Hop_5: -5187855032976046438
       Gnome Hop_11: -1414849632348080125
+      Gnome Hop_2: 657327705973076454
+      Gnome Hop_3: 2316559351308807121
+      Gnome Hop_4: 259241948786745635
+      Gnome Hop_5: -5187855032976046438
+      Gnome Hop_6: -2024161416504286770
       Gnome Hop_7: -7122400225289531641
       Gnome Hop_8: 7012729498918721938
-      Gnome Hop_1: -5672886484280828777
-      Gnome Hop_4: 259241948786745635
+      Gnome Hop_9: 471822915718253400
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

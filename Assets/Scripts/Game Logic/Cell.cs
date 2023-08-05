@@ -89,7 +89,6 @@ public class Cell : MonoBehaviour
                 attacker.Died += RemoveCharacter;
             }
 
-            Debug.Log($"Subscribed on death of: {_character.name}");
             return true;
         }
 
@@ -119,7 +118,6 @@ public class Cell : MonoBehaviour
     {
         if (character != null && character == _character)
         {
-            Debug.Log($"Removed: {_character.name} from cell: {this.name}");
             UnsubscribeFromCharacterDeath();
             Clear();
             FillChanged.Invoke();

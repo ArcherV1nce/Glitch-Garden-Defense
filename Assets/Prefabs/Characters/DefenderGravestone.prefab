@@ -133,12 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health:
-    _value: 300
+    _value: 500
   _price:
     _stars: 25
-  Died:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &2420700543952908622
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,7 +160,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &2420700543952908623
 Rigidbody2D:
@@ -188,7 +185,7 @@ Rigidbody2D:
   m_Constraints: 7
 --- !u!95 &3012494436108659359
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -205,4 +202,5 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

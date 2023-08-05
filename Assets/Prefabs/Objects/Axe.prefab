@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 486037136329278243}
-  - component: {fileID: 450410755161600353}
+  - component: {fileID: 1290574488088770355}
   - component: {fileID: 4995388008874720085}
   - component: {fileID: 5724771907687948048}
   - component: {fileID: 6568913992125389730}
@@ -36,7 +36,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &450410755161600353
+--- !u!114 &1290574488088770355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,11 +45,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 486037136329278240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c7aa8be70c6aa04180ee981ad528e02, type: 3}
+  m_Script: {fileID: 11500000, guid: b7857213565878a43bdc6b5c27ecf31d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _damage:
-    _value: 40
+    _value: 25
   _lifeTime: 3
   _isPenetrating: 1
 --- !u!114 &4995388008874720085
@@ -94,7 +94,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!95 &6568913992125389730
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,7 +111,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &486037136423232270
 GameObject:
   m_ObjectHideFlags: 0
