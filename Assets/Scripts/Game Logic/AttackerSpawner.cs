@@ -7,14 +7,18 @@ public class AttackerSpawner : MonoBehaviour
     private const float SpawnDelayMax = 5f;
 
     [SerializeField] private Line _line;
-    [SerializeField] private Attacker atackerPrefab;
+    [SerializeField] private Wave _currentWave;
     [SerializeField] private float _spawnDelay;
 
+    private System.Random _random;
     private Coroutine _spawningCoroutine;
     private bool _isSpawning;
+    private int _remainingAttackers;
 
     private void OnEnable()
     {
+        SetupRandom();
+        SetupFirstWave();
         StartSpawning();
     }
 
@@ -50,29 +54,69 @@ public class AttackerSpawner : MonoBehaviour
         StopCoroutine(_spawningCoroutine);
     }
 
+    private bool TryGetAttackerFromCurrentWave(out Attacker currentAttacker)
+    {
+        currentAttacker = _currentWave.AttackersPrefabs[_random.Next(0, _currentWave.AttackersPrefabs.Count)];
+
+        if (currentAttacker != null)
+        {
+            return true;
+        }
+
+        else return false;
+    }
+
     private IEnumerator SpawnAtacker()
     {
-        while (_isSpawning)
+        while (_isSpawning && _remainingAttackers > 0)
         {
-            if (atackerPrefab != null)
+            if (TryGetAttackerFromCurrentWave(out Attacker attackerPrefab))
             {
-                Attacker attacker = Instantiate(atackerPrefab, transform.position, transform.rotation);
+                Attacker attacker = Instantiate(attackerPrefab, transform.position, transform.rotation);
                 attacker.transform.parent = _line.transform;
                 _line.AddCharacter(attacker);
+                _remainingAttackers--;
+            }
+
+            if (_remainingAttackers <= 0)
+            {
+                _isSpawning = false;
             }
 
             yield return new WaitForSeconds(_spawnDelay);
         }
 
-        StopCoroutine(_spawningCoroutine);
+        DisableSpawning();
     }
 
     private void DisableSpawning()
     {
         if (_spawningCoroutine != null)
         {
+            Debug.Log("Spawning is stopped.");
             StopCoroutine(_spawningCoroutine);
             _spawningCoroutine = null;
+        }
+    }
+
+    private void SetupRandom()
+    {
+        if (_random == null)
+        {
+            _random = new System.Random();
+        }
+    }
+
+    private void SetupFirstWave()
+    {
+        if (_currentWave == null)
+        {
+            Debug.LogError($"Spawner {this.name} has no Wave Scriptable object set.");
+        }
+
+        else
+        {
+            _remainingAttackers = _currentWave.AttackersCount;
         }
     }
 

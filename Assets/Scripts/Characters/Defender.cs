@@ -1,34 +1,55 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class Defender : Character
 {
     [SerializeField] private Resources _price;
-    
-    private bool _isAttacked;
 
+    public event UnityAction<Defender> Spawned;
     public new event UnityAction<Defender> Died;
 
     public Resources Price => _price;
-    public bool IsAttacked => _isAttacked;
 
     public Defender (Resources price)
     {
         _price = price;
     }
 
-    public virtual void SetAttacked()
+    protected virtual void Start()
     {
-        _isAttacked = true;
+        AlertAboutSpawn();
+        SetStartingState();
     }
 
-    public virtual void SetIdle()
+    public virtual void SetAttacked()
     {
-        _isAttacked = false;
+
+    }
+
+    public virtual void SetIdle ()
+    {
+        SetDefaultState();
+    }
+
+    protected virtual void OnValidate()
+    {
+        if (Active != null)
+        {
+            if (Active.Character != this.GetComponent<Character>())
+            {
+                Default = null;
+            }
+        }
     }
 
     protected override void TriggerDeathActions()
     {
         Died?.Invoke(this);
+    }
+
+    private void AlertAboutSpawn()
+    {
+        Spawned?.Invoke(this);
     }
 }

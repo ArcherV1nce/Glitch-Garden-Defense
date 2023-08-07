@@ -7,6 +7,7 @@ public class Lizard : Attacker
     protected override void OnEnable()
     {
         base.OnEnable();
+        SetActiveState(Spawning);
         _damageArea.CharacterEnteredDamageArea.AddListener(TrySetTarget);
     }
 

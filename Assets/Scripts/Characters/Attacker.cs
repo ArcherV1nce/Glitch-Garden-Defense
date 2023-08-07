@@ -6,16 +6,14 @@ public class Attacker : Character
 {
     [SerializeField] private Damage _damage;
     [SerializeField] private Resources _reward;
+    [SerializeField] protected CharacterState Attacking;
+    [SerializeField] protected CharacterState Spawning;
 
-    private bool _isAttacking = false;
-    private bool _isSpawned = false;
     private Defender _currentTarget = null;
 
     public new event UnityAction<Attacker> Died;
-    public UnityEvent<bool> AttackStateChanged;
+    public UnityEvent<CharacterState> StateChanged;
 
-    public bool IsAttacking => _isAttacking;
-    public bool IsSpawned => _isSpawned;
     public Damage Damage => _damage;
     public Resources Reward => _reward;
 
@@ -36,17 +34,15 @@ public class Attacker : Character
 
     public void Attack (Defender target)
     {
-        _isAttacking = true;
-        AttackStateChanged?.Invoke(_isAttacking);
         _currentTarget = target;
+        SetActiveState(Attacking);
     }
 
     private void StrikeCurrentTarget ()
     {
         if (!_currentTarget)
         {
-            _isAttacking = false;
-            AttackStateChanged?.Invoke(_isAttacking);
+            SetActiveState(Default);
         }
 
         else
@@ -55,28 +51,14 @@ public class Attacker : Character
         }
     }
 
-    public void SetSpawning ()
+    public void SetSpawning()
     {
-        StopMoving();
-        _isSpawned = false;
+        SetActiveState(Spawning);
     }
 
-    private void SetSpawned ()
+    public void StartMoving()
     {
-        _isSpawned = true;
-        StartMoving();
-    }
-
-    public void StartMoving ()
-    {
-        _isAttacking = false;
-        AttackStateChanged?.Invoke(_isAttacking);
-    }
-
-    public void StopMoving()
-    {
-        _isAttacking = true;
-        AttackStateChanged?.Invoke(_isAttacking);
+        SetActiveState(Default);
     }
 
     private void ClearTarget(Character character)
@@ -102,6 +84,12 @@ public class Attacker : Character
         {
             _currentTarget.Died -= (ClearTarget);
         }
+    }
+
+    protected override void SetActiveState(CharacterState newState)
+    {
+        base.SetActiveState(newState);
+        StateChanged?.Invoke(Active);
     }
 
     protected override void TriggerDeathActions()

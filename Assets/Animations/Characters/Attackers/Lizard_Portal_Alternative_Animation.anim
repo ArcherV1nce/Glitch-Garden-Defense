@@ -139,23 +139,16 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: StopMoving
+    functionName: SetSpawning
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 3222574180056230849, guid: 891a2c6fc41962740b72b34afd203843, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1
-    functionName: SetSpawned
+    functionName: StartMoving
     data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1.0416666
-    functionName: SetSpawningState
-    data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 3222574180056230849, guid: 891a2c6fc41962740b72b34afd203843, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

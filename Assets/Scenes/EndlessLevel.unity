@@ -2024,7 +2024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _line: {fileID: 939555857}
-  atackerPrefab: {fileID: 3222574180056230849, guid: 891a2c6fc41962740b72b34afd203843, type: 3}
+  _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
   _spawnDelay: 3
 --- !u!4 &667239400
 Transform:
@@ -5396,7 +5396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _line: {fileID: 45577236}
-  atackerPrefab: {fileID: 3222574180056230849, guid: 891a2c6fc41962740b72b34afd203843, type: 3}
+  _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
   _spawnDelay: 3
 --- !u!4 &1515731680
 Transform:
@@ -5443,7 +5443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _line: {fileID: 771047006}
-  atackerPrefab: {fileID: 3222574180056230849, guid: 891a2c6fc41962740b72b34afd203843, type: 3}
+  _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
   _spawnDelay: 3
 --- !u!4 &1526362278
 Transform:
@@ -6682,7 +6682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _line: {fileID: 435336752}
-  atackerPrefab: {fileID: 3222574180056230849, guid: 891a2c6fc41962740b72b34afd203843, type: 3}
+  _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
   _spawnDelay: 3
 --- !u!1 &1917897457
 GameObject:

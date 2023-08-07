@@ -9,7 +9,7 @@ public class Line : MonoBehaviour
     [SerializeField] private List<Attacker> _attackers;
 
     public event UnityAction AttackStopped;
-    public event UnityAction AttackStarted;
+    public event UnityAction Attacked;
 
     public bool IsDefended => _defenders.Count > 0;
     public bool IsAttacked => _attackers.Count > 0;
@@ -44,7 +44,6 @@ public class Line : MonoBehaviour
         }
     }
 
-
     public void RemoveCharacter(Character character)
     {
         if (character is Defender)
@@ -68,14 +67,16 @@ public class Line : MonoBehaviour
     private void AddDefenderSubscriptions(Defender defender)
     {
         defender.Died += RemoveCharacter;
-        AttackStarted += defender.SetAttacked;
+        defender.Spawned += CheckAttackState;
+        Attacked += defender.SetAttacked;
         AttackStopped += defender.SetIdle;
     }
 
     private void RemoveDefenderSubscriptions(Defender defender)
     {
         defender.Died -= RemoveCharacter;
-        AttackStarted -= defender.SetAttacked;
+        defender.Spawned -= CheckAttackState;
+        Attacked -= defender.SetAttacked;
         AttackStopped -= defender.SetIdle;
     }
 
@@ -107,7 +108,20 @@ public class Line : MonoBehaviour
 
     private void AlertAttack()
     {
-        AttackStarted?.Invoke();
+        Attacked?.Invoke();
+    }
+
+    private void CheckAttackState(Defender defender)
+    {
+        if (IsAttacked)
+        {
+            AlertAttack();
+        }
+
+        else
+        {
+            AttackStopped?.Invoke();
+        }
     }
 
     private void CheckAttackFinished()

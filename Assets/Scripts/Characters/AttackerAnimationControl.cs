@@ -18,9 +18,13 @@ public class AttackerAnimationControl : AnimationControl
         UnsubscribeFromAttackerStates();
     }
 
-    public void UpdateAttackingState(bool isAttacking)
+    public void UpdateStates(CharacterState newState)
     {
-        Animator.SetBool(AttackingState, isAttacking);
+        foreach (StateParameter stateParameter in newState.StateParameters)
+        {
+            Animator.SetBool(stateParameter.ParameterName, stateParameter.ParameterState);
+            Debug.Log($"Attacker {this.name} entered state {newState.name} with parameter {stateParameter.ParameterName} set to {stateParameter.ParameterState}");
+        }
     }
 
     protected override void Setup()
@@ -29,18 +33,13 @@ public class AttackerAnimationControl : AnimationControl
         _attacker = GetComponent<Attacker>();
     }
 
-    private void SetSpawningState()
-    {
-        Animator.SetBool(SpawningState, _attacker.IsSpawned);
-    }
-
     private void SubscribeToAttackerStates()
     {
-        _attacker.AttackStateChanged.AddListener(UpdateAttackingState);
+        _attacker.StateChanged.AddListener(UpdateStates);
     }
 
     private void UnsubscribeFromAttackerStates()
     {
-        _attacker.AttackStateChanged.RemoveListener(UpdateAttackingState);
+        _attacker.StateChanged.RemoveListener(UpdateStates);
     }
 }

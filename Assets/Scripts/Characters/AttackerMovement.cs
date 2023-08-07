@@ -10,14 +10,45 @@ public class AttackerMovement : Movement
         Setup();
     }
 
+    private void UpdateMovementState(CharacterState state)
+    {
+        bool movementState = false;
+        
+        foreach (StateParameter parameter in state.StateParameters)
+        {
+            if (parameter.ParameterName == "finishedSpawning" && parameter.ParameterState == false)
+            {
+                movementState = false;
+                break;
+            }
+
+            if (parameter.ParameterName == "isAttacking")
+            {
+                movementState = !parameter.ParameterState;
+            }
+        }
+        
+        SetMovementState(movementState);
+    }
+
+    private void SubscribeToAttackerStates()
+    {
+        _attacker.StateChanged.AddListener(UpdateMovementState);
+    }
+
+    private void UnsubscribeFromAttackerStates()
+    {
+        _attacker.StateChanged.RemoveListener(UpdateMovementState);
+    }
+
     protected override void OnEnable()
     {
-        _attacker.AttackStateChanged.AddListener(SetMovementState);
+        SubscribeToAttackerStates();
     }
 
     protected override void OnDisable()
     {
-        _attacker.AttackStateChanged.RemoveListener(SetMovementState);
+        UnsubscribeFromAttackerStates();
     }
 
     protected override void Setup ()
@@ -25,9 +56,9 @@ public class AttackerMovement : Movement
         _attacker = GetComponent<Attacker>();
     }
 
-    protected override void SetMovementState (bool isAttacking)
+    protected override void SetMovementState (bool shouldMove)
     {
-        base.SetMovementState(isAttacking == false);
+        base.SetMovementState(shouldMove);
 
         if (IsMoving)
         {
