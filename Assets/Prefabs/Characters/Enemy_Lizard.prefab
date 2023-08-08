@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health:
     _value: 100
-  Default: {fileID: 11400000, guid: 6df59818467cc1d4bbacf2c69669d860, type: 2}
+  Default: {fileID: 11400000, guid: 92a2cd2b04f01164bab9ed7a2a84de15, type: 2}
   _damage:
     _value: 25
   _reward:

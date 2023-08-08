@@ -5,10 +5,15 @@ using UnityEngine.Events;
 public class Defender : Character
 {
     [SerializeField] private Resources _price;
+    
+    [SerializeField] protected DefenderState Default;
+
+    private DefenderState _active;
 
     public event UnityAction<Defender> Spawned;
     public new event UnityAction<Defender> Died;
 
+    public DefenderState Active => _active;
     public Resources Price => _price;
 
     public Defender (Resources price)
@@ -32,6 +37,21 @@ public class Defender : Character
         SetDefaultState();
     }
 
+    public override void SetDefaultState()
+    {
+        SetActiveState(Default);
+    }
+
+    public override void SetStartingState()
+    {
+        SetDefaultState();
+    }
+
+    private void AlertAboutSpawn()
+    {
+        Spawned?.Invoke(this);
+    }
+
     protected virtual void OnValidate()
     {
         if (Active != null)
@@ -48,8 +68,8 @@ public class Defender : Character
         Died?.Invoke(this);
     }
 
-    private void AlertAboutSpawn()
+    protected void SetActiveState (DefenderState newState)
     {
-        Spawned?.Invoke(this);
+        _active = newState;
     }
 }

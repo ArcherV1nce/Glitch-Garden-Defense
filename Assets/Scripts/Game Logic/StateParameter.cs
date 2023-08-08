@@ -2,23 +2,19 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class StateParameter
+public abstract class StateParameter
 {
-    [SerializeField] private string _parameterName;
-    [SerializeField] private bool _parameterState;
+    [SerializeField] protected bool ParameterState;
 
-    public string ParameterName => _parameterName;
-    public bool ParameterState => _parameterState;
+    public bool State => ParameterState;
 
-    public StateParameter (string parameterName, bool parameterState)
+    public StateParameter (bool state)
     {
-        _parameterName = parameterName;
-        _parameterState = parameterState;
+        ParameterState = state;
     }
 
     public StateParameter()
     {
-        _parameterName = "Default Parameter";
-        _parameterState = false;
+        ParameterState = false;
     }
 }

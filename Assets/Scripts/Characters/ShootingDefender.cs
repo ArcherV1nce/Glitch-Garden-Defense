@@ -6,11 +6,11 @@ public class ShootingDefender : Defender
     [SerializeField] private Transform _projectilePosition;
     [SerializeField] private DefenderProjectile _projectile;
     [SerializeField] private float _shootingDelay;
-    [SerializeField] private CharacterState _attacked;
+    [SerializeField] private DefenderState _attacked;
 
     private float _shootingReloadTime;
 
-    public UnityEvent <CharacterState> AttackStateChanged;
+    public UnityEvent <DefenderState> AttackStateChanged;
 
     public ShootingDefender(Resources price) : base(price) { }
 
@@ -36,6 +36,15 @@ public class ShootingDefender : Defender
         AttackStateChanged?.Invoke(Active);
     }
 
+    private void Shoot()
+    {
+        if (IsReadyToShoot)
+        {
+            Instantiate(_projectile, _projectilePosition.position, Quaternion.identity);
+            _shootingReloadTime = _shootingDelay;
+        }
+    }
+
     protected override void OnValidate()
     {
         base.OnValidate();
@@ -43,15 +52,6 @@ public class ShootingDefender : Defender
         if (_attacked != null && _attacked.Character != this.GetComponent<ShootingDefender>())
         {
             _attacked = null;
-        }
-    }
-
-    private void Shoot()
-    {
-        if (IsReadyToShoot)
-        {
-            Instantiate(_projectile, _projectilePosition.position, Quaternion.identity);
-            _shootingReloadTime = _shootingDelay;
         }
     }
 }

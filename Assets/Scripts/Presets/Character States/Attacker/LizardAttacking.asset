@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0405a7b7b0277eb4d985c8714bf6d008, type: 3}
+  m_Script: {fileID: 11500000, guid: 76562586a5f98a64ca065a9501f93307, type: 3}
   m_Name: LizardAttacking
   m_EditorClassIdentifier: 
-  _character: {fileID: 3222574180056230849, guid: 891a2c6fc41962740b72b34afd203843, type: 3}
-  _stateParameters:
-  - _parameterName: isAttacking
-    _parameterState: 1
-  - _parameterName: finishedSpawning
-    _parameterState: 1
+  _attacker: {fileID: 3222574180056230849, guid: 891a2c6fc41962740b72b34afd203843, type: 3}
+  _parameters:
+  - ParameterState: 1
+    _name: 2
+  - ParameterState: 0
+    _name: 1
+  - ParameterState: 1
+    _name: 3

@@ -10,21 +10,16 @@ public class AttackerMovement : Movement
         Setup();
     }
 
-    private void UpdateMovementState(CharacterState state)
+    private void UpdateMovementState(AttackerState state)
     {
         bool movementState = false;
-        
-        foreach (StateParameter parameter in state.StateParameters)
-        {
-            if (parameter.ParameterName == "finishedSpawning" && parameter.ParameterState == false)
-            {
-                movementState = false;
-                break;
-            }
 
-            if (parameter.ParameterName == "isAttacking")
+        foreach (AttackerStateParameter parameter in state.Parameters)
+        {
+            if (parameter.Name == AttackerStateParameter.AttackerStateParameters.IsMoving.ToString())
             {
-                movementState = !parameter.ParameterState;
+                movementState = parameter.State;
+                break;
             }
         }
         

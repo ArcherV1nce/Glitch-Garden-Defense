@@ -6,16 +6,25 @@ public class Attacker : Character
 {
     [SerializeField] private Damage _damage;
     [SerializeField] private Resources _reward;
-    [SerializeField] protected CharacterState Attacking;
-    [SerializeField] protected CharacterState Spawning;
+
+    [SerializeField] protected AttackerState Default;
+    [SerializeField] protected AttackerState Attacking;
+    [SerializeField] protected AttackerState Spawning;
 
     private Defender _currentTarget = null;
+    private AttackerState _active;
 
     public new event UnityAction<Attacker> Died;
-    public UnityEvent<CharacterState> StateChanged;
+    public UnityEvent<AttackerState> StateChanged;
 
+    public AttackerState Active => _active;
     public Damage Damage => _damage;
     public Resources Reward => _reward;
+
+    protected virtual void Awake()
+    {
+        SetStartingState();
+    }
 
     protected virtual void OnEnable()
     {
@@ -38,7 +47,27 @@ public class Attacker : Character
         SetActiveState(Attacking);
     }
 
-    private void StrikeCurrentTarget ()
+    public void SetSpawning()
+    {
+        SetActiveState(Spawning);
+    }
+
+    public void StartMoving()
+    {
+        SetDefaultState();
+    }
+
+    public override void SetStartingState()
+    {
+        SetSpawning();
+    }
+
+    public override void SetDefaultState()
+    {
+        SetActiveState(Default);
+    }
+
+    private void StrikeCurrentTarget()
     {
         if (!_currentTarget)
         {
@@ -49,16 +78,6 @@ public class Attacker : Character
         {
             _currentTarget.TakeDamage(Damage);
         }
-    }
-
-    public void SetSpawning()
-    {
-        SetActiveState(Spawning);
-    }
-
-    public void StartMoving()
-    {
-        SetActiveState(Default);
     }
 
     private void ClearTarget(Character character)
@@ -86,9 +105,9 @@ public class Attacker : Character
         }
     }
 
-    protected override void SetActiveState(CharacterState newState)
+    protected void SetActiveState(AttackerState newState)
     {
-        base.SetActiveState(newState);
+        _active = newState;
         StateChanged?.Invoke(Active);
     }
 

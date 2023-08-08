@@ -3,9 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(Attacker))]
 public class AttackerAnimationControl : AnimationControl
 {
-    private const string SpawningState = "finishedSpawning";
-    private const string AttackingState = "isAttacking";
-
     private Attacker _attacker;
 
     private void OnEnable()
@@ -18,12 +15,12 @@ public class AttackerAnimationControl : AnimationControl
         UnsubscribeFromAttackerStates();
     }
 
-    public void UpdateStates(CharacterState newState)
+    public void UpdateStates(AttackerState newState)
     {
-        foreach (StateParameter stateParameter in newState.StateParameters)
+        foreach (AttackerStateParameter stateParameter in newState.Parameters)
         {
-            Animator.SetBool(stateParameter.ParameterName, stateParameter.ParameterState);
-            Debug.Log($"Attacker {this.name} entered state {newState.name} with parameter {stateParameter.ParameterName} set to {stateParameter.ParameterState}");
+            Animator.SetBool(stateParameter.Name.ToString(), stateParameter.State);
+            Debug.Log($"Attacker {this.name} entered state {newState.name} with parameter {stateParameter.Name} set to {stateParameter.State}");
         }
     }
 

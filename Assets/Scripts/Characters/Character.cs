@@ -4,9 +4,6 @@ using UnityEngine.Events;
 public abstract class Character : MonoBehaviour, IDeath
 {
     [SerializeField] private Health _health;
-    [SerializeField] protected CharacterState Default;
-
-    public CharacterState Active { protected set; get; }
 
     public event UnityAction<Character> Died;
 
@@ -39,20 +36,9 @@ public abstract class Character : MonoBehaviour, IDeath
         }
     }
 
-    protected virtual void SetStartingState()
-    {
-        SetDefaultState();
-    }
+    public abstract void SetStartingState();
 
-    protected void SetDefaultState()
-    {
-        SetActiveState(Default);
-    }
-
-    protected virtual void SetActiveState(CharacterState newState)
-    {
-        Active = newState;
-    }
+    public abstract void SetDefaultState();
 
     protected virtual void TriggerDeathActions()
     {

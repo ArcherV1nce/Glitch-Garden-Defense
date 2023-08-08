@@ -167,9 +167,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health:
     _value: 150
-  Default: {fileID: 11400000, guid: 84699758cf7b14047a34af371f88eee6, type: 2}
   _price:
     _stars: 25
+  Default: {fileID: 11400000, guid: 52337ea8d6373f24b97f4b15cacf2af2, type: 2}
   _projectilePosition: {fileID: 7943339259954339391}
   _projectile: {fileID: 6011369930798578393, guid: af7c2a46e4ae5144ba6a430ac7b8f37a, type: 3}
   _shootingDelay: 2

@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0405a7b7b0277eb4d985c8714bf6d008, type: 3}
-  m_Name: CactusShooting
+  m_Script: {fileID: 11500000, guid: a2e0d450d0ecfde4d837f727e8719acb, type: 3}
+  m_Name: CactusAttacking
   m_EditorClassIdentifier: 
-  _character: {fileID: 52048741179631147, guid: d363afcac422fd24a90844c0e42a3562, type: 3}
-  _stateParameters:
-  - _parameterName: isShooting
-    _parameterState: 1
+  _defender: {fileID: 52048741179631147, guid: d363afcac422fd24a90844c0e42a3562, type: 3}
+  _parameters:
+  - ParameterState: 1
+    _name: 1
