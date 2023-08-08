@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackersCount: 3
   _attackerPrefabs:
-  - {fileID: 3222574180056230849, guid: 891a2c6fc41962740b72b34afd203843, type: 3}
-  - {fileID: 3222574180056230849, guid: 891a2c6fc41962740b72b34afd203843, type: 3}
+  - {fileID: 1544415852209800888, guid: e2b6b425c3b8713469ab28f1cb9c23db, type: 3}

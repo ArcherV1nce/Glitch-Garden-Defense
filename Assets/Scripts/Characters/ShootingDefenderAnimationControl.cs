@@ -20,7 +20,6 @@ public class ShootingDefenderAnimationControl : AnimationControl
         foreach (DefenderStateParameter stateParameter in newState.Parameters)
         {
             Animator.SetBool(stateParameter.Name.ToString(), stateParameter.State);
-            Debug.Log($"Defender {this.name} entered state {newState.name} with parameter {stateParameter.Name} set to {stateParameter.State}");
         }
     }
 

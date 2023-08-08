@@ -87,7 +87,7 @@ TextureImporter:
       213: 7527401686257822748
     second: Fox Jump_27
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -147,6 +147,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -198,6 +199,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -810,34 +823,34 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fox Jump_7: 4945806229976530522
-      Fox Jump_10: -5274253688197188781
-      Fox Jump_26: 3996573758587980212
-      Fox Jump_2: -8049898823471573670
-      Fox Jump_9: -7634059773975050168
-      Fox Jump_24: 4209958018717634995
-      Fox Jump_3: 2018178189912915148
-      Fox Jump_15: 3567572022897867947
-      Fox Jump_11: -2014802332116763029
-      Fox Jump_6: 4236267675253303970
-      Fox Jump_27: 7527401686257822748
       Fox Jump_0: 3574847051743030441
-      Fox Jump_20: 5836492112489044017
-      Fox Jump_18: 6043662283957070822
-      Fox Jump_14: 8759160383606020271
-      Fox Jump_23: -916961800633767298
-      Fox Jump_25: 453941256070748476
       Fox Jump_1: -4825974039586952881
-      Fox Jump_19: 7968785280044236153
-      Fox Jump_5: 3482572464398073299
-      Fox Jump_21: 5120210764112384961
-      Fox Jump_13: 1895851617272342781
-      Fox Jump_4: -2755340144835460296
-      Fox Jump_8: 1684972804003008202
-      Fox Jump_16: 2789166413554905566
-      Fox Jump_22: 7087334483648362703
-      Fox Jump_17: -1784994958234630845
+      Fox Jump_10: -5274253688197188781
+      Fox Jump_11: -2014802332116763029
       Fox Jump_12: -8542986598768599023
+      Fox Jump_13: 1895851617272342781
+      Fox Jump_14: 8759160383606020271
+      Fox Jump_15: 3567572022897867947
+      Fox Jump_16: 2789166413554905566
+      Fox Jump_17: -1784994958234630845
+      Fox Jump_18: 6043662283957070822
+      Fox Jump_19: 7968785280044236153
+      Fox Jump_2: -8049898823471573670
+      Fox Jump_20: 5836492112489044017
+      Fox Jump_21: 5120210764112384961
+      Fox Jump_22: 7087334483648362703
+      Fox Jump_23: -916961800633767298
+      Fox Jump_24: 4209958018717634995
+      Fox Jump_25: 453941256070748476
+      Fox Jump_26: 3996573758587980212
+      Fox Jump_27: 7527401686257822748
+      Fox Jump_3: 2018178189912915148
+      Fox Jump_4: -2755340144835460296
+      Fox Jump_5: 3482572464398073299
+      Fox Jump_6: 4236267675253303970
+      Fox Jump_7: 4945806229976530522
+      Fox Jump_8: 1684972804003008202
+      Fox Jump_9: -7634059773975050168
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

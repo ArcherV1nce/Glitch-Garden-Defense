@@ -7,6 +7,7 @@ public class Attacker : Character
     [SerializeField] private Damage _damage;
     [SerializeField] private Resources _reward;
 
+    [SerializeField] protected MeleeAttack AttackArea;
     [SerializeField] protected AttackerState Default;
     [SerializeField] protected AttackerState Attacking;
     [SerializeField] protected AttackerState Spawning;
@@ -29,11 +30,14 @@ public class Attacker : Character
     protected virtual void OnEnable()
     {
         SubscribeToTargetDeath();
+        SetActiveState(Spawning);
+        AttackArea.CharacterEnteredMeleeAttackArea.AddListener(TrySetTarget);
     }
 
     protected virtual void OnDisable()
     {
         UnsubscribeFromTargetDeath();
+        AttackArea.CharacterEnteredMeleeAttackArea.RemoveListener(TrySetTarget);
     }
 
     public Resources GetReward ()
@@ -109,6 +113,14 @@ public class Attacker : Character
     {
         _active = newState;
         StateChanged?.Invoke(Active);
+    }
+
+    protected void TrySetTarget(Character character)
+    {
+        if (character is Defender)
+        {
+            Attack(character as Defender);
+        }
     }
 
     protected override void TriggerDeathActions()

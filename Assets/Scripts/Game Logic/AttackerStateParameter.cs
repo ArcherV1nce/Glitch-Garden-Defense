@@ -13,7 +13,8 @@ public class AttackerStateParameter : StateParameter
         Default,
         IsMoving,
         IsAttacking,
-        FinishedSpawning
+        FinishedSpawning,
+        IsUsingSkill
     }
 
     public AttackerStateParameter(AttackerStateParameters name, bool state) : base (state)

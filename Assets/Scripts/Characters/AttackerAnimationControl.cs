@@ -20,7 +20,6 @@ public class AttackerAnimationControl : AnimationControl
         foreach (AttackerStateParameter stateParameter in newState.Parameters)
         {
             Animator.SetBool(stateParameter.Name.ToString(), stateParameter.State);
-            Debug.Log($"Attacker {this.name} entered state {newState.name} with parameter {stateParameter.Name} set to {stateParameter.State}");
         }
     }
 

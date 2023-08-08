@@ -5443,7 +5443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _line: {fileID: 771047006}
-  _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
+  _currentWave: {fileID: 11400000, guid: ac5d7164fe6d5d54996f076643568960, type: 2}
   _spawnDelay: 3
 --- !u!4 &1526362278
 Transform:

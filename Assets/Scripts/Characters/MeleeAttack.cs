@@ -6,7 +6,7 @@ public class MeleeAttack : MonoBehaviour
 {
     private Collider2D _trigger;
 
-    public UnityEvent<Character> CharacterEnteredDamageArea;
+    public UnityEvent<Character> CharacterEnteredMeleeAttackArea;
 
     private void OnValidate()
     {
@@ -35,7 +35,7 @@ public class MeleeAttack : MonoBehaviour
     {
         if (collider.TryGetComponent<Character>(out Character character))
         {
-            CharacterEnteredDamageArea?.Invoke(character);
+            CharacterEnteredMeleeAttackArea?.Invoke(character);
             return true;
         }
 

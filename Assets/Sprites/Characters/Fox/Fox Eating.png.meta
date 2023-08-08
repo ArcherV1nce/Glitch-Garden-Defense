@@ -63,7 +63,7 @@ TextureImporter:
       213: 781529429376668191
     second: Fox Eating_19
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -123,6 +123,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -174,6 +175,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -618,26 +631,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fox Eating_12: 5840083829643320373
-      Fox Eating_15: 5600851936528198718
-      Fox Eating_6: -2351908859522475459
-      Fox Eating_19: 781529429376668191
-      Fox Eating_5: -4964044176242952792
-      Fox Eating_9: 8247255084812329007
-      Fox Eating_11: -1513014696461789594
-      Fox Eating_7: 9049968214371932315
-      Fox Eating_10: -1779816809531929865
-      Fox Eating_16: -6698832738377866176
-      Fox Eating_1: 5447948022673283725
-      Fox Eating_2: 7428705937205978307
       Fox Eating_0: 4523694527636890326
-      Fox Eating_3: 3306208647587707286
+      Fox Eating_1: 5447948022673283725
+      Fox Eating_10: -1779816809531929865
+      Fox Eating_11: -1513014696461789594
+      Fox Eating_12: 5840083829643320373
+      Fox Eating_13: -8893334408548853788
+      Fox Eating_14: 5448528828344436692
+      Fox Eating_15: 5600851936528198718
+      Fox Eating_16: -6698832738377866176
       Fox Eating_17: -2616878455912080950
       Fox Eating_18: -433965125333269493
-      Fox Eating_8: 337936086056860190
-      Fox Eating_14: 5448528828344436692
-      Fox Eating_13: -8893334408548853788
+      Fox Eating_19: 781529429376668191
+      Fox Eating_2: 7428705937205978307
+      Fox Eating_3: 3306208647587707286
       Fox Eating_4: 4667942824762666018
+      Fox Eating_5: -4964044176242952792
+      Fox Eating_6: -2351908859522475459
+      Fox Eating_7: 9049968214371932315
+      Fox Eating_8: 337936086056860190
+      Fox Eating_9: 8247255084812329007
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -39,7 +39,7 @@ TextureImporter:
       213: -4355890550225760130
     second: Fox Running_11
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -99,6 +99,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -150,6 +151,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -426,18 +439,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fox Running_8: -555244608545739551
-      Fox Running_7: -9066932197608732810
-      Fox Running_3: 4183376534722103051
-      Fox Running_11: -4355890550225760130
-      Fox Running_6: -1248797723352466313
-      Fox Running_5: -2102101676120516931
-      Fox Running_2: 2411212283926625588
-      Fox Running_10: -7722825254393066200
-      Fox Running_9: 3294793243138151688
-      Fox Running_4: 1878933213425258762
-      Fox Running_1: -5447189599148108117
       Fox Running_0: 8189650667827876979
+      Fox Running_1: -5447189599148108117
+      Fox Running_10: -7722825254393066200
+      Fox Running_11: -4355890550225760130
+      Fox Running_2: 2411212283926625588
+      Fox Running_3: 4183376534722103051
+      Fox Running_4: 1878933213425258762
+      Fox Running_5: -2102101676120516931
+      Fox Running_6: -1248797723352466313
+      Fox Running_7: -9066932197608732810
+      Fox Running_8: -555244608545739551
+      Fox Running_9: 3294793243138151688
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

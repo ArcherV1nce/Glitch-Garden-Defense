@@ -93,7 +93,6 @@ public class AttackerSpawner : MonoBehaviour
     {
         if (_spawningCoroutine != null)
         {
-            Debug.Log("Spawning is stopped.");
             StopCoroutine(_spawningCoroutine);
             _spawningCoroutine = null;
         }
@@ -101,10 +100,7 @@ public class AttackerSpawner : MonoBehaviour
 
     private void SetupRandom()
     {
-        if (_random == null)
-        {
-            _random = new System.Random();
-        }
+        _random ??= new System.Random();
     }
 
     private void SetupFirstWave()

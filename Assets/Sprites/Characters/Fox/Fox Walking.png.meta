@@ -75,7 +75,7 @@ TextureImporter:
       213: 1187552709326016759
     second: Fox Walking_23
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -135,6 +135,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -186,6 +187,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -714,30 +727,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fox Walking_3: -2791069648256494988
-      Fox Walking_9: -7350464110744688983
-      Fox Walking_10: -2949590239931843451
-      Fox Walking_11: -8075445861559157891
-      Fox Walking_2: -2468473409954516976
-      Fox Walking_14: 1448194855523774678
-      Fox Walking_16: -5311934848019547296
-      Fox Walking_19: 8117423152785385804
-      Fox Walking_22: -8330695611408317492
-      Fox Walking_4: -6268024693252013089
-      Fox Walking_15: -6975178878038751613
-      Fox Walking_6: -169190099883843842
-      Fox Walking_17: 901910552704744478
-      Fox Walking_18: -4819751911530972445
-      Fox Walking_21: 2432968570211337888
-      Fox Walking_7: 4487901710494312207
-      Fox Walking_20: -7521790170767476523
-      Fox Walking_23: 1187552709326016759
-      Fox Walking_13: 8236011914418372855
-      Fox Walking_5: 7534969848853636512
-      Fox Walking_8: 6056114361640290729
-      Fox Walking_12: 2135366010130498299
       Fox Walking_0: 1150964161710832084
       Fox Walking_1: -5062339417134324684
+      Fox Walking_10: -2949590239931843451
+      Fox Walking_11: -8075445861559157891
+      Fox Walking_12: 2135366010130498299
+      Fox Walking_13: 8236011914418372855
+      Fox Walking_14: 1448194855523774678
+      Fox Walking_15: -6975178878038751613
+      Fox Walking_16: -5311934848019547296
+      Fox Walking_17: 901910552704744478
+      Fox Walking_18: -4819751911530972445
+      Fox Walking_19: 8117423152785385804
+      Fox Walking_2: -2468473409954516976
+      Fox Walking_20: -7521790170767476523
+      Fox Walking_21: 2432968570211337888
+      Fox Walking_22: -8330695611408317492
+      Fox Walking_23: 1187552709326016759
+      Fox Walking_3: -2791069648256494988
+      Fox Walking_4: -6268024693252013089
+      Fox Walking_5: 7534969848853636512
+      Fox Walking_6: -169190099883843842
+      Fox Walking_7: 4487901710494312207
+      Fox Walking_8: 6056114361640290729
+      Fox Walking_9: -7350464110744688983
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

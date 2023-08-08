@@ -2,26 +2,13 @@ using UnityEngine;
 
 public class Lizard : Attacker
 {
-    [SerializeField] private MeleeAttack _damageArea;
-
     protected override void OnEnable()
     {
-        base.OnEnable();
-        SetActiveState(Spawning);
-        _damageArea.CharacterEnteredDamageArea.AddListener(TrySetTarget);
+        base.OnEnable();        
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
-        _damageArea.CharacterEnteredDamageArea.RemoveListener(TrySetTarget);
-    }
-
-    private void TrySetTarget (Character character)
-    {
-        if (character is Defender)
-        {
-            Attack(character as Defender);
-        }
-    }
+    }    
 }
