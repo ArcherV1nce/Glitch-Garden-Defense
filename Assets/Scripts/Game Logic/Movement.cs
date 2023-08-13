@@ -28,7 +28,7 @@ public class Movement : MonoBehaviour
         StartMovement();
     }
 
-    protected virtual void SetMovementState(bool isMoving)
+    protected virtual void SetMoving(bool isMoving)
     {
         IsMoving = isMoving;
     }
@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
     {
         while (IsMoving)
         {
-            transform.Translate(Direction * Speed * Time.deltaTime);
+            transform.Translate(Speed * Time.deltaTime * Direction);
             yield return new WaitForEndOfFrame();
         }
 
@@ -46,11 +46,9 @@ public class Movement : MonoBehaviour
 
     protected void StartMovement()
     {
-        if (MoveRoutineNull)
-        {
-            IsMoving = true;
-            _moveRoutine = StartCoroutine(Move());
-        }
+        StopMovement();
+        IsMoving = true;
+        _moveRoutine = StartCoroutine(Move());
     }
 
     protected void StopMovement()

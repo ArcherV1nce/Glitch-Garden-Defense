@@ -49,9 +49,9 @@ public class ShootingDefender : Defender
     {
         base.OnValidate();
 
-        if (_attacked != null && _attacked.Character != this.GetComponent<ShootingDefender>())
+        if (_attacked == null)
         {
-            _attacked = null;
+            Debug.LogError("No attacking state file assigned.");
         }
     }
 }

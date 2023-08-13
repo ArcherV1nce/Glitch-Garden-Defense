@@ -56,7 +56,7 @@ public class Attacker : Character
         SetActiveState(Spawning);
     }
 
-    public void StartMoving()
+    public virtual void StartMoving()
     {
         SetDefaultState();
     }
@@ -115,11 +115,19 @@ public class Attacker : Character
         StateChanged?.Invoke(Active);
     }
 
-    protected void TrySetTarget(Character character)
+    protected virtual void TrySetTarget(Character character)
     {
         if (character is Defender)
         {
             Attack(character as Defender);
+        }
+    }
+
+    protected void CheckTarget()
+    {
+        if (_currentTarget != null)
+        {
+            TrySetTarget(_currentTarget);
         }
     }
 

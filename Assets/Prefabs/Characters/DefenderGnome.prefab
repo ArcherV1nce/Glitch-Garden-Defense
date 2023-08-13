@@ -114,7 +114,7 @@ Transform:
   m_GameObject: {fileID: 2614923500439187000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2614923499661167990}
@@ -142,7 +142,7 @@ MonoBehaviour:
   _projectilePosition: {fileID: 5161307191137408172}
   _projectile: {fileID: 1290574488088770355, guid: 371a454977a1c754e89d3fc969ea0502, type: 3}
   _shootingDelay: 5
-  _attacked: {fileID: 0}
+  _attacked: {fileID: 11400000, guid: 6166de6b59e5f1747bde53c6636f630b, type: 2}
   AttackStateChanged:
     m_PersistentCalls:
       m_Calls: []

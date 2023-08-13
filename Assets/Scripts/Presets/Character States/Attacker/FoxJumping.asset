@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attacker: {fileID: 1544415852209800888, guid: e2b6b425c3b8713469ab28f1cb9c23db, type: 3}
   _parameters:
-  - ParameterState: 1
+  - ParameterState: 0
     _name: 2
   - ParameterState: 0
     _name: 1

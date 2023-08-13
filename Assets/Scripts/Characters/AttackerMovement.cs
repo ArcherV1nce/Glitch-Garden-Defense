@@ -3,14 +3,14 @@ using UnityEngine;
 [RequireComponent(typeof(Attacker))]
 public class AttackerMovement : Movement
 {
-    private Attacker _attacker;
+    protected Attacker Attacker;
 
     private void Awake()
     {
         Setup();
     }
 
-    private void UpdateMovementState(AttackerState state)
+    protected virtual void UpdateMovementState(AttackerState state)
     {
         bool movementState = false;
 
@@ -23,17 +23,17 @@ public class AttackerMovement : Movement
             }
         }
         
-        SetMovementState(movementState);
+        SetMoving(movementState);
     }
 
     private void SubscribeToAttackerStates()
     {
-        _attacker.StateChanged.AddListener(UpdateMovementState);
+        Attacker.StateChanged.AddListener(UpdateMovementState);
     }
 
     private void UnsubscribeFromAttackerStates()
     {
-        _attacker.StateChanged.RemoveListener(UpdateMovementState);
+        Attacker.StateChanged.RemoveListener(UpdateMovementState);
     }
 
     protected override void OnEnable()
@@ -48,12 +48,12 @@ public class AttackerMovement : Movement
 
     protected override void Setup ()
     {
-        _attacker = GetComponent<Attacker>();
+        Attacker = GetComponent<Attacker>();
     }
 
-    protected override void SetMovementState (bool shouldMove)
+    protected override void SetMoving (bool shouldMove)
     {
-        base.SetMovementState(shouldMove);
+        base.SetMoving(shouldMove);
 
         if (IsMoving)
         {

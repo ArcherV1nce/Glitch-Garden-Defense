@@ -18,7 +18,7 @@ public class MeleeAttack : MonoBehaviour
         CheckForCharacterEnter(collision);
     }
 
-    private void ValidateTrigger()
+    public void ValidateTrigger()
     {
         if (_trigger == null)
         {
