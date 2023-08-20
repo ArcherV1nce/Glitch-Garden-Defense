@@ -126,7 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health:
-    _value: 100
+    _value: 125
+    _valueMax: 125
   _damage:
     _value: 25
   _reward:

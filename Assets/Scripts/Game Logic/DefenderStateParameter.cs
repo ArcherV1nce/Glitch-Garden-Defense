@@ -11,7 +11,8 @@ public class DefenderStateParameter : StateParameter
     public enum DefenderStateParameters
     {
         Default,
-        IsAttacking
+        IsAttacking,
+        SkillIsReady
     }
 
     public DefenderStateParameter(DefenderStateParameters name, bool state) : base(state)

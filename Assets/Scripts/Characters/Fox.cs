@@ -30,8 +30,10 @@ public class Fox : Attacker
         UnsubscribeFromEvasionSkill();
     }
 
-    private void OnValidate()
+    protected override void OnValidate()
     {
+        base.OnValidate();
+
         if (_collider == null)
         {
             _collider = GetComponent<Collider2D>();
@@ -64,18 +66,12 @@ public class Fox : Attacker
     {
         SetActiveState(_usingSkill);
         Immaterialize();
-        _skillIsReady = false;
-
-        if (_reloadingRoutine != null)
-        {
-            StopCooldownCoroutine(); 
-        }
-
-        _reloadingRoutine = StartCoroutine(DecreaseSkillCooldown());
+        StartCooldown();
     }
 
     private void Immaterialize()
     {
+        _skillIsReady = false;
         _rigidbody.simulated = false;
         _collider.enabled = false;
     }
@@ -101,6 +97,16 @@ public class Fox : Attacker
     private void UnsubscribeFromEvasionSkill()
     {
         _attackDetection.EvasionTriggered.RemoveListener(TryUseSkill);
+    }
+
+    private void StartCooldown()
+    {
+        if (_reloadingRoutine != null)
+        {
+            StopCooldownCoroutine();
+        }
+
+        _reloadingRoutine = StartCoroutine(DecreaseSkillCooldown());
     }
 
     private void Setup()

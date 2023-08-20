@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health:
     _value: 100
+    _valueMax: 100
   _price:
     _stars: 20
   Default: {fileID: 0}

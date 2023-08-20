@@ -1,5 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class Defender : Character
@@ -52,8 +51,9 @@ public class Defender : Character
         Spawned?.Invoke(this);
     }
 
-    protected virtual void OnValidate()
+    protected override void OnValidate()
     {
+        base.OnValidate();
         if (Active != null)
         {
             if (Active.Character != this.GetComponent<Character>())

@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health:
     _value: 150
+    _valueMax: 150
   _price:
     _stars: 25
   Default: {fileID: 11400000, guid: 52337ea8d6373f24b97f4b15cacf2af2, type: 2}
