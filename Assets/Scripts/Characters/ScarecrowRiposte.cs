@@ -1,30 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefenderRiposte : MonoBehaviour
+[RequireComponent(typeof(Collider2D))]
+public class ScarecrowRiposte : MonoBehaviour
 {
-    private const float LifeTimeMin = 0.05f;
+    private const float LifeTimeMin = 0.1f;
 
     [SerializeField] private Collider2D _trigger;
     [SerializeField] private float _lifetime;
 
-    private Scarecrow _owner;
     private Damage _damage;
     private List<Attacker> _enemies;
 
     private void Awake()
     {
         Setup();
-    }
-
-    private void OnEnable()
-    {
-        SubscribeToOwner();
-    }
-
-    private void OnDisable()
-    {
-        UnsubscribeFromOwner();
     }
 
     private void OnValidate()
@@ -37,19 +27,20 @@ public class DefenderRiposte : MonoBehaviour
         CheckExplosionAreaForEnemies(collision);
     }
 
-    public void SetOwner(Scarecrow owner)
+    public void SetDamage(Damage damage)
     {
-        _owner = owner;
+        _damage = damage;
     }
 
     private void Setup()
     {
         _enemies = new List<Attacker>();
-    }
+        _trigger = GetComponent<Collider2D>();
 
-    private void SetDamage(Damage damage)
-    {
-        _damage = damage;
+        if (_trigger.isTrigger == false)
+        {
+            _trigger.isTrigger = true;
+        }
     }
 
     private void CheckExplosionAreaForEnemies(Collider2D collision)
@@ -85,15 +76,5 @@ public class DefenderRiposte : MonoBehaviour
         {
             _lifetime = LifeTimeMin;
         }
-    }
-
-    private void SubscribeToOwner()
-    {
-         _owner.RiposteDamageUpdated.AddListener(SetDamage);
-    }
-
-    private void UnsubscribeFromOwner()
-    {
-        _owner.RiposteDamageUpdated.RemoveListener(SetDamage);
     }
 }

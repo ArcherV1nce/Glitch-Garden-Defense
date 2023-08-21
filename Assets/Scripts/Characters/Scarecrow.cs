@@ -1,43 +1,36 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(ScarecrowSkill))]
 public class Scarecrow : Defender
 {
-    private const float RiposteThresholdMin = 0.1f;
-    private const float RiposteDamageMultiplierMax = 3f;
-
     [SerializeField] private DefenderState _charged;
     [SerializeField] private DefenderState _chargedAttacked;
-    [SerializeField] private DefenderRiposte _riposte;
-    [SerializeField] private float _damageRequiredForRiposte; //Перенести в класс Riposte
-    [SerializeField, Range(0, RiposteDamageMultiplierMax)] private float _riposteMultiplier; //Перенести в класс Riposte
-
-    private float _damageTaken;
-
+    [SerializeField] private ScarecrowSkill _riposte;
+    
     public UnityEvent<DefenderState> StateChanged;
     public UnityEvent<bool> RiposteChargeStatusUpdated;
     public UnityEvent<Damage> RiposteDamageUpdated;
+    public UnityEvent RiposteTriggered;
 
     public Scarecrow(Resources price) : base(price) { }
-
-    public bool IsCharged => _damageTaken >= _damageRequiredForRiposte;
 
     protected override void OnValidate()
     {
         base.OnValidate();
-        ValidateRiposteDamageMin();
+        ValidateSkillComponent();
     }
 
     public override void TakeDamage(Damage damage)
     {
         base.TakeDamage(damage);
-        AccumulateDamageForAttack(damage);
-        CheckRiposteStatus();
+        RiposteDamageUpdated?.Invoke(damage);
+        _riposte.CheckRiposteStatus();
     }
 
     public override void SetAttacked()
     {
-        if (IsCharged)
+        if (_riposte.IsCharged)
         {
             SetActiveState(_chargedAttacked);
             StateChanged?.Invoke(Active);
@@ -46,7 +39,7 @@ public class Scarecrow : Defender
 
     public override void SetIdle()
     {
-        if (IsCharged)
+        if (_riposte.IsCharged)
         {
             SetActiveState(_charged);
         }
@@ -63,36 +56,11 @@ public class Scarecrow : Defender
 
     }
 
-    private void CheckRiposteStatus() //Перенести в класс Riposte
+    private void ValidateSkillComponent()
     {
-        RiposteChargeStatusUpdated?.Invoke(IsCharged);
-
-        if (IsCharged)
+        if (_riposte == null)
         {
-            RiposteDamageUpdated?.Invoke(GetRiposteDamage(_damageTaken));
+            _riposte = GetComponent<ScarecrowSkill>();
         }
-        else
-        {
-            RiposteDamageUpdated?.Invoke(new Damage(Damage.NoDamageValue));
-        }
-    }
-
-    private void AccumulateDamageForAttack(Damage damage) //Перенести в класс Riposte
-    {
-        _damageTaken += damage.Value;
-    }
-
-    private void ValidateRiposteDamageMin() //Перенести в класс Riposte
-    {
-        if (_damageRequiredForRiposte <= MaxHealth * RiposteThresholdMin || _damageRequiredForRiposte < MaxHealth == false)
-        {
-            _damageRequiredForRiposte = MaxHealth * RiposteThresholdMin;
-        }
-    }
-
-    private Damage GetRiposteDamage(float damageAccumulated) //Перенести в класс Riposte
-    {
-        float riposteDamageValue = damageAccumulated * _riposteMultiplier;
-        return new Damage((int)riposteDamageValue);
     }
 }

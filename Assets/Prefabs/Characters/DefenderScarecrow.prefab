@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2585156704662914148}
   - component: {fileID: 5885367073041779685}
+  - component: {fileID: 8466636935176248496}
   - component: {fileID: 2585156704662914150}
   - component: {fileID: 3149946574119346103}
   - component: {fileID: 2585156704662914151}
@@ -138,12 +139,10 @@ MonoBehaviour:
     _valueMax: 250
   _price:
     _stars: 100
-  Default: {fileID: 0}
-  _charged: {fileID: 0}
-  _chargedAttacked: {fileID: 0}
-  _riposte: {fileID: 3591743377185437613, guid: f0c3aab58409754458658488fa39eeee, type: 3}
-  _damageRequiredForRiposte: 25
-  _riposteMultiplier: 2
+  Default: {fileID: 11400000, guid: 2d3c78ca9bce07a419b305a15e8e6dd0, type: 2}
+  _charged: {fileID: 11400000, guid: c7e2975805d580e44bbcedf77d25efca, type: 2}
+  _chargedAttacked: {fileID: 11400000, guid: 5aa2c75f83eefc34fa8937535f05a5b8, type: 2}
+  _riposte: {fileID: 8466636935176248496}
   StateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -153,6 +152,25 @@ MonoBehaviour:
   RiposteDamageUpdated:
     m_PersistentCalls:
       m_Calls: []
+  RiposteTriggered:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8466636935176248496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585156704662914152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87fd6cdb242ee2e46b85baa60852ef1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defender: {fileID: 5885367073041779685}
+  _prefab: {fileID: 3591743377185437613, guid: f0c3aab58409754458658488fa39eeee, type: 3}
+  _damageRequiredForRiposte: 25
+  _riposteMultiplier: 0
 --- !u!61 &2585156704662914150
 BoxCollider2D:
   m_ObjectHideFlags: 0
