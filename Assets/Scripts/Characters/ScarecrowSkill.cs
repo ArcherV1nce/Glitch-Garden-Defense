@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Scarecrow))]
 public class ScarecrowSkill : MonoBehaviour
@@ -14,8 +15,8 @@ public class ScarecrowSkill : MonoBehaviour
     private float _damageTaken;
     private Vector3 _position;
 
-    public float DamageRequired => _damageRequiredForRiposte;
-    public bool IsCharged => _damageTaken >= DamageRequired;
+    public UnityEvent<bool> ChargeStatusUpdated;
+    public bool IsCharged => _damageTaken >= _damageRequiredForRiposte;
 
     private void Awake()
     {
@@ -52,16 +53,7 @@ public class ScarecrowSkill : MonoBehaviour
 
     public void CheckRiposteStatus()
     {
-        _defender.RiposteChargeStatusUpdated?.Invoke(IsCharged);
-
-        if (IsCharged)
-        {
-            _defender.RiposteDamageUpdated?.Invoke(GetRiposteDamage(_damageTaken));
-        }
-        else
-        {
-            _defender.RiposteDamageUpdated?.Invoke(new Damage(Damage.NoDamageValue));
-        }
+        ChargeStatusUpdated?.Invoke(IsCharged);
     }
 
     private void SetPosition()
@@ -113,13 +105,13 @@ public class ScarecrowSkill : MonoBehaviour
 
     private void SubscribeToScarecrow()
     {
+        _defender.DamageTaken.AddListener(AccumulateDamageForAttack);
         _defender.RiposteTriggered.AddListener(PerformRiposteExplosion);
-        _defender.RiposteDamageUpdated.AddListener(AccumulateDamageForAttack);
     }
 
     private void UnsubscribeFromScarecrow()
     {
+        _defender.DamageTaken.RemoveListener(AccumulateDamageForAttack);
         _defender.RiposteTriggered.RemoveListener(PerformRiposteExplosion);
-        _defender.RiposteDamageUpdated.RemoveListener(AccumulateDamageForAttack);
     }
 }

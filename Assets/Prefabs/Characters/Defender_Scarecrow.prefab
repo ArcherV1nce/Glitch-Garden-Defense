@@ -95,11 +95,12 @@ GameObject:
   - component: {fileID: 2585156704662914148}
   - component: {fileID: 5885367073041779685}
   - component: {fileID: 8466636935176248496}
+  - component: {fileID: 6471249145778221550}
   - component: {fileID: 2585156704662914150}
   - component: {fileID: 3149946574119346103}
   - component: {fileID: 2585156704662914151}
   m_Layer: 0
-  m_Name: DefenderScarecrow
+  m_Name: Defender_Scarecrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,12 +147,6 @@ MonoBehaviour:
   StateChanged:
     m_PersistentCalls:
       m_Calls: []
-  RiposteChargeStatusUpdated:
-    m_PersistentCalls:
-      m_Calls: []
-  RiposteDamageUpdated:
-    m_PersistentCalls:
-      m_Calls: []
   RiposteTriggered:
     m_PersistentCalls:
       m_Calls: []
@@ -170,7 +165,25 @@ MonoBehaviour:
   _defender: {fileID: 5885367073041779685}
   _prefab: {fileID: 3591743377185437613, guid: f0c3aab58409754458658488fa39eeee, type: 3}
   _damageRequiredForRiposte: 25
-  _riposteMultiplier: 0
+  _riposteMultiplier: 2
+  DamageUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  ChargeStatusUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6471249145778221550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585156704662914152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5db8e59d7f110d4ba1acc8e6a553575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &2585156704662914150
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -340,7 +353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6623711369583609610
 Transform:
   m_ObjectHideFlags: 0
