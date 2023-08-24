@@ -67,7 +67,7 @@ public class ScarecrowRiposte : MonoBehaviour
     private void PerformRiposteExplosion()
     {
         DealDamageToEnemies();
-        Destroy(this, _lifetime);
+        Destroy(this.gameObject, _lifetime);
     }
 
     private void ValidateLifetime()

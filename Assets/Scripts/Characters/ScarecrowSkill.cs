@@ -8,6 +8,7 @@ public class ScarecrowSkill : MonoBehaviour
     private const float RiposteDamageMultiplierMax = 3f;
 
     [SerializeField] private Scarecrow _defender;
+    [SerializeField] private ScarecrowRiposteButton _button;
     [SerializeField] private ScarecrowRiposte _prefab;
     [SerializeField] private float _damageRequiredForRiposte;
     [SerializeField, Range(0, RiposteDamageMultiplierMax)] private float _riposteMultiplier;
@@ -27,11 +28,13 @@ public class ScarecrowSkill : MonoBehaviour
     private void OnEnable()
     {
         SubscribeToScarecrow();
+        SubscribeToRiposteButton();
     }
 
     private void OnDisable()
     {
         UnsubscribeFromScarecrow();
+        UnsubscribeFromRiposteButton();
     }
 
     private void OnValidate()
@@ -95,6 +98,7 @@ public class ScarecrowSkill : MonoBehaviour
         ScarecrowRiposte explosion = Instantiate(_prefab, _position, Quaternion.identity);
         explosion.SetDamage(GetRiposteDamage(_damageTaken));
         ResetDamage();
+        ChargeStatusUpdated?.Invoke(IsCharged);
     }
 
     private Damage GetRiposteDamage(float damageAccumulated)
@@ -103,15 +107,23 @@ public class ScarecrowSkill : MonoBehaviour
         return new Damage((int)riposteDamageValue);
     }
 
+    private void SubscribeToRiposteButton()
+    {
+        _button.OnDefenderClicked += PerformRiposteExplosion;
+    }
+
+    private void UnsubscribeFromRiposteButton()
+    {
+        _button.OnDefenderClicked -= PerformRiposteExplosion;
+    }
+
     private void SubscribeToScarecrow()
     {
         _defender.DamageTaken.AddListener(AccumulateDamageForAttack);
-        _defender.RiposteTriggered.AddListener(PerformRiposteExplosion);
     }
 
     private void UnsubscribeFromScarecrow()
     {
         _defender.DamageTaken.RemoveListener(AccumulateDamageForAttack);
-        _defender.RiposteTriggered.RemoveListener(PerformRiposteExplosion);
     }
 }

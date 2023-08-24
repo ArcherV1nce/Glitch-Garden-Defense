@@ -1,0 +1,11 @@
+Gameplay:
+- Balance damage, health and prices
+- Add tutorial levels
+
+Menu:
+- Add level selection menu
+
+Scarecrow:
+- Perform refactoring of class and skills
+- Fix button remaining active despite it's visuals are off
+- Add visuals for remaining health

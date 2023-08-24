@@ -1,4 +1,3 @@
-using System.Data;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,9 +10,11 @@ public class Scarecrow : Defender
 
     private bool _isAttacked;
 
+    public UnityAction<bool> OnAttackStatusChanged;
     public UnityEvent<Damage> DamageTaken;
     public UnityEvent<DefenderState> StateChanged;
-    public UnityEvent RiposteTriggered;
+
+    public bool IsAttacked => _isAttacked;
 
     public Scarecrow(Resources price) : base(price) { }
 
@@ -47,9 +48,9 @@ public class Scarecrow : Defender
 
         if (_riposte.IsCharged)
         {
-            Debug.Log("Activated _chargedAttacked state");
             SetActiveState(_chargedAttacked);
             StateChanged?.Invoke(Active);
+            OnAttackStatusChanged?.Invoke(IsAttacked);
         }
     }
 
@@ -68,11 +69,6 @@ public class Scarecrow : Defender
         }
 
         StateChanged?.Invoke(Active);
-    }
-
-    public void PerformRiposte()
-    {
-
     }
 
     private void ChooseStateByChargeStatus(bool isCharged)
