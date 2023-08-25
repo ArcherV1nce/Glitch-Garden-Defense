@@ -1,27 +1,26 @@
 using UnityEngine;
 
-[RequireComponent(typeof(ScarecrowRiposteButton))]
 public class ScarecrowRiposteButtonVisual : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _buttonSprite;
     [SerializeField] private SpriteRenderer _textSprite;
 
-    private ScarecrowRiposteButton _button;
+    private Scarecrow _scarecrow;
 
     private void OnValidate()
     {
-        ValidateButton();
+        ValidadeScarecrow();
     }
 
     private void OnEnable()
     {
-        ValidateButton();
-        SubscribeToRiposteButton();
+        ValidadeScarecrow();
+        SubscribeToScarecrow();
     }
 
     private void OnDisable()
     {
-        UnsubscribeFromRiposteButton();
+        UnsubscribeFromScarecrow();
     }
 
     private void UpdateVisualState(bool isActive)
@@ -38,18 +37,18 @@ public class ScarecrowRiposteButtonVisual : MonoBehaviour
         }
     }
 
-    private void ValidateButton()
+    private void ValidadeScarecrow()
     {
-        _button = GetComponent<ScarecrowRiposteButton>();
+        _scarecrow = GetComponentInParent<Scarecrow>();
     }
 
-    private void SubscribeToRiposteButton()
+    private void SubscribeToScarecrow()
     {
-        _button.OnSkillStatusUpdated += UpdateVisualState;
+        _scarecrow.OnAttackStatusChanged += UpdateVisualState;
     }
 
-    private void UnsubscribeFromRiposteButton()
+    private void UnsubscribeFromScarecrow()
     {
-        _button.OnSkillStatusUpdated -= UpdateVisualState;
+        _scarecrow.OnAttackStatusChanged -= UpdateVisualState;
     }
 }

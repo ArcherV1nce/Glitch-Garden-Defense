@@ -11,6 +11,7 @@ public class Scarecrow : Defender
     private bool _isAttacked;
 
     public UnityAction<bool> OnAttackStatusChanged;
+    public UnityAction OnRiposteTriggered;
     public UnityEvent<Damage> DamageTaken;
     public UnityEvent<DefenderState> StateChanged;
 
@@ -51,6 +52,14 @@ public class Scarecrow : Defender
             SetActiveState(_chargedAttacked);
             StateChanged?.Invoke(Active);
             OnAttackStatusChanged?.Invoke(IsAttacked);
+        }
+    }
+
+    public override void UseSkill()
+    {
+        if (_isAttacked)
+        {
+            OnRiposteTriggered?.Invoke();
         }
     }
 

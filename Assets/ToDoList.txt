@@ -6,6 +6,6 @@ Menu:
 - Add level selection menu
 
 Scarecrow:
-- Perform refactoring of class and skills
-- Fix button remaining active despite it's visuals are off
-- Add visuals for remaining health
+- Perform refactoring of classes
+- Add visuals for remaining health and damage output
+- Add possibility to explode when other lines are under attack

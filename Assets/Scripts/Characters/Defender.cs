@@ -31,6 +31,11 @@ public class Defender : Character
 
     }
 
+    public virtual void UseSkill()
+    {
+
+    }
+
     public virtual void SetIdle ()
     {
         SetDefaultState();

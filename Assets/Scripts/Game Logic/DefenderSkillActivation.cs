@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class ScarecrowSkillActivation : MonoBehaviour
+public class DefenderSkillActivation : MonoBehaviour
 {
+    private const int LeftMouseButtonId = 0;
+
     [SerializeField] private LayerMask _contactFilter;
 
     private Camera _camera;
@@ -18,28 +21,28 @@ public class ScarecrowSkillActivation : MonoBehaviour
 
     private void CheckMouseInput()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(LeftMouseButtonId))
         {
-            if (CheckScarecrowButtonDetection(out ScarecrowRiposteButton button))
+            if (CheckScarecrowDetection(out Defender defender))
             {
-                button.TriggerClick();
+                defender.UseSkill();
             }
         }
     }
 
-    private bool CheckScarecrowButtonDetection(out ScarecrowRiposteButton button)
+    private bool CheckScarecrowDetection(out Defender defender)
     {
         Vector3 mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         Collider2D target = Physics2D.OverlapPoint(mousePosition, _contactFilter);
 
-        if (target != null && target.TryGetComponent<ScarecrowRiposteButton>(out button))
+        if (target != null && target.TryGetComponent<Defender>(out defender))
         {
             return true;
         }
 
         else
         {
-            button = null;
+            defender = null;
             return false;
         }
     }

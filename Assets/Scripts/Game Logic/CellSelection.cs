@@ -3,6 +3,8 @@ using UnityEngine.Events;
 
 public class CellSelection : MonoBehaviour
 {
+    private const int LeftMouseButtonId = 0;
+
     [SerializeField] private LayerMask _contactFilter;
     
     private Camera _camera;
@@ -21,7 +23,7 @@ public class CellSelection : MonoBehaviour
 
     private void CheckMouseInput()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(LeftMouseButtonId))
         {
             if (CheckCellDetection(out Cell cell))
             {
