@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c30817c4a5b7478e89346a0c06da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trigger: {fileID: 3591743377185437614}
+  _size: {x: 2.5, y: 2.5}
   _lifetime: 1
 --- !u!61 &3591743377185437614
 BoxCollider2D:
@@ -74,7 +74,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 2.5, y: 2.5}
   m_EdgeRadius: 0
 --- !u!50 &3591743377185437615
 Rigidbody2D:

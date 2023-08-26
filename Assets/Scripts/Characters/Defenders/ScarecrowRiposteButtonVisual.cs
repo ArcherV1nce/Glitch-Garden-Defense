@@ -23,18 +23,9 @@ public class ScarecrowRiposteButtonVisual : MonoBehaviour
         UnsubscribeFromScarecrow();
     }
 
-    private void UpdateVisualState(bool isActive)
+    private void UpdateVisualState()
     {
-        if (isActive)
-        {
-            _buttonSprite.enabled = true;
-            _textSprite.enabled = true;
-        }
-        else
-        {
-            _buttonSprite.enabled = false;
-            _textSprite.enabled = false;
-        }
+
     }
 
     private void ValidadeScarecrow()
@@ -44,11 +35,9 @@ public class ScarecrowRiposteButtonVisual : MonoBehaviour
 
     private void SubscribeToScarecrow()
     {
-        _scarecrow.OnAttackStatusChanged += UpdateVisualState;
     }
 
     private void UnsubscribeFromScarecrow()
     {
-        _scarecrow.OnAttackStatusChanged -= UpdateVisualState;
     }
 }

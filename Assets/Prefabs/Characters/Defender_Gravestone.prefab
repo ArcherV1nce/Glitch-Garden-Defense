@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2420700543952908622}
   - component: {fileID: 2420700543952908623}
   - component: {fileID: 3012494436108659359}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Defender_Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

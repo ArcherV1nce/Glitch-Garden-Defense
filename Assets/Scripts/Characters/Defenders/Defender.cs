@@ -56,18 +56,6 @@ public class Defender : Character
         Spawned?.Invoke(this);
     }
 
-    protected override void OnValidate()
-    {
-        base.OnValidate();
-        if (Active != null)
-        {
-            if (Active.Character != this.GetComponent<Character>())
-            {
-                Default = null;
-            }
-        }
-    }
-
     protected override void TriggerDeathActions()
     {
         Died?.Invoke(this);

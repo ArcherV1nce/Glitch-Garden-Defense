@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 21438825971651213}
   - component: {fileID: 2412137693946054208}
   - component: {fileID: 5760656681769749870}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Defender_Cactus
   m_TagString: Defender
   m_Icon: {fileID: 0}

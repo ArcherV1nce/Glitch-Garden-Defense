@@ -16,21 +16,21 @@ public class DefenderSkillActivation : MonoBehaviour
 
     private void Update()
     {
-        CheckMouseInput();
+        CheckMouseClickOnDefender();
     }
 
-    private void CheckMouseInput()
+    private void CheckMouseClickOnDefender()
     {
         if (Input.GetMouseButtonDown(LeftMouseButtonId))
         {
-            if (CheckScarecrowDetection(out Defender defender))
+            if (CheckDefenderDetection(out Defender defender))
             {
                 defender.UseSkill();
             }
         }
     }
 
-    private bool CheckScarecrowDetection(out Defender defender)
+    private bool CheckDefenderDetection(out Defender defender)
     {
         Vector3 mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         Collider2D target = Physics2D.OverlapPoint(mousePosition, _contactFilter);

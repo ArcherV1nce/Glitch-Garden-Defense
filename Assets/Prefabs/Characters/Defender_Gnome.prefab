@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 6258456043526171867}
   - component: {fileID: 672984473698530164}
   - component: {fileID: 2614923500439187001}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Defender_Gnome
   m_TagString: Untagged
   m_Icon: {fileID: 0}

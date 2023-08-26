@@ -1,14 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class ScarecrowRiposte : MonoBehaviour
 {
+    private const float ExplosionSizeMin = 0f;
+    private const float ExplosionSizeMax = 5f;
+
     private const float LifeTimeMin = 0.1f;
 
-    [SerializeField] private Collider2D _trigger;
+    [SerializeField] private Vector2 _size;
     [SerializeField] private float _lifetime;
 
+    private BoxCollider2D _trigger;
     private Damage _damage;
     private List<Attacker> _enemies;
 
@@ -19,7 +23,10 @@ public class ScarecrowRiposte : MonoBehaviour
 
     private void OnValidate()
     {
+        ValidateTrigger();
         ValidateLifetime();
+        ValidateSizeValues();
+        UpdateTriggerSize();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,12 +42,9 @@ public class ScarecrowRiposte : MonoBehaviour
     private void Setup()
     {
         _enemies = new List<Attacker>();
-        _trigger = GetComponent<Collider2D>();
 
-        if (_trigger.isTrigger == false)
-        {
-            _trigger.isTrigger = true;
-        }
+        ValidateTrigger();
+        UpdateTriggerSize();
     }
 
     private void CheckExplosionAreaForEnemies(Collider2D collision)
@@ -76,5 +80,41 @@ public class ScarecrowRiposte : MonoBehaviour
         {
             _lifetime = LifeTimeMin;
         }
+    }
+
+    private void ValidateSizeValues()
+    {
+        if (_size.x > ExplosionSizeMax)
+        {
+            _size.x = ExplosionSizeMax;
+        }
+        else if (_size.x < ExplosionSizeMin)
+        {
+            _size.x = ExplosionSizeMin;
+        }
+
+        if (_size.y > ExplosionSizeMax)
+        {
+            _size.y = ExplosionSizeMax;
+        }
+        else if (_size.y < ExplosionSizeMin)
+        {
+            _size.y = ExplosionSizeMin;
+        }
+    }
+
+    private void ValidateTrigger()
+    {
+        _trigger = GetComponent<BoxCollider2D>();
+
+        if (_trigger.isTrigger == false)
+        {
+            _trigger.isTrigger = true;
+        }
+    }
+
+    private void UpdateTriggerSize()
+    {
+        _trigger.size = _size;
     }
 }

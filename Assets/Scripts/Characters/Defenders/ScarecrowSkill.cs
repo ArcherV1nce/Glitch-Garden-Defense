@@ -48,7 +48,6 @@ public class ScarecrowSkill : MonoBehaviour
     public void ResetDamage()
     {
         _damageTaken = 0;
-        SetDamage(new Damage(Damage.NoDamageValue));
     }
 
     public void CheckRiposteStatus()
@@ -59,11 +58,6 @@ public class ScarecrowSkill : MonoBehaviour
     private void SetPosition()
     {
         _position = _defender.GetComponent<Transform>().position;
-    }
-
-    private void SetDamage(Damage damage)
-    {
-        _prefab.SetDamage(damage);
     }
 
     private void ValidateRiposteDamageMin()
