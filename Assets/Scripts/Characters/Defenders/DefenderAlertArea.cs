@@ -13,7 +13,7 @@ public class DefenderAlertArea : MonoBehaviour
     private BoxCollider2D _detectionArea;
     private List<Attacker> _attackers;
 
-    public event UnityAction<bool> OnAlertUpdated;
+    public event UnityAction<bool> AlertUpdated;
 
     public bool IsAlerted => _attackers.Count > 0;
 
@@ -60,14 +60,14 @@ public class DefenderAlertArea : MonoBehaviour
     private void AddAttackerToList(Attacker attacker)
     {
         _attackers.Add(attacker);
-        OnAlertUpdated?.Invoke(IsAlerted);
+        AlertUpdated?.Invoke(IsAlerted);
     }
 
     private void RemoveAttackerFromList(Attacker attacker)
     {
         UnsubscribeFromAttackerDeath(attacker);
         _attackers.Remove(attacker);
-        OnAlertUpdated?.Invoke(IsAlerted);
+        AlertUpdated?.Invoke(IsAlerted);
     }
 
     private bool TryGetAttacker(Collider2D collision, out Attacker attacker)

@@ -11,8 +11,8 @@ public class Scarecrow : Defender
 
     private bool _isAlerted;
 
-    public UnityAction<bool> OnAttackStatusUpdated;
-    public UnityAction OnRiposteTriggered;
+    public UnityAction<bool> AttackStatusUpdated;
+    public UnityAction RiposteTriggered;
     public UnityEvent<Damage> DamageTaken;
     public UnityEvent<DefenderState> StateChanged;
 
@@ -47,14 +47,14 @@ public class Scarecrow : Defender
     {
         _isAlerted = true;
         ChooseStateByAlert(_isAlerted);
-        OnAttackStatusUpdated?.Invoke(_isAlerted);
+        AttackStatusUpdated?.Invoke(_isAlerted);
     }
 
     public override void UseSkill()
     {
-        if (_isAlerted)
+        if (_isAlerted&&_riposteSkill.IsCharged)
         {
-            OnRiposteTriggered?.Invoke();
+            RiposteTriggered?.Invoke();
         }
     }
 
@@ -74,7 +74,7 @@ public class Scarecrow : Defender
             SetDefaultState();
         }
 
-        OnAttackStatusUpdated?.Invoke(_isAlerted);
+        AttackStatusUpdated?.Invoke(_isAlerted);
         StateChanged?.Invoke(Active);
     }
 
@@ -84,7 +84,7 @@ public class Scarecrow : Defender
         {
             SetActiveState(_chargedAttacked);
             StateChanged?.Invoke(Active);
-            OnAttackStatusUpdated?.Invoke(_isAlerted);
+            AttackStatusUpdated?.Invoke(_isAlerted);
         }
         else
         {
@@ -130,12 +130,12 @@ public class Scarecrow : Defender
     private void SubscribeToEvents()
     {
         _riposteSkill.ChargeStatusUpdated?.AddListener(ChooseStateByChargeStatus);
-        _alertArea.OnAlertUpdated += ChooseStateByAlert;
+        _alertArea.AlertUpdated += ChooseStateByAlert;
     }
 
     private void UnsubscribeFromEvents()
     {
         _riposteSkill.ChargeStatusUpdated?.RemoveListener(ChooseStateByChargeStatus);
-        _alertArea.OnAlertUpdated -= ChooseStateByAlert;
+        _alertArea.AlertUpdated -= ChooseStateByAlert;
     }
 }

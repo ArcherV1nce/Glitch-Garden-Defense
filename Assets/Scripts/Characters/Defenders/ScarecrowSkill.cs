@@ -101,12 +101,12 @@ public class ScarecrowSkill : MonoBehaviour
     private void SubscribeToScarecrow()
     {
         _defender.DamageTaken.AddListener(AccumulateDamageForAttack);
-        _defender.OnRiposteTriggered += PerformRiposteExplosion;
+        _defender.RiposteTriggered += PerformRiposteExplosion;
     }
 
     private void UnsubscribeFromScarecrow()
     {
         _defender.DamageTaken.RemoveListener(AccumulateDamageForAttack);
-        _defender.OnRiposteTriggered -= PerformRiposteExplosion;
+        _defender.RiposteTriggered -= PerformRiposteExplosion;
     }
 }

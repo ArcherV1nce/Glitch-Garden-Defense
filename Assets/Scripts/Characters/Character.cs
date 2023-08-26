@@ -3,9 +3,12 @@ using UnityEngine.Events;
 
 public abstract class Character : MonoBehaviour, IDeath
 {
+    private const float TimeToDie = 0.1f;
+
     [SerializeField] private Health _health;
 
     public event UnityAction<Character> Died;
+    public event UnityAction<float, float> HealthValueChanged;
 
     public bool IsAlive => _health.IsAlive;
     public float HealthValue => _health.Value;
@@ -19,6 +22,7 @@ public abstract class Character : MonoBehaviour, IDeath
     public virtual void TakeDamage (Damage damage)
     {
         _health.ApplyDamage(damage);
+        HealthValueChanged?.Invoke(HealthValue, MaxHealth);
         CheckDeath();
     }
 
@@ -33,7 +37,7 @@ public abstract class Character : MonoBehaviour, IDeath
         if (_health.IsAlive == false)
         {
             TriggerDeathActions();
-            Destroy(gameObject, Time.deltaTime);
+            Destroy(gameObject, TimeToDie);
             return true;
         }
 

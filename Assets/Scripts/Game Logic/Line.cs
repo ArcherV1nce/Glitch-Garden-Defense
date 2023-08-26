@@ -62,6 +62,8 @@ public class Line : MonoBehaviour
         _defenders ??= new List<Defender>();
 
         _attackers ??= new List<Attacker>();
+
+        ValidateVillage();
     }
 
     private void AddDefenderSubscriptions(Defender defender)
@@ -129,6 +131,19 @@ public class Line : MonoBehaviour
         if (IsAttacked == false)
         {
             AttackStopped?.Invoke();
+        }
+    }
+
+    private void ValidateVillage()
+    {
+        if (_village == null)
+        {
+            _village = FindAnyObjectByType<Village>();
+        }
+
+        if (_village == null)
+        {
+            Debug.LogError("Village Component is missing in the scene.");
         }
     }
 
