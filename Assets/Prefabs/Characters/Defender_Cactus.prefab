@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 21438825971651213}
   - component: {fileID: 2412137693946054208}
   - component: {fileID: 5760656681769749870}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Defender_Cactus
   m_TagString: Defender
   m_Icon: {fileID: 0}
@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health:
     _value: 150
+    _valueMax: 150
   _price:
     _stars: 25
   Default: {fileID: 11400000, guid: 52337ea8d6373f24b97f4b15cacf2af2, type: 2}

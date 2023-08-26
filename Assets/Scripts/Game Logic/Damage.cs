@@ -4,20 +4,28 @@ using UnityEngine;
 [Serializable]
 public struct Damage
 {
+    public static readonly int NoDamageValue = 0;
+
     [SerializeField] private int _value;
 
     public int Value => _value;
+    public int ValueMin => NoDamageValue;
 
     public Damage (int value)
     {
         _value = value;
     }
 
-    private void OnValidate ()
+    private void OnValidate()
     {
-        if (_value < 0)
+        ValidateValue();
+    }
+
+    private void ValidateValue()
+    {
+        if (_value < ValueMin)
         {
-            _value = 0;
+            _value = ValueMin;
         }
     }
 }

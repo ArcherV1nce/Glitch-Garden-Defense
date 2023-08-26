@@ -1,0 +1,9 @@
+Gameplay:
+- Balance damage, health and prices
+- Add tutorial levels
+
+Menu:
+- Add level selection menu
+
+Scarecrow:
+- Add visuals for remaining health and damage output

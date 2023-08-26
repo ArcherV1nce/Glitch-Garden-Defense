@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -3482851710872211012}
   - component: {fileID: 2565084416041011295}
   - component: {fileID: 8521010894158233318}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Defender_Trophy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health:
     _value: 100
+    _valueMax: 100
   _price:
     _stars: 20
   Default: {fileID: 0}

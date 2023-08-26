@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(ShootingDefender))]
-public class ShootingDefenderAnimationControl : AnimationControl
+public class ShootingDefenderAnimationControl : DefenderAnimationControl
 {
     private ShootingDefender _shooter;
 
@@ -13,14 +13,6 @@ public class ShootingDefenderAnimationControl : AnimationControl
     private void OnDisable()
     {
         UnsubscribeFromShootingDefender();
-    }
-
-    public void UpdateStates(DefenderState newState)
-    {
-        foreach (DefenderStateParameter stateParameter in newState.Parameters)
-        {
-            Animator.SetBool(stateParameter.Name.ToString(), stateParameter.State);
-        }
     }
 
     protected override void Setup()

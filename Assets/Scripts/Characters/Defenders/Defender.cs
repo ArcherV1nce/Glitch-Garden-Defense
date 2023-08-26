@@ -1,5 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class Defender : Character
@@ -32,6 +31,11 @@ public class Defender : Character
 
     }
 
+    public virtual void UseSkill()
+    {
+
+    }
+
     public virtual void SetIdle ()
     {
         SetDefaultState();
@@ -50,17 +54,6 @@ public class Defender : Character
     private void AlertAboutSpawn()
     {
         Spawned?.Invoke(this);
-    }
-
-    protected virtual void OnValidate()
-    {
-        if (Active != null)
-        {
-            if (Active.Character != this.GetComponent<Character>())
-            {
-                Default = null;
-            }
-        }
     }
 
     protected override void TriggerDeathActions()

@@ -1,15 +1,13 @@
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.UIElements;
 
-public class CellSelection : MonoBehaviour
+public class DefenderSkillActivation : MonoBehaviour
 {
     private const int LeftMouseButtonId = 0;
 
     [SerializeField] private LayerMask _contactFilter;
-    
-    private Camera _camera;
 
-    public UnityAction<Cell> CellClicked;
+    private Camera _camera;
 
     private void Awake()
     {
@@ -18,33 +16,33 @@ public class CellSelection : MonoBehaviour
 
     private void Update()
     {
-        CheckMouseInput();
+        CheckMouseClickOnDefender();
     }
 
-    private void CheckMouseInput()
+    private void CheckMouseClickOnDefender()
     {
         if (Input.GetMouseButtonDown(LeftMouseButtonId))
         {
-            if (CheckCellDetection(out Cell cell))
+            if (CheckDefenderDetection(out Defender defender))
             {
-                CellClicked?.Invoke(cell);
+                defender.UseSkill();
             }
         }
     }
 
-    private bool CheckCellDetection(out Cell cell)
+    private bool CheckDefenderDetection(out Defender defender)
     {
         Vector3 mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         Collider2D target = Physics2D.OverlapPoint(mousePosition, _contactFilter);
 
-        if (target != null && target.TryGetComponent<Cell>(out cell))
+        if (target != null && target.TryGetComponent<Defender>(out defender))
         {
             return true;
         }
 
         else
         {
-            cell = null;
+            defender = null;
             return false;
         }
     }

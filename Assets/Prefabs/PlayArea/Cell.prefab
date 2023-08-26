@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1588266096619418804}
   - component: {fileID: 1588266096619418802}
   - component: {fileID: 6172303302880375484}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,9 +50,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _size: 1
   _character: {fileID: 0}
-  FillChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &8557555676670269249
 MonoBehaviour:
   m_ObjectHideFlags: 0

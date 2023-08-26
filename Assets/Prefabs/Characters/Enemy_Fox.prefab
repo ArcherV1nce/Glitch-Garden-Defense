@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 6269601809571243020}
   - component: {fileID: 882336575043383280}
   m_Layer: 6
-  m_Name: Fox
+  m_Name: Enemy_Fox
   m_TagString: Attacker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _usingSkill: {fileID: 11400000, guid: 3d025af211811aa4887c54a7a9e8e2e2, type: 2}
-  _skillReloadTime: 3
+  _skillReloadTime: 5
   _attackDetection: {fileID: 6539361707782416511}
 --- !u!114 &8054610559243796525
 MonoBehaviour:
