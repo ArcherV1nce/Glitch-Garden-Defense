@@ -2,15 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class ScarecrowRiposte : MonoBehaviour
+public class DefenderExplosion : MonoBehaviour
 {
     private const float ExplosionSizeMin = 0f;
     private const float ExplosionSizeMax = 5f;
-
-    private const float LifeTimeMin = 0.1f;
+    private const float DestructionDelay = 0.05f;
 
     [SerializeField] private Vector2 _size;
-    [SerializeField] private float _lifetime;
 
     private BoxCollider2D _trigger;
     private Damage _damage;
@@ -24,7 +22,6 @@ public class ScarecrowRiposte : MonoBehaviour
     private void OnValidate()
     {
         ValidateTrigger();
-        ValidateLifetime();
         ValidateSizeValues();
         UpdateTriggerSize();
     }
@@ -71,15 +68,11 @@ public class ScarecrowRiposte : MonoBehaviour
     private void PerformRiposteExplosion()
     {
         DealDamageToEnemies();
-        Destroy(this.gameObject, _lifetime);
     }
 
-    private void ValidateLifetime()
+    private void DisposeOfObject()
     {
-        if (_lifetime < LifeTimeMin)
-        {
-            _lifetime = LifeTimeMin;
-        }
+        Destroy(this.gameObject, DestructionDelay);
     }
 
     private void ValidateSizeValues()

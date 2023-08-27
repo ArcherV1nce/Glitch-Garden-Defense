@@ -23,11 +23,11 @@ public class ScarecrowAnimationControl : DefenderAnimationControl
 
     private void SubscribeToScarecrow()
     {
-        _defender.StateChanged.AddListener(UpdateStates);
+        _defender.StateChanged += UpdateStates;
     }
 
     private void UnsubscribeFromScarecrow()
     {
-        _defender.StateChanged.RemoveListener(UpdateStates);
+        _defender.StateChanged -= UpdateStates;
     }
 }

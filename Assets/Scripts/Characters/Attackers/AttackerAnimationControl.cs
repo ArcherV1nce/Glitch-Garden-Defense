@@ -15,7 +15,12 @@ public class AttackerAnimationControl : AnimationControl
         UnsubscribeFromAttackerStates();
     }
 
-    public void UpdateStates(AttackerState newState)
+    public void OnStateChanged(AttackerState newState)
+    {
+        UpdateStates(newState);
+    }
+
+    private void UpdateStates(AttackerState newState)
     {
         foreach (AttackerStateParameter stateParameter in newState.Parameters)
         {
@@ -31,11 +36,11 @@ public class AttackerAnimationControl : AnimationControl
 
     private void SubscribeToAttackerStates()
     {
-        _attacker.StateChanged.AddListener(UpdateStates);
+        _attacker.StateChanged += OnStateChanged;
     }
 
     private void UnsubscribeFromAttackerStates()
     {
-        _attacker.StateChanged.RemoveListener(UpdateStates);
+        _attacker.StateChanged -= OnStateChanged;
     }
 }

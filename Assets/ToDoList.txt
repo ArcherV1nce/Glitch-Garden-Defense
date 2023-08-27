@@ -1,6 +1,8 @@
 Gameplay:
-- Balance damage, health and prices
-- Add tutorial levels
+- Balance damage, health and prices.
+- Add tutorial levels.
+- Add Dig-out mechanic (You can remove defenders from cells to retrieve their value multiplied by percentage of remaining health by value decrease modifier). 
+//RetrievableStars = Value * Health/HealthMax * RetrievalModifier
 
 Level:
 - Add multiple waves to level

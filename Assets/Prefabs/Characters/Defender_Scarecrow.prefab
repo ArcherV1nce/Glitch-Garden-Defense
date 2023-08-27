@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c291139f681fd7f4588eb47be57049c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _size: {x: 2, y: 2}
+  _size: {x: 2.5, y: 2.5}
 --- !u!61 &5418872294643479948
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 2.5, y: 2.5}
   m_EdgeRadius: 0
 --- !u!50 &7347536137334599363
 Rigidbody2D:
@@ -239,14 +239,7 @@ MonoBehaviour:
   Default: {fileID: 11400000, guid: 2d3c78ca9bce07a419b305a15e8e6dd0, type: 2}
   _charged: {fileID: 11400000, guid: c7e2975805d580e44bbcedf77d25efca, type: 2}
   _chargedAttacked: {fileID: 11400000, guid: 5aa2c75f83eefc34fa8937535f05a5b8, type: 2}
-  _riposteSkill: {fileID: 8466636935176248496}
   _alertArea: {fileID: 8526607058996960994}
-  DamageTaken:
-    m_PersistentCalls:
-      m_Calls: []
-  StateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &8466636935176248496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,11 +254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _defender: {fileID: 5885367073041779685}
   _prefab: {fileID: 3591743377185437613, guid: f0c3aab58409754458658488fa39eeee, type: 3}
-  _damageRequiredForRiposte: 50
+  _damageRequiredForRiposte: 100
   _riposteMultiplier: 2
-  ChargeStatusUpdated:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &6471249145778221550
 MonoBehaviour:
   m_ObjectHideFlags: 0

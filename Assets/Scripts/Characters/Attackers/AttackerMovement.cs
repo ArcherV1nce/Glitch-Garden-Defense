@@ -10,30 +10,19 @@ public class AttackerMovement : Movement
         Setup();
     }
 
-    protected virtual void UpdateMovementState(AttackerState state)
+    public void OnStateChanged(AttackerState state)
     {
-        bool movementState = false;
-
-        foreach (AttackerStateParameter parameter in state.Parameters)
-        {
-            if (parameter.Name == AttackerStateParameter.AttackerStateParameters.IsMoving.ToString())
-            {
-                movementState = parameter.State;
-                break;
-            }
-        }
-        
-        SetMoving(movementState);
+        UpdateMovementState(state);
     }
 
     private void SubscribeToAttackerStates()
     {
-        Attacker.StateChanged.AddListener(UpdateMovementState);
+        Attacker.StateChanged += OnStateChanged;
     }
 
     private void UnsubscribeFromAttackerStates()
     {
-        Attacker.StateChanged.RemoveListener(UpdateMovementState);
+        Attacker.StateChanged -= OnStateChanged;
     }
 
     protected override void OnEnable()
@@ -49,6 +38,22 @@ public class AttackerMovement : Movement
     protected override void Setup ()
     {
         Attacker = GetComponent<Attacker>();
+    }
+
+    protected virtual void UpdateMovementState(AttackerState state)
+    {
+        bool movementState = false;
+
+        foreach (AttackerStateParameter parameter in state.Parameters)
+        {
+            if (parameter.Name == AttackerStateParameter.AttackerStateParameters.IsMoving.ToString())
+            {
+                movementState = parameter.State;
+                break;
+            }
+        }
+
+        SetMoving(movementState);
     }
 
     protected override void SetMoving (bool shouldMove)

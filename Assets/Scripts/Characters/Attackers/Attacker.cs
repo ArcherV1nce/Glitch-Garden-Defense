@@ -16,7 +16,7 @@ public class Attacker : Character
     private AttackerState _active;
 
     public new event UnityAction<Attacker> Died;
-    public UnityEvent<AttackerState> StateChanged;
+    public event UnityAction<AttackerState> StateChanged;
 
     public AttackerState Active => _active;
     public Damage Damage => _damage;
@@ -31,13 +31,13 @@ public class Attacker : Character
     {
         SubscribeToTargetDeath();
         SetActiveState(Spawning);
-        AttackArea.CharacterEnteredMeleeAttackArea.AddListener(TrySetTarget);
+        SubscribeToMeleeAttack();
     }
 
     protected virtual void OnDisable()
     {
         UnsubscribeFromTargetDeath();
-        AttackArea.CharacterEnteredMeleeAttackArea.RemoveListener(TrySetTarget);
+        UnsubscribeFromMeleeAttack();
     }
 
     public Resources GetReward ()
@@ -107,6 +107,16 @@ public class Attacker : Character
         {
             _currentTarget.Died -= (ClearTarget);
         }
+    }
+
+    private void SubscribeToMeleeAttack()
+    {
+        AttackArea.CharacterEnteredMeleeAttackArea.AddListener(TrySetTarget);
+    }
+
+    private void UnsubscribeFromMeleeAttack()
+    {
+        AttackArea.CharacterEnteredMeleeAttackArea.RemoveListener(TrySetTarget);
     }
 
     protected void SetActiveState(AttackerState newState)

@@ -5,20 +5,22 @@ using UnityEngine.Events;
 public class ScarecrowSkill : MonoBehaviour
 {
     private const float RiposteThresholdMin = 0.1f;
+    private const float RiposteDamageMultiplierMin = 0.5f;
     private const float RiposteDamageMultiplierMax = 3f;
 
     [SerializeField] private Scarecrow _defender;
-    [SerializeField] private ScarecrowRiposte _prefab;
+    [SerializeField] private DefenderExplosion _prefab;
     [SerializeField] private float _damageRequiredForRiposte;
-    [SerializeField, Range(0, RiposteDamageMultiplierMax)] private float _riposteMultiplier;
+    [SerializeField, Range
+        (RiposteDamageMultiplierMin, RiposteDamageMultiplierMax)] private float _riposteMultiplier;
 
     private float _damageTaken;
     private Vector3 _position;
 
-    public UnityEvent<bool> ChargeStatusUpdated;
+    public event UnityAction<bool> ChargeStatusUpdated;
     public event UnityAction<float> RiposteDamageChanged;
 
-    public bool IsCharged => _damageTaken >= _damageRequiredForRiposte;
+    public bool IsCharged => _damageTaken * _riposteMultiplier >= _damageRequiredForRiposte;
 
     private void Awake()
     {
@@ -49,14 +51,14 @@ public class ScarecrowSkill : MonoBehaviour
 
     public void ResetDamage()
     {
-        _damageTaken = 0;
+        _damageTaken = Damage.NoDamageValue;
         RiposteDamageChanged?.Invoke(GetRiposteDamage(_damageTaken).Value);
     }
 
     public void CheckRiposteStatus()
     {
-        ChargeStatusUpdated?.Invoke(IsCharged);
         RiposteDamageChanged?.Invoke(GetRiposteDamage(_damageTaken).Value);
+        ChargeStatusUpdated?.Invoke(IsCharged);
     }
 
     private void SetPosition()
@@ -91,7 +93,7 @@ public class ScarecrowSkill : MonoBehaviour
 
     private void PerformRiposteExplosion()
     {
-        ScarecrowRiposte explosion = Instantiate(_prefab, _position, Quaternion.identity);
+        DefenderExplosion explosion = Instantiate(_prefab, _position, Quaternion.identity);
         explosion.SetDamage(GetRiposteDamage(_damageTaken));
         ResetDamage();
         ChargeStatusUpdated?.Invoke(IsCharged);
@@ -103,15 +105,25 @@ public class ScarecrowSkill : MonoBehaviour
         return new Damage((int)riposteDamageValue);
     }
 
+    private void OnDamageTaken(Damage damage)
+    {
+        AccumulateDamageForAttack(damage);
+    }
+
+    private void OnRiposteTriggered()
+    {
+        PerformRiposteExplosion();
+    }
+
     private void SubscribeToScarecrow()
     {
-        _defender.DamageTaken.AddListener(AccumulateDamageForAttack);
-        _defender.RiposteTriggered += PerformRiposteExplosion;
+        _defender.DamageTaken += OnDamageTaken;
+        _defender.RiposteTriggered += OnRiposteTriggered;
     }
 
     private void UnsubscribeFromScarecrow()
     {
-        _defender.DamageTaken.RemoveListener(AccumulateDamageForAttack);
-        _defender.RiposteTriggered -= PerformRiposteExplosion;
+        _defender.DamageTaken -= OnDamageTaken;
+        _defender.RiposteTriggered -= OnRiposteTriggered;
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public abstract class Character : MonoBehaviour, IDeath
 {
-    private const float TimeToDie = 0.1f;
+    private const float TimeToDie = 0.05f;
 
     [SerializeField] private Health _health;
 

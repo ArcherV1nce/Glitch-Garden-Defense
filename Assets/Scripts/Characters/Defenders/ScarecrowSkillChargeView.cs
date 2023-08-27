@@ -12,6 +12,7 @@ public class ScarecrowSkillChargeView : MonoBehaviour
     private void OnEnable()
     {
         ValidateSkill();
+        ValidateTextComponent();
         SubscribeToSkill();
     }
 
@@ -23,6 +24,7 @@ public class ScarecrowSkillChargeView : MonoBehaviour
     private void OnValidate()
     {
         ValidateSkill();
+        ValidateTextComponent();
         ValidateText();
     }
 

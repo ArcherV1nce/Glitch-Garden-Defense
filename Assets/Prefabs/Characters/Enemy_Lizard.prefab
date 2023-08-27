@@ -137,9 +137,6 @@ MonoBehaviour:
   Default: {fileID: 11400000, guid: 92a2cd2b04f01164bab9ed7a2a84de15, type: 2}
   Attacking: {fileID: 11400000, guid: ab847cc50ffad3c4890325361d6ed21d, type: 2}
   Spawning: {fileID: 11400000, guid: c0f1002ac413a7d40a70f8abac1f6122, type: 2}
-  StateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &6060306855148586956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +218,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1, y: 0.05}
+  m_Offset: {x: -0.1, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.3, y: 0.3}
@@ -232,7 +229,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.78}
+  m_Size: {x: 0.45, y: 0.75}
   m_EdgeRadius: 0
 --- !u!1 &8871911305791364020
 GameObject:
@@ -339,7 +336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2786555069017594275, guid: d5c74115080b78b44a37e8e250b34758, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2786555069017594275, guid: d5c74115080b78b44a37e8e250b34758, type: 3}
       propertyPath: m_LocalPosition.z
