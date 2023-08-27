@@ -16,6 +16,8 @@ public class ScarecrowSkill : MonoBehaviour
     private Vector3 _position;
 
     public UnityEvent<bool> ChargeStatusUpdated;
+    public event UnityAction<float> RiposteDamageChanged;
+
     public bool IsCharged => _damageTaken >= _damageRequiredForRiposte;
 
     private void Awake()
@@ -48,11 +50,13 @@ public class ScarecrowSkill : MonoBehaviour
     public void ResetDamage()
     {
         _damageTaken = 0;
+        RiposteDamageChanged?.Invoke(GetRiposteDamage(_damageTaken).Value);
     }
 
     public void CheckRiposteStatus()
     {
         ChargeStatusUpdated?.Invoke(IsCharged);
+        RiposteDamageChanged?.Invoke(GetRiposteDamage(_damageTaken).Value);
     }
 
     private void SetPosition()
@@ -82,6 +86,7 @@ public class ScarecrowSkill : MonoBehaviour
     private void AccumulateDamageForAttack(Damage damage)
     {
         _damageTaken += damage.Value;
+        RiposteDamageChanged?.Invoke(GetRiposteDamage(_damageTaken).Value);
     }
 
     private void PerformRiposteExplosion()

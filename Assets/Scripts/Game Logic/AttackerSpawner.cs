@@ -4,7 +4,7 @@ using UnityEngine;
 public class AttackerSpawner : MonoBehaviour
 {
     private const float SpawnDelayMin = 0.5f;
-    private const float SpawnDelayMax = 5f;
+    private const float SpawnDelayMax = 60f;
 
     [SerializeField] private Line _line;
     [SerializeField] private Wave _currentWave;

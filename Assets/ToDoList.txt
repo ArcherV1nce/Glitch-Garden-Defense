@@ -2,8 +2,10 @@ Gameplay:
 - Balance damage, health and prices
 - Add tutorial levels
 
+Level:
+- Add multiple waves to level
+- Add vawe changing
+- Move Spawning delay to wave config
+
 Menu:
 - Add level selection menu
-
-Scarecrow:
-- Add visuals for remaining health and damage output

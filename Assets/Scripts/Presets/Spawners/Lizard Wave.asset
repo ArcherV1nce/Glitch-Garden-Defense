@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f4b2663b944d64bbd6d98c0eca31f6, type: 3}
   m_Name: Lizard Wave
   m_EditorClassIdentifier: 
-  _attackersCount: 1
+  _attackersCount: 8
   _attackerPrefabs:
   - {fileID: 3222574180056230849, guid: 891a2c6fc41962740b72b34afd203843, type: 3}

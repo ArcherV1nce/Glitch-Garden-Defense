@@ -958,7 +958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _line: {fileID: 523847558838271932}
   _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  _spawnDelay: 3
+  _spawnDelay: 10
 --- !u!4 &667239400
 Transform:
   m_ObjectHideFlags: 0
@@ -1786,7 +1786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _line: {fileID: 523847559554643897}
   _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  _spawnDelay: 3
+  _spawnDelay: 10
 --- !u!4 &1515731680
 Transform:
   m_ObjectHideFlags: 0
@@ -1833,7 +1833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _line: {fileID: 523847559038893555}
   _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  _spawnDelay: 3
+  _spawnDelay: 10
 --- !u!4 &1526362278
 Transform:
   m_ObjectHideFlags: 0
@@ -2098,7 +2098,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stars: 500'
+  m_text: 'Stars: 200'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e1d2fbbcb120c03478ce84738af37826, type: 2}
   m_sharedMaterial: {fileID: -1217652716745120434, guid: e1d2fbbcb120c03478ce84738af37826, type: 2}
@@ -2382,7 +2382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _money:
-    _stars: 500
+    _stars: 200
 --- !u!1 &1885434436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2429,7 +2429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _line: {fileID: 523847559373944221}
   _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  _spawnDelay: 3
+  _spawnDelay: 10
 --- !u!1 &1917897457
 GameObject:
   m_ObjectHideFlags: 0
