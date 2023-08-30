@@ -21,8 +21,7 @@ public class ValueBarView : MonoBehaviour
 
     protected virtual void OnValueChanged(float value, float maxValue)
     {
-        Value = value/maxValue;
-        UpdateFilling();
+        UpdateFilling(value, maxValue);
     }
 
     private void ValidateTransform()
@@ -33,8 +32,14 @@ public class ValueBarView : MonoBehaviour
         }
     }
 
-    protected void UpdateFilling()
+    protected void SetFillingScale(float valueX)
     {
+        _filling.localScale = new Vector3(valueX, _filling.localScale.y, _filling.localScale.z);
+    }
+
+    protected void UpdateFilling(float value, float maxValue)
+    {
+        Value = value / maxValue;
         if (Value < FillingValueMin)
         {
             Value = FillingValueMin;
@@ -44,7 +49,7 @@ public class ValueBarView : MonoBehaviour
             Value = FillingValueMax;
         }
 
-        _filling.localScale = new Vector3 (Value, _filling.localScale.y, _filling.localScale.z);
+        SetFillingScale(Value);
     }
 
     protected virtual void Setup()

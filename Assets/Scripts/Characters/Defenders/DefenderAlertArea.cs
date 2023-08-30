@@ -14,6 +14,8 @@ public class DefenderAlertArea : MonoBehaviour
     private List<Attacker> _attackers;
 
     public event UnityAction<bool> AlertUpdated;
+    public event UnityAction<Attacker> AttackerEnteredArea;
+    public event UnityAction<Attacker> AttackerLeftArea;
 
     public bool IsAlerted => _attackers.Count > 0;
 
@@ -44,6 +46,7 @@ public class DefenderAlertArea : MonoBehaviour
         if (TryGetAttacker(collision, out Attacker attacker))
         {
             AddAttackerToList(attacker);
+            AttackerEnteredArea?.Invoke(attacker);
             SubsribeOnAttackerDeath(attacker);
         }
     }
@@ -53,6 +56,7 @@ public class DefenderAlertArea : MonoBehaviour
         if (TryGetAttacker(collision, out Attacker attacker))
         {
             RemoveAttackerFromList(attacker);
+            AttackerLeftArea?.Invoke(attacker);
             UnsubscribeFromAttackerDeath(attacker);
         }
     }

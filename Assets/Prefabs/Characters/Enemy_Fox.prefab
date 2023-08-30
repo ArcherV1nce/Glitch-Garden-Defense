@@ -138,9 +138,6 @@ MonoBehaviour:
   Default: {fileID: 11400000, guid: e2b98462c719ce249880fa7e45764fba, type: 2}
   Attacking: {fileID: 11400000, guid: 6adc4821ec8330e48b52863269c26d7c, type: 2}
   Spawning: {fileID: 11400000, guid: d5cb1714342ffcd4aaabb6147dad3bb6, type: 2}
-  StateChanged:
-    m_PersistentCalls:
-      m_Calls: []
   _usingSkill: {fileID: 11400000, guid: 3d025af211811aa4887c54a7a9e8e2e2, type: 2}
   _skillReloadTime: 5
   _attackDetection: {fileID: 6539361707782416511}
