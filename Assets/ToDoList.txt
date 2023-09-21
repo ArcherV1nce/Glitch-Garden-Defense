@@ -5,9 +5,12 @@ Gameplay:
 //RetrievableStars = Value * Health/HealthMax * RetrievalModifier
 
 Level:
-- Add multiple waves to level
-- Add vawe changing
 - Move Spawning delay to wave config
+- Add Lines Callouts for defeating all enemies
+- Add Victory UI
 
 Menu:
 - Add level selection menu
+
+Bugs to Fix:
+- Automated defenders don't shoot in the built game.

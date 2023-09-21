@@ -957,8 +957,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _line: {fileID: 523847558838271932}
+  _waves:
+  - {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
+  - {fileID: 11400000, guid: ac5d7164fe6d5d54996f076643568960, type: 2}
   _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  _spawnDelay: 10
+  _spawnDelay: 5
 --- !u!4 &667239400
 Transform:
   m_ObjectHideFlags: 0
@@ -1348,6 +1351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 839469895}
+  - component: {fileID: 839469896}
   m_Layer: 0
   m_Name: AttackersSpawners
   m_TagString: Untagged
@@ -1374,6 +1378,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &839469896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839469894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94bd64b09e32fdd42b8f5a744a81ed52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waveSwitchDelay: 15
+  _spawners:
+  - {fileID: 1515731679}
+  - {fileID: 667239399}
+  - {fileID: 1526362277}
+  - {fileID: 1885434438}
 --- !u!1 &846537407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,8 +1807,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _line: {fileID: 523847559554643897}
+  _waves:
+  - {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
+  - {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
   _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  _spawnDelay: 10
+  _spawnDelay: 5
 --- !u!4 &1515731680
 Transform:
   m_ObjectHideFlags: 0
@@ -1832,8 +1857,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _line: {fileID: 523847559038893555}
+  _waves:
+  - {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
+  - {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
   _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  _spawnDelay: 10
+  _spawnDelay: 5
 --- !u!4 &1526362278
 Transform:
   m_ObjectHideFlags: 0
@@ -1932,7 +1960,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 168255934}
   m_HandleRect: {fileID: 168255933}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2023,6 +2051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _village: {fileID: 1698287538}
+  _spawnersControl: {fileID: 839469896}
   _loader: {fileID: 1629003491}
 --- !u!4 &1629003493
 Transform:
@@ -2428,8 +2457,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _line: {fileID: 523847559373944221}
+  _waves:
+  - {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
+  - {fileID: 11400000, guid: ac5d7164fe6d5d54996f076643568960, type: 2}
   _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  _spawnDelay: 10
+  _spawnDelay: 5
 --- !u!1 &1917897457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,7 +2595,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140762466}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 99810e9560120c944b05e13b8b9e5ce6, type: 3}

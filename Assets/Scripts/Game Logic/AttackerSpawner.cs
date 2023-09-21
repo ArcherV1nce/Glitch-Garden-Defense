@@ -1,19 +1,31 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AttackerSpawner : MonoBehaviour
 {
     private const float SpawnDelayMin = 0.5f;
     private const float SpawnDelayMax = 60f;
+    private const int FirstWaveNumber = 0;
 
     [SerializeField] private Line _line;
+    [SerializeField] private List<Wave> _waves;
     [SerializeField] private Wave _currentWave;
-    [SerializeField] private float _spawnDelay;
-
+    [SerializeField, Range(SpawnDelayMin, SpawnDelayMax)] 
+    private float _spawnDelay;
+    
     private System.Random _random;
     private Coroutine _spawningCoroutine;
     private bool _isSpawning;
+    private int _activeWaveNumber;
     private int _remainingAttackers;
+
+    public event UnityAction WaveFinished;
+    public event UnityAction Stopped;
+
+    public bool FinishedSpawning => _isSpawning == false;
+    public bool HasMoreWaves => _activeWaveNumber < _waves.Count;
 
     private void OnEnable()
     {
@@ -50,8 +62,22 @@ public class AttackerSpawner : MonoBehaviour
 
     public void StopSpawning ()
     {
-        _isSpawning = false;
-        StopCoroutine(_spawningCoroutine);
+        DisableSpawning();
+    }
+
+    public void UpdateWaveData()
+    {
+        if (_waves.Count > _activeWaveNumber)
+        {
+            _currentWave = _waves[_activeWaveNumber];
+            _remainingAttackers = _currentWave.AttackersCount;
+            StartSpawning();
+        }
+
+        else
+        {
+            Stopped?.Invoke();
+        }
     }
 
     private bool TryGetAttackerFromCurrentWave(out Attacker currentAttacker)
@@ -80,6 +106,7 @@ public class AttackerSpawner : MonoBehaviour
 
             if (_remainingAttackers <= 0)
             {
+                _activeWaveNumber++;
                 _isSpawning = false;
             }
 
@@ -95,6 +122,7 @@ public class AttackerSpawner : MonoBehaviour
         {
             StopCoroutine(_spawningCoroutine);
             _spawningCoroutine = null;
+            WaveFinished?.Invoke();
         }
     }
 
@@ -105,6 +133,8 @@ public class AttackerSpawner : MonoBehaviour
 
     private void SetupFirstWave()
     {
+        _activeWaveNumber = FirstWaveNumber;
+
         if (_currentWave == null)
         {
             Debug.LogError($"Spawner {this.name} has no Wave Scriptable object set.");
@@ -112,6 +142,7 @@ public class AttackerSpawner : MonoBehaviour
 
         else
         {
+            _currentWave = _waves[_activeWaveNumber];
             _remainingAttackers = _currentWave.AttackersCount;
         }
     }
