@@ -3,14 +3,23 @@ using UnityEngine;
 
 public class Fox : Attacker
 {
+    private const float ReloadTimeMin = 0f;
+    private const float ReloadTimeMax = 15f;
+    private const float InvincibilityTimeMin = 0f;
+    private const float InvincibilityTimeMax = 2f;
+
     [SerializeField] private AttackerState _usingSkill;
-    [SerializeField] private float _skillReloadTime;
+    [SerializeField, Range(ReloadTimeMin, ReloadTimeMax)] 
+    private float _skillReloadTime;
+    [SerializeField, Range(InvincibilityTimeMin, InvincibilityTimeMax)] 
+    private float _invinsibilityTime;
     [SerializeField] private FoxEvasionSkill _attackDetection;
 
     private Collider2D _collider;
     private Rigidbody2D _rigidbody;
     private bool _skillIsReady;
     private Coroutine _reloadingRoutine;
+    private Coroutine _jumpRoutine;
 
     protected override void Awake()
     {
@@ -28,6 +37,8 @@ public class Fox : Attacker
     {
         base.OnDisable();
         UnsubscribeFromEvasionSkill();
+        StopCooldownCoroutine();
+        StopJumpRoutine();
     }
 
     protected override void OnValidate()
@@ -66,6 +77,7 @@ public class Fox : Attacker
     {
         SetActiveState(_usingSkill);
         Immaterialize();
+        _jumpRoutine = StartCoroutine(WaitForMaterialization());
         StartCooldown();
     }
 
@@ -83,10 +95,29 @@ public class Fox : Attacker
         CheckTarget();
     }
 
+    private IEnumerator WaitForMaterialization()
+    {
+        yield return new WaitForSeconds(_invinsibilityTime);
+        Materialize();
+        StopJumpRoutine();
+    }
+
+    private void StopJumpRoutine()
+    {
+        if (_jumpRoutine != null)
+        {
+            StopCoroutine(_jumpRoutine);
+            _jumpRoutine = null;
+        }
+    }
+
     private void StopCooldownCoroutine()
     {
-        StopCoroutine(_reloadingRoutine);
-        _reloadingRoutine = null;
+        if (_reloadingRoutine != null)
+        {
+            StopCoroutine(_reloadingRoutine);
+            _reloadingRoutine = null;
+        }
     }
 
     private void SubscribeToEvasionSkill()

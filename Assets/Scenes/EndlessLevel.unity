@@ -958,10 +958,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _line: {fileID: 523847558838271932}
   _waves:
-  - {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
+  - {fileID: 11400000, guid: fdde277fbcdd9d94eb89a68b0d26df67, type: 2}
   - {fileID: 11400000, guid: ac5d7164fe6d5d54996f076643568960, type: 2}
+  - {fileID: 11400000, guid: ee2ce02ed7c337744a1357c2e37ba086, type: 2}
+  - {fileID: 11400000, guid: ee2ce02ed7c337744a1357c2e37ba086, type: 2}
   _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  _spawnDelay: 5
 --- !u!4 &667239400
 Transform:
   m_ObjectHideFlags: 0
@@ -1390,7 +1391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94bd64b09e32fdd42b8f5a744a81ed52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waveSwitchDelay: 15
+  _waveSwitchDelay: 10
   _spawners:
   - {fileID: 1515731679}
   - {fileID: 667239399}
@@ -1809,9 +1810,10 @@ MonoBehaviour:
   _line: {fileID: 523847559554643897}
   _waves:
   - {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  - {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
+  - {fileID: 11400000, guid: d7bf6850189675f43b03ba8b574a41c9, type: 2}
+  - {fileID: 11400000, guid: ee2ce02ed7c337744a1357c2e37ba086, type: 2}
+  - {fileID: 11400000, guid: ee2ce02ed7c337744a1357c2e37ba086, type: 2}
   _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  _spawnDelay: 5
 --- !u!4 &1515731680
 Transform:
   m_ObjectHideFlags: 0
@@ -1859,9 +1861,10 @@ MonoBehaviour:
   _line: {fileID: 523847559038893555}
   _waves:
   - {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
+  - {fileID: 11400000, guid: ee2ce02ed7c337744a1357c2e37ba086, type: 2}
   - {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
+  - {fileID: 11400000, guid: ee2ce02ed7c337744a1357c2e37ba086, type: 2}
   _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  _spawnDelay: 5
 --- !u!4 &1526362278
 Transform:
   m_ObjectHideFlags: 0
@@ -2127,7 +2130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stars: 200'
+  m_text: 'Coins: 200'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e1d2fbbcb120c03478ce84738af37826, type: 2}
   m_sharedMaterial: {fileID: -1217652716745120434, guid: e1d2fbbcb120c03478ce84738af37826, type: 2}
@@ -2217,7 +2220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _resources: {fileID: 1698287540}
-  _starsText: 'Stars: '
+  _coinsText: 'Coins: '
 --- !u!1 &1656681055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2397,7 +2400,7 @@ MonoBehaviour:
   _defenderSpawner: {fileID: 1473161896}
   _health:
     _value: 200
-    _valueMax: 0
+    _valueMax: 200
 --- !u!114 &1698287540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2411,7 +2414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _money:
-    _stars: 200
+    _coins: 200
 --- !u!1 &1885434436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,9 +2462,10 @@ MonoBehaviour:
   _line: {fileID: 523847559373944221}
   _waves:
   - {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  - {fileID: 11400000, guid: ac5d7164fe6d5d54996f076643568960, type: 2}
+  - {fileID: 11400000, guid: d7bf6850189675f43b03ba8b574a41c9, type: 2}
+  - {fileID: 11400000, guid: ee2ce02ed7c337744a1357c2e37ba086, type: 2}
+  - {fileID: 11400000, guid: ee2ce02ed7c337744a1357c2e37ba086, type: 2}
   _currentWave: {fileID: 11400000, guid: 8880e12ead267e24aa3f7fe48e7127ce, type: 2}
-  _spawnDelay: 5
 --- !u!1 &1917897457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,7 +2520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 284025847}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 0
   m_MovementType: 1
   m_Elasticity: 0.1
@@ -2600,7 +2604,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 99810e9560120c944b05e13b8b9e5ce6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.066
   m_Pitch: 1
   Loop: 1
   Mute: 0

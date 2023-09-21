@@ -7,7 +7,7 @@ public class PlayerResources : MonoBehaviour
 
     public event UnityAction AmountChanged;
 
-    public int Stars => _money.Stars;
+    public int Coins => _money.Coins;
 
     public bool TrySpendResources(Defender defender)
     {

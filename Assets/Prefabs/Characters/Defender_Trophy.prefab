@@ -53,7 +53,7 @@ MonoBehaviour:
     _value: 100
     _valueMax: 100
   _price:
-    _stars: 20
+    _coins: 20
   Default: {fileID: 0}
 --- !u!95 &2565084416041011295
 Animator:

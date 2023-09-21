@@ -11,7 +11,7 @@ public class DefenderButton : MonoBehaviour
 
     public UnityAction<Defender> DefenderSelected;
 
-    public int DefenderPrice => _defender.Price.Stars;
+    public int DefenderPrice => _defender.Price.Coins;
 
     private void Awake()
     {

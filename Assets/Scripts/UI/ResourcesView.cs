@@ -4,12 +4,12 @@ using TMPro;
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class ResourcesView : MonoBehaviour
 {
-    private const string StarsTextDefault = "Stars: ";
+    private const string CoinsTextDefault = "Coins: ";
 
     [SerializeField] private PlayerResources _resources;
-    [SerializeField] private string _starsText;
+    [SerializeField] private string _coinsText;
 
-    private TextMeshProUGUI _starsDisplay;
+    private TextMeshProUGUI _coinsDisplay;
 
     private void Awake()
     {
@@ -28,7 +28,7 @@ public class ResourcesView : MonoBehaviour
 
     private void OnValidate()
     {
-        if (_starsDisplay == null)
+        if (_coinsDisplay == null)
         {
             Setup();
         }
@@ -38,30 +38,30 @@ public class ResourcesView : MonoBehaviour
 
     private void Setup()
     {
-        _starsDisplay = GetComponent<TextMeshProUGUI>();
-        UpdateStarsDisplay();
+        _coinsDisplay = GetComponent<TextMeshProUGUI>();
+        UpdateCoinsDisplay();
     }
 
     private void ValidateText()
     {
-        if (_starsText == "")
+        if (_coinsText == "")
         {
-            _starsText = StarsTextDefault;
+            _coinsText = CoinsTextDefault;
         }
     }
 
     private void SubscribeToResoucesChange()
     {
-        _resources.AmountChanged += UpdateStarsDisplay;
+        _resources.AmountChanged += UpdateCoinsDisplay;
     }
 
     private void UnsubscribeFromResoucesChange()
     {
-        _resources.AmountChanged -= UpdateStarsDisplay;
+        _resources.AmountChanged -= UpdateCoinsDisplay;
     }
 
-    private void UpdateStarsDisplay()
+    private void UpdateCoinsDisplay()
     {
-        _starsDisplay.text = _starsText + _resources.Stars;
+        _coinsDisplay.text = _coinsText + _resources.Coins;
     }
 }

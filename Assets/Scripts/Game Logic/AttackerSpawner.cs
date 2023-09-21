@@ -5,15 +5,11 @@ using UnityEngine.Events;
 
 public class AttackerSpawner : MonoBehaviour
 {
-    private const float SpawnDelayMin = 0.5f;
-    private const float SpawnDelayMax = 60f;
     private const int FirstWaveNumber = 0;
 
     [SerializeField] private Line _line;
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private Wave _currentWave;
-    [SerializeField, Range(SpawnDelayMin, SpawnDelayMax)] 
-    private float _spawnDelay;
     
     private System.Random _random;
     private Coroutine _spawningCoroutine;
@@ -37,11 +33,6 @@ public class AttackerSpawner : MonoBehaviour
     private void OnDisable()
     {
         DisableSpawning();
-    }
-
-    private void OnValidate()
-    {
-        ValidateDelay();
     }
 
     public string GetLineName()
@@ -110,7 +101,7 @@ public class AttackerSpawner : MonoBehaviour
                 _isSpawning = false;
             }
 
-            yield return new WaitForSeconds(_spawnDelay);
+            yield return new WaitForSeconds(_currentWave.SpawnDelay);
         }
 
         DisableSpawning();
@@ -144,19 +135,6 @@ public class AttackerSpawner : MonoBehaviour
         {
             _currentWave = _waves[_activeWaveNumber];
             _remainingAttackers = _currentWave.AttackersCount;
-        }
-    }
-
-    private void ValidateDelay()
-    {
-        if (_spawnDelay > SpawnDelayMax)
-        {
-            _spawnDelay = SpawnDelayMax;
-        }
-
-        else if (_spawnDelay < SpawnDelayMin)
-        {
-            _spawnDelay = SpawnDelayMin;
         }
     }
 }

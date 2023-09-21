@@ -132,7 +132,7 @@ MonoBehaviour:
   _damage:
     _value: 25
   _reward:
-    _stars: 5
+    _coins: 5
   AttackArea: {fileID: 6207831929992602231}
   Default: {fileID: 11400000, guid: 92a2cd2b04f01164bab9ed7a2a84de15, type: 2}
   Attacking: {fileID: 11400000, guid: ab847cc50ffad3c4890325361d6ed21d, type: 2}

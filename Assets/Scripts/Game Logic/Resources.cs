@@ -4,26 +4,26 @@ using UnityEngine;
 [Serializable]
 public class Resources
 {
-    [SerializeField] private int _stars;
+    [SerializeField] private int _coins;
 
-    public int Stars => _stars;
+    public int Coins => _coins;
 
-    public Resources (int stars)
+    public Resources (int coins)
     {
-        _stars = stars;
+        _coins = coins;
     }
 
-    public void ValidateStarsAmount()
+    public void ValidateCoinsAmount()
     {
-        if (Stars <= 0)
+        if (Coins <= 0)
         {
-            _stars = 0;
+            _coins = 0;
         }
     }
 
     public void AddResouces(Resources resources)
     {
-        _stars += resources.Stars;
+        _coins += resources.Coins;
     }
 
     public bool TrySpendResources(Resources resources)
@@ -33,12 +33,12 @@ public class Resources
             return false;
         }
 
-        if (resources.Stars > _stars)
+        if (resources.Coins > _coins)
         {
             return false;
         }
 
-        _stars -= resources.Stars;
+        _coins -= resources.Coins;
         return true;
     }
 }

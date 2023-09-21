@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f4b2663b944d64bbd6d98c0eca31f6, type: 3}
   m_Name: Fox Wave
   m_EditorClassIdentifier: 
-  _attackersCount: 1
+  _attackersCount: 5
   _attackerPrefabs:
   - {fileID: 1544415852209800888, guid: e2b6b425c3b8713469ab28f1cb9c23db, type: 3}
+  _spawnDelay: 5

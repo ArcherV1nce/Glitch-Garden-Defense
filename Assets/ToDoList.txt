@@ -2,15 +2,16 @@ Gameplay:
 - Balance damage, health and prices.
 - Add tutorial levels.
 - Add Dig-out mechanic (You can remove defenders from cells to retrieve their value multiplied by percentage of remaining health by value decrease modifier). 
-//RetrievableStars = Value * Health/HealthMax * RetrievalModifier
+//RetrievableCoins = Value * Health/HealthMax * RetrievalModifier
+- Add Spawn limit for Defenders
+- Add Drag and Drop mechanic for Defenders to move them to another cell
 
 Level:
-- Move Spawning delay to wave config
 - Add Lines Callouts for defeating all enemies
 - Add Victory UI
 - Add level objectives:
 	- Village received no damage;
-	- Collected X stars;
+	- Collected X coins;
 	- Used certain defenders;
 
 Menu:

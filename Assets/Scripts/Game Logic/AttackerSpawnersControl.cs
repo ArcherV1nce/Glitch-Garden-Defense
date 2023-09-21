@@ -8,7 +8,7 @@ public class AttackerSpawnersControl : MonoBehaviour
     private const float WaveSwitchDelayMin = 0f;
     private const float WaveSwitchDelayMax = 60f;
 
-    [SerializeField, Range(WaveSwitchDelayMin, WaveSwitchDelayMax)] 
+    [SerializeField, Range(WaveSwitchDelayMin, WaveSwitchDelayMax)]
     private float _waveSwitchDelay;
     [SerializeField] private List<AttackerSpawner> _spawners;
 
@@ -25,12 +25,14 @@ public class AttackerSpawnersControl : MonoBehaviour
     private void OnEnable()
     {
         SubscribeToSpawners();
+        EnableSwitch();
     }
 
     private void OnDisable()
     {
-        StopDelayedSwitchCoroutine();
+        DisableSwitch();
         UnsubscribeFromSpawners();
+        StopDelayedSwitchCoroutine();
     }
 
     private void Setup()
@@ -91,7 +93,7 @@ public class AttackerSpawnersControl : MonoBehaviour
 
         foreach (AttackerSpawner spawner in _spawners)
         {
-            if(spawner.HasMoreWaves)
+            if (spawner.HasMoreWaves)
             {
                 spawnersHaveWavesRemaining = true;
             }
@@ -107,6 +109,16 @@ public class AttackerSpawnersControl : MonoBehaviour
             _canStartNextWave = false;
             _delayedWaveSwitch = StartCoroutine(SwitchWavesWithDelay(_waveSwitchDelay));
         }
+    }
+
+    private void EnableSwitch()
+    {
+        _canStartNextWave = true;
+    }
+
+    private void DisableSwitch()
+    {
+        _canStartNextWave = false;
     }
 
     private void SubscribeToSpawners()

@@ -330,13 +330,6 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.21666667
-    functionName: StrikeCurrentTarget
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 10
-    messageOptions: 0
   - time: 0.73333335
     functionName: StrikeCurrentTarget
     data: 

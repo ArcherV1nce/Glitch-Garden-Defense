@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage:
-    _value: 50
+    _value: 40
   _lifeTime: 3
   _isPenetrating: 0
 --- !u!114 &746397977323890423
