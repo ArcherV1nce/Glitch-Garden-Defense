@@ -65,11 +65,9 @@ public class LevelLoader : MonoBehaviour
         }
 
         AsyncOperation sceneLoadingOperation = SceneManager.LoadSceneAsync(_levelName);
-        Debug.Log(sceneLoadingOperation.progress);
         
         while (!_sceneLoadingFinished)
         {
-            Debug.Log(sceneLoadingOperation.progress);
             _sceneLoadingFinished = sceneLoadingOperation.isDone;
             yield return new WaitForEndOfFrame();
         }

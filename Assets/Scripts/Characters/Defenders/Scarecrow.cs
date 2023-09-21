@@ -22,6 +22,7 @@ public class Scarecrow : Defender
     {
         ValidateSkillComponent();
         SubscribeToEvents();
+        ValidateAlertArea();
     }
 
     private void OnDisable()

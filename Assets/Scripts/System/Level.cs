@@ -7,7 +7,7 @@ public class Level : MonoBehaviour
     [SerializeField] private LevelLoader _loader;
 
     private bool _wavesFinished;
-    private bool _enemiesDefeated;
+    //private bool _enemiesDefeated;
 
     private void Awake()
     {
@@ -27,7 +27,7 @@ public class Level : MonoBehaviour
     private void Setup()
     {
         _wavesFinished = false;
-        _enemiesDefeated = false;
+        //_enemiesDefeated = false;
 
         if (_village == null)
         {

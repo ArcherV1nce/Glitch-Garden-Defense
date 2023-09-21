@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 5760656681769749870}
   m_Layer: 7
   m_Name: Defender_Cactus
-  m_TagString: Defender
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

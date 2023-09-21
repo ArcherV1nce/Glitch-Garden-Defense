@@ -14,6 +14,11 @@ public abstract class Character : MonoBehaviour, IDeath
     public float HealthValue => _health.Value;
     public float MaxHealth => _health.ValueMax;
 
+    protected virtual void Awake()
+    {
+        ValidateHealth();
+    }
+
     protected virtual void OnValidate()
     {
         ValidateHealth();

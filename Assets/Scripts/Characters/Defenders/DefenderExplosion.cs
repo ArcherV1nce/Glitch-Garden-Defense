@@ -17,6 +17,9 @@ public class DefenderExplosion : MonoBehaviour
     private void Awake()
     {
         Setup();
+        ValidateTrigger();
+        ValidateSizeValues();
+        UpdateTriggerSize();
     }
 
     private void OnValidate()

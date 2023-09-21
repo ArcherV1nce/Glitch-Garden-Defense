@@ -12,6 +12,12 @@ public class LineCellsGenerator : MonoBehaviour
 
     private Line _line;
 
+    private void Awake()
+    {
+        Setup();
+        RegenerateCells();
+    }
+
     private void OnValidate()
     {
         Setup();
@@ -54,6 +60,12 @@ public class LineCellsGenerator : MonoBehaviour
         {
             _line = GetComponent<Line>();
         }
+    }
+
+    private void RegenerateCells()
+    {
+        DestroyCells();
+        GenerateCells();
     }
 
     private Vector3 TryGetLastCellPosition()

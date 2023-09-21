@@ -22,8 +22,9 @@ public class Attacker : Character
     public Damage Damage => _damage;
     public Resources Reward => _reward;
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         SetStartingState();
     }
 

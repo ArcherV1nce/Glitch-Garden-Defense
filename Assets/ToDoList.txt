@@ -8,9 +8,13 @@ Level:
 - Move Spawning delay to wave config
 - Add Lines Callouts for defeating all enemies
 - Add Victory UI
+- Add level objectives:
+	- Village received no damage;
+	- Collected X stars;
+	- Used certain defenders;
 
 Menu:
 - Add level selection menu
 
-Bugs to Fix:
-- Automated defenders don't shoot in the built game.
+Code refactoring:
+- Move important methods from OnValidate to OnAwake.

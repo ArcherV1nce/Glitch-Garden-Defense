@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class Cell : MonoBehaviour
 {
     private const float SizeMin = 1f;
+    private const string LayerName = "Cell";
 
     [SerializeField] private float _size;
     [SerializeField] private Character _character;
@@ -19,6 +20,8 @@ public class Cell : MonoBehaviour
     private void OnEnable()
     {
         TrySubscribeOnCharacterDeath();
+        ValidateSize();
+        ValidateLine();
     }
 
     private void OnDisable()
@@ -32,7 +35,12 @@ public class Cell : MonoBehaviour
         ValidateLine();
     }
 
-    public bool TryAddCharacter (Character character)
+    private void Start()
+    {
+        ValidateLayer();
+    }
+
+    public bool TryAddCharacter(Character character)
     {
         if (IsFree)
         {
@@ -49,17 +57,22 @@ public class Cell : MonoBehaviour
         }
     }
 
-    public void SetLine (Line line)
+    public void SetLine(Line line)
     {
         _line = line;
     }
 
-    public void Clear ()
+    public void Clear()
     {
         _character = null;
     }
 
-    private void ValidateSize ()
+    private void ValidateLayer()
+    {
+        gameObject.layer = LayerMask.NameToLayer(LayerName);
+    }
+
+    private void ValidateSize()
     {
         if (_size < SizeMin)
         {
@@ -114,7 +127,7 @@ public class Cell : MonoBehaviour
         }
     }
 
-    private void RemoveCharacter (Character character)
+    private void RemoveCharacter(Character character)
     {
         if (character != null && character == _character)
         {

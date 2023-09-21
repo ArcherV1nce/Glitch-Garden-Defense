@@ -4,6 +4,12 @@ public class Healthbar : ValueBarView
 {
     [SerializeField] private Character _character;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        ValidateCharacter();
+    }
+
     protected override void OnValidate()
     {
         base.OnValidate();
