@@ -95,14 +95,15 @@ public class Fox : Attacker
 
     private void Materialize()
     {
+        CheckTarget();
         _rigidbody.simulated = true;
         _collider.enabled = true;
-        CheckTarget();
     }
 
     private IEnumerator WaitForMaterialization()
     {
         yield return new WaitForSeconds(_invinsibilityTime);
+        yield return new WaitForFixedUpdate();
         Materialize();
         StopJumpRoutine();
     }

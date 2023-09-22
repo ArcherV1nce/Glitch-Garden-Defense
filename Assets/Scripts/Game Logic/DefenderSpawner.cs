@@ -72,7 +72,7 @@ public class DefenderSpawner : MonoBehaviour
     {
         for (int i = 0; i < _spawnLimit.Count; i++)
         {
-            if (_spawnLimit[i].Defender == defender)
+            if (_spawnLimit[i].Defender.Id == defender.Id)
             {
                 if (_spawnLimit[i].SpawnLimit > _spawnLimit[i].Spawned)
                 {
@@ -94,7 +94,7 @@ public class DefenderSpawner : MonoBehaviour
     {
         for (int i = 0; i < _spawnLimit.Count; i++)
         {
-            if (_spawnLimit[i].Defender.GetType() == defender.GetType())
+            if (_spawnLimit[i].Defender.Id == defender.Id)
             {
                 _spawnLimit[i].DefenderRemoved();
             }

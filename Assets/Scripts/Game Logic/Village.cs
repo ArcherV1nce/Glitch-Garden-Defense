@@ -14,6 +14,7 @@ public class Village : MonoBehaviour
     public event UnityAction Destroyed;
 
     public int Health => _health.Value;
+    public int HealthMax => _health.ValueMax;
 
     private void Awake()
     {

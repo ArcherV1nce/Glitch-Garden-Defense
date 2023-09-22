@@ -1,16 +1,13 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
+[RequireComponent(typeof(Slider))]
 public class VillageHealthView : MonoBehaviour
 {
-    private const string HealthTextDefault = "Village health: ";
 
     [SerializeField] private Village _village;
-    [SerializeField] private string _healthText;
+    [SerializeField] private Slider _healthView;
     
-    private TextMeshProUGUI _healthDisplay;
-
     private void Awake()
     {
         Setup();
@@ -28,26 +25,16 @@ public class VillageHealthView : MonoBehaviour
 
     private void OnValidate()
     {
-        if (_healthDisplay == null)
+        if (_healthView == null)
         {
             Setup();
         }
-
-        ValidateText();
     }
 
     private void Setup()
     {
-        _healthDisplay = GetComponent<TextMeshProUGUI>();
+        _healthView = GetComponent<Slider>();
         UpdateHealthDisplay();
-    }
-
-    private void ValidateText()
-    {
-        if (_healthText == "")
-        {
-            _healthText = HealthTextDefault;
-        }
     }
 
     private void SubscribeToVillageHealthChange()
@@ -62,6 +49,6 @@ public class VillageHealthView : MonoBehaviour
 
     private void UpdateHealthDisplay()
     {
-        _healthDisplay.text = _healthText + _village.Health;
+        _healthView.value = (float)_village.Health/_village.HealthMax;
     }
 }

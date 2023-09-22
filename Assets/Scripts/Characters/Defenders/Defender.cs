@@ -3,8 +3,8 @@ using UnityEngine.Events;
 
 public class Defender : Character
 {
+    [SerializeField] private DefenderIdentificator _id;
     [SerializeField] private Resources _price;
-    
     [SerializeField] protected DefenderState Default;
 
     private DefenderState _active;
@@ -14,6 +14,7 @@ public class Defender : Character
 
     public DefenderState Active => _active;
     public Resources Price => _price;
+    public DefenderIdentificator Id => _id;
 
     public Defender (Resources price)
     {

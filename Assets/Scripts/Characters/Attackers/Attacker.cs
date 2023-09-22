@@ -48,8 +48,12 @@ public class Attacker : Character
 
     public void Attack (Defender target)
     {
-        _currentTarget = target;
         SetActiveState(Attacking);
+        
+        if (target != _currentTarget)
+        {
+            _currentTarget = target;
+        }
     }
 
     public void SetSpawning()
@@ -130,6 +134,7 @@ public class Attacker : Character
     {
         if (character is Defender)
         {
+            _currentTarget = character as Defender;
             Attack(character as Defender);
         }
     }

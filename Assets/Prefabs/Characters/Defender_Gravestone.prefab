@@ -136,6 +136,7 @@ MonoBehaviour:
   _health:
     _value: 600
     _valueMax: 600
+  _id: 2
   _price:
     _coins: 20
   Default: {fileID: 11400000, guid: 530c1417dc03add4585d663487e042fe, type: 2}
