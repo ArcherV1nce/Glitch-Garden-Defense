@@ -6,7 +6,7 @@ public class Fox : Attacker
     private const float ReloadTimeMin = 0f;
     private const float ReloadTimeMax = 15f;
     private const float InvincibilityTimeMin = 0f;
-    private const float InvincibilityTimeMax = 2f;
+    private const float InvincibilityTimeMax = 2.5f;
 
     [SerializeField] private AttackerState _usingSkill;
     [SerializeField, Range(ReloadTimeMin, ReloadTimeMax)] 
@@ -31,6 +31,11 @@ public class Fox : Attacker
     {
         base.OnEnable();
         SubscribeToEvasionSkill();
+    }
+
+    protected void OnDestroy()
+    {
+        UnsubscribeFromEvasionSkill();
     }
 
     protected override void OnDisable()

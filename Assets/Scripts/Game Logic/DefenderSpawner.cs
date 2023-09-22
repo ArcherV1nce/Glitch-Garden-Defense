@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CellSelection))]
 public class DefenderSpawner : MonoBehaviour
 {
     [SerializeField] private PlayerResources _money;
+    [SerializeField] private List<DefenderSpawnLimit> _spawnLimit;
 
     private Defender _selectedDefender;
     private CellSelection _cellSelect;
@@ -45,17 +47,64 @@ public class DefenderSpawner : MonoBehaviour
             return false;
         }
 
-        if (_money.TrySpendResources(_selectedDefender))
+        if (CheckDefenderLimit(_selectedDefender))
         {
-            Defender defender = Instantiate(
-                _selectedDefender, cell.transform.position, Quaternion.identity, cell.transform);
+            if (_money.TrySpendResources(_selectedDefender))
+            {
+                Defender defender = Instantiate(
+                    _selectedDefender, cell.transform.position, Quaternion.identity, cell.transform);
 
-            cell.TryAddCharacter(defender);
+                cell.TryAddCharacter(defender);
+                SubscribeToDefenderDeath(defender);
 
-            return true;
+                return true;
+            }
+            else
+            {
+                DecreaseDefenderLimit(_selectedDefender);
+            }
+        }
+        
+        return false;
+    }
+
+    private bool CheckDefenderLimit(Defender defender)
+    {
+        for (int i = 0; i < _spawnLimit.Count; i++)
+        {
+            if (_spawnLimit[i].Defender == defender)
+            {
+                if (_spawnLimit[i].SpawnLimit > _spawnLimit[i].Spawned)
+                {
+                    _spawnLimit[i].DefenderSpawned();
+                    return true;
+                }
+
+                else
+                {
+                    return false;
+                }
+            }
         }
 
         return false;
+    }
+
+    private void DecreaseDefenderLimit(Defender defender)
+    {
+        for (int i = 0; i < _spawnLimit.Count; i++)
+        {
+            if (_spawnLimit[i].Defender.GetType() == defender.GetType())
+            {
+                _spawnLimit[i].DefenderRemoved();
+            }
+        }
+    }
+
+    private void OnDied(Defender defender)
+    {
+        DecreaseDefenderLimit(defender);
+        UnsubscribeFromDefenderDeath(defender);
     }
 
     private void SubscribeOnSelection()
@@ -63,8 +112,18 @@ public class DefenderSpawner : MonoBehaviour
         _cellSelect.CellClicked += OnCellClicked;
     }
 
+    private void SubscribeToDefenderDeath(Defender defender)
+    {
+        defender.Died += OnDied;
+    }
+
     private void UnsubscribeFromSelection()
     {
         _cellSelect.CellClicked -= OnCellClicked;
+    }
+
+    private void UnsubscribeFromDefenderDeath(Defender defender)
+    {
+        defender.Died -= OnDied;
     }
 }

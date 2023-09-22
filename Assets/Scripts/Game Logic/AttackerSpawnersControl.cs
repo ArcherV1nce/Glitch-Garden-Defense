@@ -107,7 +107,10 @@ public class AttackerSpawnersControl : MonoBehaviour
         if (spawnersHaveWavesRemaining && allSpawnersFinishedSpawning && _canStartNextWave)
         {
             _canStartNextWave = false;
-            _delayedWaveSwitch = StartCoroutine(SwitchWavesWithDelay(_waveSwitchDelay));
+            if (isActiveAndEnabled)
+            {
+                _delayedWaveSwitch = StartCoroutine(SwitchWavesWithDelay(_waveSwitchDelay));
+            }
         }
     }
 

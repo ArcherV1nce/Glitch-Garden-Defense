@@ -1711,6 +1711,7 @@ GameObject:
   - component: {fileID: 1473161898}
   - component: {fileID: 1473161897}
   - component: {fileID: 1473161896}
+  - component: {fileID: 1473161899}
   m_Layer: 0
   m_Name: DefenderSpawner
   m_TagString: Untagged
@@ -1746,6 +1747,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _money: {fileID: 1698287540}
+  _spawnLimit:
+  - _defender: {fileID: 52048741179631147, guid: d363afcac422fd24a90844c0e42a3562, type: 3}
+    _spawnLimit: 8
+  - _defender: {fileID: 4616333470862225852, guid: 1b784b3bfb0f9a844b0490ab9b5764d7, type: 3}
+    _spawnLimit: 8
+  - _defender: {fileID: 2420700543952908621, guid: 330866da13f5a9f4d9d7cd5b33441adc, type: 3}
+    _spawnLimit: 12
+  - _defender: {fileID: 5885367073041779685, guid: 8a7faeb87fe686f4da58bb679cdb1c5a, type: 3}
+    _spawnLimit: 4
 --- !u!114 &1473161897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1778,6 +1788,21 @@ MonoBehaviour:
   _contactFilter:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &1473161899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473161893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daa57d42846100b42ba655e6819d220c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _contactFilter:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1515731678
 GameObject:
   m_ObjectHideFlags: 0
@@ -7409,7 +7434,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 523847559599610396}
-  - component: {fileID: 523847559599610399}
   m_Layer: 0
   m_Name: CoreGameArea
   m_TagString: Untagged
@@ -7433,21 +7457,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &523847559599610399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523847559599610370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daa57d42846100b42ba655e6819d220c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _contactFilter:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!212 &523847559610112692
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -26,6 +26,11 @@ public class Healthbar : ValueBarView
         UnsubscribeFromCharacterHealthChange();
     }
 
+    private void OnDestroy()
+    {
+        UnsubscribeFromCharacterHealthChange();
+    }
+
     protected override void Setup()
     {
         base.Setup();

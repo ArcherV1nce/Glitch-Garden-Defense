@@ -140,7 +140,7 @@ MonoBehaviour:
   Spawning: {fileID: 11400000, guid: d5cb1714342ffcd4aaabb6147dad3bb6, type: 2}
   _usingSkill: {fileID: 11400000, guid: 3d025af211811aa4887c54a7a9e8e2e2, type: 2}
   _skillReloadTime: 5
-  _invinsibilityTime: 1.75
+  _invinsibilityTime: 2
   _attackDetection: {fileID: 6539361707782416511}
 --- !u!114 &8054610559243796525
 MonoBehaviour:
@@ -415,7 +415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2786555069017594275, guid: d5c74115080b78b44a37e8e250b34758, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2786555069017594275, guid: d5c74115080b78b44a37e8e250b34758, type: 3}
       propertyPath: m_LocalPosition.z

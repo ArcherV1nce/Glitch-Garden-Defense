@@ -134,10 +134,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health:
-    _value: 500
-    _valueMax: 500
+    _value: 600
+    _valueMax: 600
   _price:
-    _coins: 25
+    _coins: 20
   Default: {fileID: 11400000, guid: 530c1417dc03add4585d663487e042fe, type: 2}
 --- !u!61 &2420700543952908622
 BoxCollider2D:
@@ -224,7 +224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1881761548883843047, guid: ceae1b757ca8c074dab6501bc14af019, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 1881761548883843047, guid: ceae1b757ca8c074dab6501bc14af019, type: 3}
       propertyPath: m_LocalPosition.z
