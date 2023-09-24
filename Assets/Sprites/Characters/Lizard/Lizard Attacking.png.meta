@@ -270,7 +270,7 @@ TextureImporter:
       213: 2884397543113064928
     second: Lizard Attacking_88
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -330,6 +330,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -381,6 +382,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2274,95 +2287,95 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Lizard Attacking_41: -1627432884647786759
-      Lizard Attacking_57: 1249685852213211978
-      Lizard Attacking_75: 8964893768988286006
-      Lizard Attacking_29: 6543109952153106319
-      Lizard Attacking_83: -5536645129497915169
-      Lizard Attacking_61: -8303892320320656839
-      Lizard Attacking_37: -860907419282037124
-      Lizard Attacking_74: -2282766015094221997
-      Lizard Attacking_73: -3296919405051776372
-      Lizard Attacking_8: -9164311563850487235
-      Lizard Attacking_21: -2962686900436319612
-      Lizard Attacking_6: 194356909083271977
-      Lizard Attacking_15: -1356629129952778962
-      Lizard Attacking_66: 167331293271928248
-      Lizard Attacking_46: 2076566718247255247
-      Lizard Attacking_87: -1872920428887797507
-      Lizard Attacking_25: -8203119235108878569
-      Lizard Attacking_59: -2241020417433319224
-      Lizard Attacking_88: 2884397543113064928
-      Lizard Attacking_19: 8058351056531653618
-      Lizard Attacking_4: -723404634819465821
-      Lizard Attacking_9: -5099081048025030643
-      Lizard Attacking_77: 8456975499450846473
-      Lizard Attacking_34: -5173281111964905524
-      Lizard Attacking_12: -359627748026061233
-      Lizard Attacking_80: 8925314239325817598
-      Lizard Attacking_84: 5620521958306032383
-      Lizard Attacking_54: 916259748796442713
-      Lizard Attacking_36: 2424690637353557625
-      Lizard Attacking_44: -612112408011298337
-      Lizard Attacking_72: -6539337875946286641
-      Lizard Attacking_22: -5889518422000451267
-      Lizard Attacking_64: 7873944975284092965
-      Lizard Attacking_76: 7670311006732986542
+      Lizard Attacking_0: -3340233067479159950
       Lizard Attacking_1: -3973701328654710892
-      Lizard Attacking_85: 8880547128405509806
+      Lizard Attacking_10: 5537919864947286379
+      Lizard Attacking_11: 6624424256340238522
+      Lizard Attacking_12: -359627748026061233
+      Lizard Attacking_13: -8887494398126645591
+      Lizard Attacking_14: 7006078195028664680
+      Lizard Attacking_15: -1356629129952778962
       Lizard Attacking_16: 8295359217853608003
-      Lizard Attacking_39: -2522337004360429907
-      Lizard Attacking_42: -5364742938498592456
-      Lizard Attacking_45: 8574535695255557858
-      Lizard Attacking_69: 1819950600026579378
-      Lizard Attacking_86: 9176923596369588678
       Lizard Attacking_17: -6131910708691679955
-      Lizard Attacking_53: 8516106951271197370
       Lizard Attacking_18: 552055520336269921
+      Lizard Attacking_19: 8058351056531653618
+      Lizard Attacking_2: 7460013834076210185
+      Lizard Attacking_20: 1700631915826854273
+      Lizard Attacking_21: -2962686900436319612
+      Lizard Attacking_22: -5889518422000451267
+      Lizard Attacking_23: 7998882612465903966
+      Lizard Attacking_24: -3969949779018097958
+      Lizard Attacking_25: -8203119235108878569
+      Lizard Attacking_26: -7450644094000235110
+      Lizard Attacking_27: 1090578872040889171
+      Lizard Attacking_28: -3231794851537249288
+      Lizard Attacking_29: 6543109952153106319
+      Lizard Attacking_3: 3617570274085136561
+      Lizard Attacking_30: -559683021808790752
+      Lizard Attacking_31: -7189123841070871123
+      Lizard Attacking_32: -4150084752782451529
+      Lizard Attacking_33: 7953293416334195047
+      Lizard Attacking_34: -5173281111964905524
+      Lizard Attacking_35: -8791214569530535495
+      Lizard Attacking_36: 2424690637353557625
+      Lizard Attacking_37: -860907419282037124
+      Lizard Attacking_38: -3893218274441486823
+      Lizard Attacking_39: -2522337004360429907
+      Lizard Attacking_4: -723404634819465821
+      Lizard Attacking_40: -2904953644048260341
+      Lizard Attacking_41: -1627432884647786759
+      Lizard Attacking_42: -5364742938498592456
+      Lizard Attacking_43: -2910702123271436369
+      Lizard Attacking_44: -612112408011298337
+      Lizard Attacking_45: 8574535695255557858
+      Lizard Attacking_46: 2076566718247255247
+      Lizard Attacking_47: -3227790618158858614
       Lizard Attacking_48: 1764238319824030632
       Lizard Attacking_49: 863045585016818970
-      Lizard Attacking_2: 7460013834076210185
-      Lizard Attacking_47: -3227790618158858614
-      Lizard Attacking_24: -3969949779018097958
       Lizard Attacking_5: 6916213579619569285
-      Lizard Attacking_68: -1586583532278297015
-      Lizard Attacking_28: -3231794851537249288
-      Lizard Attacking_55: 9155745486195939629
-      Lizard Attacking_62: -778242945950918985
-      Lizard Attacking_3: 3617570274085136561
-      Lizard Attacking_13: -8887494398126645591
-      Lizard Attacking_79: -1627199823883453313
       Lizard Attacking_50: 4527178231594079772
-      Lizard Attacking_31: -7189123841070871123
-      Lizard Attacking_43: -2910702123271436369
-      Lizard Attacking_20: 1700631915826854273
-      Lizard Attacking_10: 5537919864947286379
-      Lizard Attacking_26: -7450644094000235110
-      Lizard Attacking_38: -3893218274441486823
-      Lizard Attacking_63: 6009454911957420995
-      Lizard Attacking_81: 1850969044750121157
       Lizard Attacking_51: 5543491491057938867
-      Lizard Attacking_82: 5207238328771468128
-      Lizard Attacking_60: -8094021335726610841
-      Lizard Attacking_65: -4838945889653586836
-      Lizard Attacking_70: 8893608188472639209
-      Lizard Attacking_56: -5604277894892616984
-      Lizard Attacking_7: 5864936328320449481
-      Lizard Attacking_23: 7998882612465903966
-      Lizard Attacking_27: 1090578872040889171
-      Lizard Attacking_58: 2820900673457866422
-      Lizard Attacking_67: 7499766356426261975
-      Lizard Attacking_78: -6988992058960182133
-      Lizard Attacking_33: 7953293416334195047
-      Lizard Attacking_71: -2613252921156396431
-      Lizard Attacking_11: 6624424256340238522
-      Lizard Attacking_35: -8791214569530535495
-      Lizard Attacking_0: -3340233067479159950
-      Lizard Attacking_14: 7006078195028664680
       Lizard Attacking_52: 6963352758802786794
-      Lizard Attacking_40: -2904953644048260341
-      Lizard Attacking_32: -4150084752782451529
-      Lizard Attacking_30: -559683021808790752
+      Lizard Attacking_53: 8516106951271197370
+      Lizard Attacking_54: 916259748796442713
+      Lizard Attacking_55: 9155745486195939629
+      Lizard Attacking_56: -5604277894892616984
+      Lizard Attacking_57: 1249685852213211978
+      Lizard Attacking_58: 2820900673457866422
+      Lizard Attacking_59: -2241020417433319224
+      Lizard Attacking_6: 194356909083271977
+      Lizard Attacking_60: -8094021335726610841
+      Lizard Attacking_61: -8303892320320656839
+      Lizard Attacking_62: -778242945950918985
+      Lizard Attacking_63: 6009454911957420995
+      Lizard Attacking_64: 7873944975284092965
+      Lizard Attacking_65: -4838945889653586836
+      Lizard Attacking_66: 167331293271928248
+      Lizard Attacking_67: 7499766356426261975
+      Lizard Attacking_68: -1586583532278297015
+      Lizard Attacking_69: 1819950600026579378
+      Lizard Attacking_7: 5864936328320449481
+      Lizard Attacking_70: 8893608188472639209
+      Lizard Attacking_71: -2613252921156396431
+      Lizard Attacking_72: -6539337875946286641
+      Lizard Attacking_73: -3296919405051776372
+      Lizard Attacking_74: -2282766015094221997
+      Lizard Attacking_75: 8964893768988286006
+      Lizard Attacking_76: 7670311006732986542
+      Lizard Attacking_77: 8456975499450846473
+      Lizard Attacking_78: -6988992058960182133
+      Lizard Attacking_79: -1627199823883453313
+      Lizard Attacking_8: -9164311563850487235
+      Lizard Attacking_80: 8925314239325817598
+      Lizard Attacking_81: 1850969044750121157
+      Lizard Attacking_82: 5207238328771468128
+      Lizard Attacking_83: -5536645129497915169
+      Lizard Attacking_84: 5620521958306032383
+      Lizard Attacking_85: 8880547128405509806
+      Lizard Attacking_86: 9176923596369588678
+      Lizard Attacking_87: -1872920428887797507
+      Lizard Attacking_88: 2884397543113064928
+      Lizard Attacking_9: -5099081048025030643
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

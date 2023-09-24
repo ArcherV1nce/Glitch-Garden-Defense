@@ -15,6 +15,7 @@ public class Attacker : Character
     private Defender _currentTarget = null;
     private AttackerState _active;
 
+    public event UnityAction Attacked;
     public new event UnityAction<Attacker> Died;
     public event UnityAction<AttackerState> StateChanged;
 
@@ -64,6 +65,12 @@ public class Attacker : Character
     public virtual void StartMoving()
     {
         SetDefaultState();
+    }
+
+    public override void TakeDamage(Damage damage)
+    {
+        Attacked?.Invoke();
+        base.TakeDamage(damage);
     }
 
     public override void SetStartingState()

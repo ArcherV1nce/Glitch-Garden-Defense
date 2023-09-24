@@ -1145,7 +1145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadingScreenName: LoadingScene
-  _levelName: EndlessLevel
+  _levelName: Level5
   _timeToWait: 5
   _sceneLoadingFinished: 0
 --- !u!4 &1073456816
