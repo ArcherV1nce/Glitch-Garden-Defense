@@ -133,8 +133,11 @@ public class AttackerSpawner : MonoBehaviour
 
         else
         {
-            _currentWave = _waves[_activeWaveNumber];
-            _remainingAttackers = _currentWave.AttackersCount;
+            if (_waves.Count > 0)
+            {
+                _currentWave = _waves[_activeWaveNumber];
+                _remainingAttackers = _currentWave.AttackersCount;
+            }
         }
     }
 }

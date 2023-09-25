@@ -1,16 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] private string _loadingScreenName = "LoadingScene";
-    [SerializeField] private string _levelName = "SplashScreen";
-    [SerializeField] private int _timeToWait = 5;
+    private const int UndefinedSceneId = 0;
+    private const float LoadingDelay = 3f;
+
+    [SerializeField] private float _timeToWait = LoadingDelay;
     [SerializeField] private bool _sceneLoadingFinished = false;
+    [SerializeField] private SceneName _loadingScreen;
+    [SerializeField] private SceneName _level;
 
     private Coroutine _loader;
-    private Coroutine _loadVisualizer;
+    private Coroutine _loadVisualizer;  
 
     private void Awake()
     {
@@ -24,15 +28,20 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadLevel()
     {
-        if(_levelName != null)
+        if(_level != SceneName.Undefined && _level.ToString() != SceneManager.GetActiveScene().name)
         {
-            SceneManager.LoadSceneAsync(_levelName);
+            LoadScreenLoadLevel();
+        }
+
+        else
+        {
+            _loader = StartCoroutine(LoadingOperationProcess());
         }
     }
 
     public void LoadWithDelay()
     {
-        if (_levelName != null)
+        if (_level != SceneName.Undefined)
         {
             _loader = StartCoroutine(LoadLevelWithDelay());
         }
@@ -40,15 +49,8 @@ public class LevelLoader : MonoBehaviour
 
     public void RestartLevel()
     {
-        _levelName = SceneManager.GetActiveScene().name;
+        _level = (SceneName)GetSceneEnumId(SceneManager.GetActiveScene().name);
         LoadLevel();
-    }
-
-    private IEnumerator LoadLevelWithDelay()
-    {
-        yield return new WaitForSeconds(_timeToWait);
-        SceneManager.LoadSceneAsync(_levelName);
-        yield return null;
     }
 
     public void LoadScreenLoadLevel()
@@ -56,15 +58,27 @@ public class LevelLoader : MonoBehaviour
         _loadVisualizer = StartCoroutine(LoadScreenOperationProcess());    
     }
 
+    public bool GetLoadLevelStatus()
+    {
+        return _sceneLoadingFinished;
+    }
+
+    private IEnumerator LoadLevelWithDelay()
+    {
+        yield return new WaitForSeconds(_timeToWait);
+        LoadScreenLoadLevel();
+        yield return null;
+    }
+
     private IEnumerator LoadScreenOperationProcess()
     {
-        SceneManager.LoadSceneAsync(_loadingScreenName);
-        while(SceneManager.GetActiveScene().name != _loadingScreenName)
+        SceneManager.LoadSceneAsync(_loadingScreen.ToString());
+        while(SceneManager.GetActiveScene().name != _loadingScreen.ToString())
         {
             yield return new WaitForEndOfFrame();
         }
 
-        AsyncOperation sceneLoadingOperation = SceneManager.LoadSceneAsync(_levelName);
+        AsyncOperation sceneLoadingOperation = SceneManager.LoadSceneAsync(_level.ToString());
         
         while (!_sceneLoadingFinished)
         {
@@ -73,13 +87,38 @@ public class LevelLoader : MonoBehaviour
         }
 
         yield return new WaitForEndOfFrame();
-        Destroy(this.gameObject, Time.deltaTime);
         StopLoadingCoroutines();
     }
 
-    public bool GetLoadLevelStatus()
+    private IEnumerator LoadingOperationProcess()
     {
-        return _sceneLoadingFinished;
+        AsyncOperation sceneLoadingOperation = SceneManager.LoadSceneAsync(_level.ToString());
+
+        while (!_sceneLoadingFinished)
+        {
+            _sceneLoadingFinished = sceneLoadingOperation.isDone;
+            yield return new WaitForEndOfFrame();
+        }
+
+        yield return new WaitForEndOfFrame();
+        StopLoadingCoroutines();
+    }
+
+    private int GetSceneEnumId (string name)
+    {
+        int id = UndefinedSceneId;
+
+        string[] sceneNames = Enum.GetNames(typeof(SceneName));
+        
+        for(int i = 0; i < sceneNames.Length; i++)
+        {
+            if (name == sceneNames[i])
+            {
+                id = i;
+            }
+        }
+
+        return id;
     }
 
     private void StopLoadingCoroutines()
@@ -95,5 +134,7 @@ public class LevelLoader : MonoBehaviour
             StopCoroutine(_loadVisualizer);
             _loadVisualizer = null;
         }
+
+        Destroy(this.gameObject, Time.deltaTime);
     }
 }

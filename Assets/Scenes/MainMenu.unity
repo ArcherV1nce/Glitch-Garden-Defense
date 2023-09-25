@@ -1144,10 +1144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920526be8b3e6934a960ae32fc7826a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadingScreenName: LoadingScene
-  _levelName: Level5
   _timeToWait: 5
   _sceneLoadingFinished: 0
+  _loadingScreen: 3
+  _level: 4
 --- !u!4 &1073456816
 Transform:
   m_ObjectHideFlags: 0
