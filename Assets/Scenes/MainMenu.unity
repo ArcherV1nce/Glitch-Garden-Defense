@@ -865,6 +865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 830080225}
   - component: {fileID: 830080228}
+  - component: {fileID: 830080229}
   - component: {fileID: 830080227}
   - component: {fileID: 830080226}
   m_Layer: 5
@@ -937,19 +938,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 830080227}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1073456815}
-        m_TargetAssemblyTypeName: LoadLeverController, Assembly-CSharp
-        m_MethodName: LoadScreenLoadLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &830080227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1047,6 +1036,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830080224}
   m_CullTransparentMesh: 0
+--- !u!114 &830080229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830080224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d02d4f196b4ae44817a3b583c11ae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _level: 4
 --- !u!1 &986385568
 GameObject:
   m_ObjectHideFlags: 0

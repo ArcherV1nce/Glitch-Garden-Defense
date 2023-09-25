@@ -3,7 +3,7 @@ public enum SceneName
    Undefined,
    MainMenu,
    SplashScreen,
-    LoadingScene,
+   LoadingScene,
    Level1,
    Level2,
    Level3,

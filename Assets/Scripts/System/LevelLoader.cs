@@ -63,6 +63,12 @@ public class LevelLoader : MonoBehaviour
         return _sceneLoadingFinished;
     }
 
+    public void ReceiveLevelData(LoadLevelButton levelButton)
+    {
+        _level = levelButton.Level;
+        LoadLevel();
+    }
+
     private IEnumerator LoadLevelWithDelay()
     {
         yield return new WaitForSeconds(_timeToWait);
