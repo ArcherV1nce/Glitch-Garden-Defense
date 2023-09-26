@@ -1,7 +1,9 @@
 Gameplay:
 - Balance damage, health and prices.
 - Add tutorial levels.
-- Add Dig-out mechanic (You can remove defenders from cells to retrieve their value multiplied by percentage of remaining health by value decrease modifier). 
+- Add Dig-out mechanic 
+(You can remove defenders from cells to retrieve their value multiplied by 
+percentage of remaining health by value decrease modifier). 
 //RetrievableCoins = Value * Health/HealthMax * RetrievalModifier
 - Add Drag and Drop mechanic for Defenders to move them to another cell
 
@@ -20,4 +22,5 @@ Menu:
 - Add level selection menu
 
 Code refactoring:
-- Move important methods from OnValidate to OnAwake.
+- Move important methods from OnValidate to OnAwake
+- Update Tutorial to be based on Scriptable Objects

@@ -23,14 +23,14 @@ public class AttackerSpawner : MonoBehaviour
     public bool FinishedSpawning => _isSpawning == false;
     public bool HasMoreWaves => _activeWaveNumber < _waves.Count;
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         SetupRandom();
         SetupFirstWave();
         StartSpawning();
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         DisableSpawning();
     }
@@ -48,7 +48,7 @@ public class AttackerSpawner : MonoBehaviour
         }
 
         _isSpawning = true;
-        _spawningCoroutine = StartCoroutine(SpawnAtacker());
+        _spawningCoroutine = StartCoroutine(SpawnAtackers());
     }
 
     public void StopSpawning ()
@@ -71,19 +71,29 @@ public class AttackerSpawner : MonoBehaviour
         }
     }
 
-    private bool TryGetAttackerFromCurrentWave(out Attacker currentAttacker)
+    protected void DecreaseRemainingAttackersCount()
     {
-        currentAttacker = _currentWave.AttackersPrefabs[_random.Next(0, _currentWave.AttackersPrefabs.Count)];
-
-        if (currentAttacker != null)
+        if (_remainingAttackers > 0)
         {
-            return true;
+            _remainingAttackers--;
         }
-
-        else return false;
     }
 
-    private IEnumerator SpawnAtacker()
+    protected void DisableSpawning()
+    {
+        if (_spawningCoroutine != null)
+        {
+            StopCoroutine(_spawningCoroutine);
+            _spawningCoroutine = null;
+            
+            if (_remainingAttackers <= 0)
+            {
+                WaveFinished?.Invoke();
+            }
+        }
+    }
+
+    protected virtual IEnumerator SpawnAtackers()
     {
         while (_isSpawning && _remainingAttackers > 0)
         {
@@ -92,7 +102,7 @@ public class AttackerSpawner : MonoBehaviour
                 Attacker attacker = Instantiate(attackerPrefab, transform.position, transform.rotation);
                 attacker.transform.parent = _line.transform;
                 _line.AddCharacter(attacker);
-                _remainingAttackers--;
+                DecreaseRemainingAttackersCount();
             }
 
             if (_remainingAttackers <= 0)
@@ -107,14 +117,16 @@ public class AttackerSpawner : MonoBehaviour
         DisableSpawning();
     }
 
-    private void DisableSpawning()
+    private bool TryGetAttackerFromCurrentWave(out Attacker currentAttacker)
     {
-        if (_spawningCoroutine != null)
+        currentAttacker = _currentWave.AttackersPrefabs[_random.Next(0, _currentWave.AttackersPrefabs.Count)];
+
+        if (currentAttacker != null)
         {
-            StopCoroutine(_spawningCoroutine);
-            _spawningCoroutine = null;
-            WaveFinished?.Invoke();
+            return true;
         }
+
+        else return false;
     }
 
     private void SetupRandom()
@@ -126,7 +138,7 @@ public class AttackerSpawner : MonoBehaviour
     {
         _activeWaveNumber = FirstWaveNumber;
 
-        if (_currentWave == null)
+        if (_currentWave == null && _waves.Count > 0)
         {
             Debug.LogError($"Spawner {this.name} has no Wave Scriptable object set.");
         }

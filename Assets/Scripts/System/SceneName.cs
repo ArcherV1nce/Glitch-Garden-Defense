@@ -4,6 +4,7 @@ public enum SceneName
    MainMenu,
    SplashScreen,
    LoadingScene,
+   Tutorial,
    Level1,
    Level2,
    Level3,

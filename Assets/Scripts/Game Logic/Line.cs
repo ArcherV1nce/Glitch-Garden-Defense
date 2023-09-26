@@ -19,13 +19,13 @@ public class Line : MonoBehaviour
         Setup();
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         SubscribeToAllAttackersDeath();
         AddAllDefendersSubscriptions();
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         UnsubscribeFromAllAttackersDeath();
         RemoveAllDefendersSubscriptions();
@@ -57,7 +57,20 @@ public class Line : MonoBehaviour
         }
     }
 
-    private void Setup()
+    protected virtual void AddAttacker(Attacker attacker)
+    {
+        AlertAttack();
+        _attackers.Add(attacker);
+        attacker.Died += RemoveCharacter;
+    }
+
+    protected virtual void AddDefender(Defender defender)
+    {
+        _defenders.Add(defender);
+        AddDefenderSubscriptions(defender);
+    }
+
+    protected virtual void Setup()
     {
         _defenders ??= new List<Defender>();
 
@@ -80,19 +93,6 @@ public class Line : MonoBehaviour
         defender.Spawned -= CheckAttackState;
         Attacked -= defender.SetAttacked;
         AttackStopped -= defender.SetIdle;
-    }
-
-    private void AddAttacker(Attacker attacker)
-    {
-        AlertAttack();
-        _attackers.Add(attacker);
-        attacker.Died += RemoveCharacter;
-    }
-
-    private void AddDefender(Defender defender)
-    {
-        _defenders.Add(defender);
-        AddDefenderSubscriptions(defender);
     }
 
     private void RemoveDefender(Defender defender)
