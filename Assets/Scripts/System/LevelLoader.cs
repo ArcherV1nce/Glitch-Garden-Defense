@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     private const int UndefinedSceneId = 0;
+    private const float DestructionDelay = 0.1f;
     private const float LoadingDelay = 3f;
+    private const float DefaultTimescale = 1f;
 
     [SerializeField] private float _timeToWait = LoadingDelay;
     [SerializeField] private bool _sceneLoadingFinished = false;
@@ -28,6 +30,8 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadLevel()
     {
+        Time.timeScale = DefaultTimescale;
+
         if(_level != SceneName.Undefined && _level.ToString() != SceneManager.GetActiveScene().name)
         {
             LoadScreenLoadLevel();
@@ -35,7 +39,10 @@ public class LevelLoader : MonoBehaviour
 
         else
         {
-            _loader = StartCoroutine(LoadingOperationProcess());
+            if (_level != SceneName.Undefined)
+            {
+                _loader = StartCoroutine(LoadingOperationProcess());
+            }
         }
     }
 
@@ -141,6 +148,6 @@ public class LevelLoader : MonoBehaviour
             _loadVisualizer = null;
         }
 
-        Destroy(this.gameObject, Time.deltaTime);
+        Destroy(this.gameObject, DestructionDelay);
     }
 }

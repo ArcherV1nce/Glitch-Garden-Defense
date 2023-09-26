@@ -38,7 +38,6 @@ public class TutorialAttackerSpawner : AttackerSpawner
 
     private void PauseSpawning()
     {
-        Debug.Log($"Tutorial asked to stop spawning.");
         _isPaused = true;
         StopSpawning();
         StartSpawning();

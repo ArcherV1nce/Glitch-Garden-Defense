@@ -4441,10 +4441,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 67965846}
     m_Modifications:
-    - target: {fileID: 437210037609570490, guid: d449aa27a701a2d43b82d5ebb9c9a1f4, type: 3}
-      propertyPath: _level
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 7541873240970191620, guid: d449aa27a701a2d43b82d5ebb9c9a1f4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4533,10 +4529,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RestartButton
       objectReference: {fileID: 0}
-    - target: {fileID: 7541873240970191626, guid: d449aa27a701a2d43b82d5ebb9c9a1f4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1629003491}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d449aa27a701a2d43b82d5ebb9c9a1f4, type: 3}
 --- !u!1001 &7913828437579833914

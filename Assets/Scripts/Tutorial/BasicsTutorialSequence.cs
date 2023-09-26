@@ -12,7 +12,7 @@ public class BasicsTutorialSequence : TutorialSequence
 
     [SerializeField] private TextMeshProUGUI _textUI;
     [SerializeField] private Button _continueButton;
-    [SerializeField, Range(PauseDelayMin, PauseDelayMax)] 
+    [SerializeField, Range(PauseDelayMin, PauseDelayMax)]
     private float _pauseDelay;
     [SerializeField] private string _enemyDescription;
     [SerializeField] private string _defenderDescription;
@@ -34,40 +34,38 @@ public class BasicsTutorialSequence : TutorialSequence
 
     protected override IEnumerator PlayTutorial()
     {
-        Debug.Log($"Tutorial sequence started.");
-        yield return new WaitForSeconds(_pauseDelay);
-        Debug.Log($"Tutorial Started");
+        yield return new WaitForSecondsRealtime(_pauseDelay);
+
         Time.timeScale = TimescalePaused;
+        _paused = true;
+
+
+        yield return new WaitForEndOfFrame();
+
+        _textUI.text = _enemyDescription;
+        _continueButton.gameObject.SetActive(true);
+        _continueButton.onClick.AddListener(SetEnemyDescriptionRead);
+        yield return new WaitForEndOfFrame();
+
         while (_paused)
         {
-            Debug.Log($"Game was paused");
-            yield return new WaitForFixedUpdate();
-
-            _textUI.text = _enemyDescription;
-            _continueButton.gameObject.SetActive(true);
-            _continueButton.onClick.AddListener(SetEnemyDescriptionRead);
-            yield return new WaitForFixedUpdate();
-
-            Debug.Log($"Waiting for button to be pressed");
             while (_enemyDescriptionRead == false)
             {
-                yield return new WaitForFixedUpdate();
+                yield return new WaitForEndOfFrame();
             }
 
-            Debug.Log($"Button pressed");
             _textUI.text = _defenderDescription;
             _continueButton.onClick.RemoveListener(SetEnemyDescriptionRead);
             _continueButton.gameObject.SetActive(false);
-            yield return new WaitForFixedUpdate();
-
-            Debug.Log($"Waiting for Defender to be spawned");
+            yield return new WaitForEndOfFrame();
 
             while (_defenderSpawned == false)
             {
-                yield return new WaitForFixedUpdate();
+                yield return new WaitForEndOfFrame();
             }
 
             Time.timeScale = TimescaleDefault;
+            _textUI.text = string.Empty;
             _paused = false;
             NotifiyAboutFinish();
         }

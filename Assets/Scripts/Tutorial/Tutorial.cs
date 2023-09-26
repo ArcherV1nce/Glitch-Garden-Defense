@@ -35,7 +35,6 @@ public class Tutorial : MonoBehaviour
         {
             _isPlaying = true;
             Started?.Invoke();
-            Debug.Log($"Tutorial tried to invoke Start Event");
         }
     }
 

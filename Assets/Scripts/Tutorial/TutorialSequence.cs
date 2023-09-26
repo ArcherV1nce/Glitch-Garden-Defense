@@ -15,25 +15,23 @@ public abstract class TutorialSequence : MonoBehaviour
         ValidateTutorial();
     }
 
-    protected virtual void OnEnabled()
+    protected virtual void OnEnable()
     {
         SubscribeToTutorial();
     }
 
-    protected virtual void OnDisabled()
+    protected virtual void OnDisable()
     {
         UnsubscribeFromTutorial();
     }
 
     protected virtual void StartTutorial()
     {
-        Debug.Log($"Tutorial should have started (abstract Tutorial Sequnece)");
         _sequence = StartCoroutine(PlayTutorial());
     }
 
     protected virtual void OnStarted()
     {
-        Debug.Log($"Tutorial asked abstract sequence to start");
         StartTutorial();
     }
 
