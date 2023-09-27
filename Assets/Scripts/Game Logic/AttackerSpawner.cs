@@ -19,6 +19,7 @@ public class AttackerSpawner : MonoBehaviour
     private int _activeWaveNumber;
     private int _remainingAttackers;
 
+    public event UnityAction<Attacker> AttackerSpawned;
     public event UnityAction WaveFinished;
     public event UnityAction Stopped;
 
@@ -130,6 +131,7 @@ public class AttackerSpawner : MonoBehaviour
                 attacker.transform.parent = _line.transform;
                 _line.AddCharacter(attacker);
                 DecreaseRemainingAttackersCount();
+                AttackerSpawned?.Invoke(attacker);
             }
 
             if (_remainingAttackers <= NoAttackers)

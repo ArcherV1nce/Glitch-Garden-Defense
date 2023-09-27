@@ -68,7 +68,7 @@ public class Level : MonoBehaviour
     private void CheckLevelFinish()
     {
         bool isFinished = _wavesFinished && _enemiesDefeated;
-        
+
         if (isFinished)
         {
             Finished?.Invoke(isFinished);

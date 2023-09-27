@@ -12,7 +12,6 @@ public class Scarecrow : Defender
     private bool _isAlerted;
 
     public event UnityAction<bool> AttackStatusUpdated;
-    public event UnityAction RiposteTriggered;
     public event UnityAction<Damage> DamageTaken;
     public event UnityAction<DefenderState> StateChanged;
 
@@ -55,7 +54,7 @@ public class Scarecrow : Defender
     {
         if (_isAlerted && _riposteSkill.IsCharged)
         {
-            RiposteTriggered?.Invoke();
+            TriggerSkillNotification();
         }
     }
 

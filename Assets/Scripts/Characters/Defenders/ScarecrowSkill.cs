@@ -118,12 +118,12 @@ public class ScarecrowSkill : MonoBehaviour
     private void SubscribeToScarecrow()
     {
         _defender.DamageTaken += OnDamageTaken;
-        _defender.RiposteTriggered += OnRiposteTriggered;
+        _defender.SkillTriggered += OnRiposteTriggered;
     }
 
     private void UnsubscribeFromScarecrow()
     {
         _defender.DamageTaken -= OnDamageTaken;
-        _defender.RiposteTriggered -= OnRiposteTriggered;
+        _defender.SkillTriggered -= OnRiposteTriggered;
     }
 }

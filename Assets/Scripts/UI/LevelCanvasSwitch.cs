@@ -32,7 +32,7 @@ public class LevelCanvasSwitch : MonoBehaviour
 
     public void SwitchUI(bool levelCompleted)
     {
-        _completionUIShown = !_completionUIShown;
+        _completionUIShown = levelCompleted;
         ShowUI();
     }
 

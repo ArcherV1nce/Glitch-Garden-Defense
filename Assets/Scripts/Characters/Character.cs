@@ -8,6 +8,7 @@ public abstract class Character : MonoBehaviour, IDeath
     [SerializeField] private Health _health;
 
     public event UnityAction<Character> Died;
+    public event UnityAction SkillTriggered;
     public event UnityAction<float, float> HealthValueChanged;
 
     public bool IsAlive => _health.IsAlive;
@@ -59,6 +60,11 @@ public abstract class Character : MonoBehaviour, IDeath
     protected virtual void TriggerDeathActions()
     {
         Died?.Invoke(this);
+    }
+
+    protected virtual void TriggerSkillNotification()
+    {
+        SkillTriggered?.Invoke();
     }
 
     private void ValidateHealth()

@@ -81,6 +81,7 @@ public class Fox : Attacker
     private void UseSkill()
     {
         SetActiveState(_usingSkill);
+        TriggerSkillNotification();
         Immaterialize();
         _jumpRoutine = StartCoroutine(WaitForMaterialization());
         StartCooldown();

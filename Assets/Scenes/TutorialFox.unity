@@ -1913,17 +1913,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1424952094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f508d6aa95a5ee7449f8a52b4d59acb3, type: 3}
+  m_Script: {fileID: 11500000, guid: cd0bea4591d53a341bf0f174af204549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _textUI: {fileID: 605840467}
   _continueButton: {fileID: 1489146658152743955}
-  _pauseDelay: 1.5
-  _enemyDescription: Attackers spawn and move across the field. If they cross the
-    field - you'll lose HP.
-  _defenderDescription: You can spawn defeners by clicking on the icon of desired
-    defender and than choosing one of the cells on the field. If you see the green
-    circle on the field, it means that selected defender can be placed there.
+  _pauseDelay: 0.5
+  _enemyDescription: This is a new enemy type called Fox. Foxes can ignore incoming
+    damage dealt by projectiles shot by defenders. When Fox is jumping - it can't
+    be damaged with projectiles.
 --- !u!1 &1473161893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,8 +2063,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _line: {fileID: 523847559554643904}
   _waves:
-  - {fileID: 11400000, guid: 7396da3bfe6fc394f8e84018e47bd3f2, type: 2}
-  _currentWave: {fileID: 11400000, guid: 7396da3bfe6fc394f8e84018e47bd3f2, type: 2}
+  - {fileID: 11400000, guid: fdde277fbcdd9d94eb89a68b0d26df67, type: 2}
+  _currentWave: {fileID: 11400000, guid: fdde277fbcdd9d94eb89a68b0d26df67, type: 2}
   _tutorial: {fileID: 1424952096}
 --- !u!1 &1526362276
 GameObject:
@@ -2768,7 +2766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8658852781685012367, guid: af4164cb8c7516e48bdf6c77d8fc7f11, type: 3}
       propertyPath: _level
-      value: 9
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af4164cb8c7516e48bdf6c77d8fc7f11, type: 3}
@@ -4675,7 +4673,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2445025576124452754, guid: 4fa7f72ea0b2eb94e8f379ac566618bd, type: 3}
       propertyPath: _level
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2445025577064789333, guid: 4fa7f72ea0b2eb94e8f379ac566618bd, type: 3}
       propertyPath: _gameUI
@@ -4732,6 +4730,10 @@ PrefabInstance:
     - target: {fileID: 8238550161110795428, guid: 4fa7f72ea0b2eb94e8f379ac566618bd, type: 3}
       propertyPath: m_Name
       value: CompetionUI_WithControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314237902980328589, guid: 4fa7f72ea0b2eb94e8f379ac566618bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fa7f72ea0b2eb94e8f379ac566618bd, type: 3}
@@ -5033,14 +5035,6 @@ PrefabInstance:
     - target: {fileID: 7913828437109294696, guid: 66731f093286a674d980f122a1be6add, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913828437109294697, guid: 66731f093286a674d980f122a1be6add, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913828437109294697, guid: 66731f093286a674d980f122a1be6add, type: 3}
-      propertyPath: m_fontSize
-      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 7913828437109294699, guid: 66731f093286a674d980f122a1be6add, type: 3}
       propertyPath: m_Name
