@@ -42,6 +42,7 @@ public class BasicsTutorialSequence : TutorialSequence
 
         yield return new WaitForEndOfFrame();
 
+        _textUI.gameObject.SetActive(true);
         _textUI.text = _enemyDescription;
         _continueButton.gameObject.SetActive(true);
         _continueButton.onClick.AddListener(SetEnemyDescriptionRead);
@@ -66,6 +67,7 @@ public class BasicsTutorialSequence : TutorialSequence
 
             Time.timeScale = TimescaleDefault;
             _textUI.text = string.Empty;
+            _textUI.gameObject.SetActive(false);
             _paused = false;
             NotifiyAboutFinish();
         }
@@ -91,6 +93,7 @@ public class BasicsTutorialSequence : TutorialSequence
         }
 
         _textUI.text = string.Empty;
+        _textUI.gameObject.SetActive(false);
         _continueButton.gameObject.SetActive(false);
 
         _paused = false;

@@ -9,8 +9,9 @@ public class TutorialAttackerSpawner : AttackerSpawner
 
     public bool IsPaused => _isPaused;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         Setup();
     }
 

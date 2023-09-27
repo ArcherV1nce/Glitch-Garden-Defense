@@ -8,12 +8,24 @@ public class CellSelection : MonoBehaviour
     [SerializeField] private LayerMask _contactFilter;
     
     private Camera _camera;
+    private Level _level;
+    private bool _isEnabled;
 
     public UnityAction<Cell> CellClicked;
 
     private void Awake()
     {
         Setup();
+    }
+
+    private void OnEnable()
+    {
+        SubscribeToLevel();
+    }
+
+    private void OnDisable()
+    {
+        UnsubscribeFromLevel();
     }
 
     private void Update()
@@ -23,7 +35,7 @@ public class CellSelection : MonoBehaviour
 
     private void CheckMouseInput()
     {
-        if (Input.GetMouseButtonDown(LeftMouseButtonId))
+        if (Input.GetMouseButtonDown(LeftMouseButtonId) && _isEnabled)
         {
             if (CheckCellDetection(out Cell cell))
             {
@@ -49,8 +61,25 @@ public class CellSelection : MonoBehaviour
         }
     }
 
+    private void DisableSelection(bool finished)
+    {
+        _isEnabled = finished == false;
+    }
+
     private void Setup()
     {
         _camera = Camera.main;
+        _level = FindObjectOfType<Level>();
+        _isEnabled = true;
+    }
+
+    private void SubscribeToLevel()
+    {
+        _level.Finished += DisableSelection;
+    }
+
+    private void UnsubscribeFromLevel()
+    {
+        _level.Finished -= DisableSelection;
     }
 }

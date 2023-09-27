@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -38,6 +39,7 @@ public class AttackerSpawnersControl : MonoBehaviour
     private void Setup()
     {
         _spawners ??= new List<AttackerSpawner>();
+        _spawners = GetComponentsInChildren<AttackerSpawner>().ToList();
         _canStartNextWave = true;
     }
 
