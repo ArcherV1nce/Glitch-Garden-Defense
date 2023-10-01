@@ -108,9 +108,10 @@ public class AttackerSpawner : MonoBehaviour
         {
             StopCoroutine(_spawningCoroutine);
             _spawningCoroutine = null;
-            
+
             if (_remainingAttackers <= NoAttackers)
             {
+                _isSpawning = false;
                 WaveFinished?.Invoke();
             }
 
@@ -134,14 +135,11 @@ public class AttackerSpawner : MonoBehaviour
                 AttackerSpawned?.Invoke(attacker);
             }
 
-            if (_remainingAttackers <= NoAttackers)
-            {
-                _activeWaveNumber++;
-                _isSpawning = false;
-            }
-
             yield return new WaitForSeconds(_currentWave.SpawnDelay);
         }
+
+        _activeWaveNumber++;
+        _isSpawning = false;
 
         DisableSpawning();
     }

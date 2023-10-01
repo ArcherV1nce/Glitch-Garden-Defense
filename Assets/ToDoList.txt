@@ -1,5 +1,4 @@
 Gameplay:
-- Balance damage, health and prices.
 - Add tutorial levels.
 - Add Dig-out mechanic 
 (You can remove defenders from cells to retrieve their value multiplied by 
@@ -8,7 +7,6 @@ percentage of remaining health by value decrease modifier).
 - Add Drag and Drop mechanic for Defenders to move them to another cell
 
 Level:
-- Add Lines Callouts for defeating all enemies
 - Add level objectives:
 	- Village received no damage;
 	- Collected X coins;
@@ -16,7 +14,7 @@ Level:
 
 UI:
 - Add UI effects for Spawn Limit
-- Add Victory UI
+- Add Victory UI score for completing objectives
 
 Menu:
 - Add level selection menu

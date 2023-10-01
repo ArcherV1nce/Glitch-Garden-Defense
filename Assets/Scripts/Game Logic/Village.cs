@@ -18,6 +18,7 @@ public class Village : MonoBehaviour
 
     private void Awake()
     {
+        ValidateSpawner();
         Setup();
     }
 
@@ -69,5 +70,13 @@ public class Village : MonoBehaviour
 
         if (_trigger.isTrigger == false)
             _trigger.isTrigger = true;
+    }
+
+    private void ValidateSpawner()
+    {
+        if (_defenderSpawner == null)
+        {
+            FindObjectOfType<DefenderSpawner>();
+        }
     }
 }

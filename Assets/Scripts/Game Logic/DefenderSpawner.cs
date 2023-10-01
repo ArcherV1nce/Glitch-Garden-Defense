@@ -12,6 +12,7 @@ public class DefenderSpawner : MonoBehaviour
 
     private void Awake()
     {
+        ValidateResources();
         Setup();
     }
 
@@ -70,10 +71,12 @@ public class DefenderSpawner : MonoBehaviour
 
     private bool CheckDefenderLimit(Defender defender)
     {
+        bool defenderIdListed = false;
         for (int i = 0; i < _spawnLimit.Count; i++)
         {
             if (_spawnLimit[i].Defender.Id == defender.Id)
             {
+                defenderIdListed = true;
                 if (_spawnLimit[i].SpawnLimit > _spawnLimit[i].Spawned)
                 {
                     _spawnLimit[i].DefenderSpawned();
@@ -87,6 +90,12 @@ public class DefenderSpawner : MonoBehaviour
             }
         }
 
+        if (!defenderIdListed)
+        {
+            Debug.LogError($"Add defender {defender.name} to DefenderLimit list.\n" +
+            $"{defender.name} with Id: {defender.Id} is not listed in defenderLimit and can not be spawned.");
+        }
+        
         return false;
     }
 
@@ -98,6 +107,14 @@ public class DefenderSpawner : MonoBehaviour
             {
                 _spawnLimit[i].DefenderRemoved();
             }
+        }
+    }
+
+    private void ValidateResources()
+    {
+        if (_money == null)
+        {
+            _money = FindObjectOfType<PlayerResources>();
         }
     }
 

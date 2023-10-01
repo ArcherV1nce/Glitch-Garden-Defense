@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(DefenderSpawner))]
@@ -15,7 +16,7 @@ public class DefenderSelect : MonoBehaviour
 
     private void OnEnable()
     {
-        SubscribeOnButtonEvents();
+        SubscribeToButtonEvents();
     }
 
     private void OnDisable()
@@ -23,7 +24,45 @@ public class DefenderSelect : MonoBehaviour
         UnsubscribeFromButtonEvents();
     }
 
-    private void SubscribeOnButtonEvents()
+    private void Setup()
+    {
+        _spawner = GetComponent<DefenderSpawner>();
+
+        if (_buttons == null || _buttons.Count == 0)
+        {
+            _buttons = new List<DefenderButton>();
+        }
+
+        ValidateDefenderButtons();
+    }
+
+    private void ValidateDefenderButtons()
+    {
+        List<DefenderButton> buttons = FindObjectsOfType<DefenderButton>().ToList();
+
+        AddMissingButtons();
+
+        if (buttons.Count != _buttons.Count)
+        {
+            _buttons.Clear();
+            AddMissingButtons();
+        }
+    }
+
+    private void AddMissingButtons()
+    {
+        List<DefenderButton> buttons = FindObjectsOfType<DefenderButton>().ToList();
+
+        foreach (DefenderButton button in buttons)
+        {
+            if (_buttons.Contains(button) == false)
+            {
+                _buttons.Add(button);
+            }
+        }
+    }
+
+    private void SubscribeToButtonEvents()
     {
         foreach (DefenderButton button in _buttons)
         {
@@ -37,10 +76,5 @@ public class DefenderSelect : MonoBehaviour
         {
             button.DefenderSelected += _spawner.SetSelectedDefender;
         }
-    }
-
-    private void Setup()
-    {
-        _spawner = GetComponent<DefenderSpawner>();
     }
 }

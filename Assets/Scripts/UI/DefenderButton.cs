@@ -10,6 +10,7 @@ public class DefenderButton : MonoBehaviour
     private Button _button;
 
     public UnityAction<Defender> DefenderSelected;
+    public UnityAction<bool> DefenderAvailabilityUpdated;
 
     public int DefenderPrice => _defender.Price.Coins;
 
