@@ -249,7 +249,7 @@ MonoBehaviour:
     _valueMax: 400
   _id: 3
   _price:
-    _coins: 75
+    _coins: 60
   Default: {fileID: 11400000, guid: 2d3c78ca9bce07a419b305a15e8e6dd0, type: 2}
   _charged: {fileID: 11400000, guid: c7e2975805d580e44bbcedf77d25efca, type: 2}
   _chargedAttacked: {fileID: 11400000, guid: 5aa2c75f83eefc34fa8937535f05a5b8, type: 2}

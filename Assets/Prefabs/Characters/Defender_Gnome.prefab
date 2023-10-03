@@ -140,7 +140,7 @@ MonoBehaviour:
     _valueMax: 150
   _id: 1
   _price:
-    _coins: 50
+    _coins: 40
   Default: {fileID: 11400000, guid: 76e7231707b88224593ddc234633d01f, type: 2}
   _projectilePosition: {fileID: 5161307191137408172}
   _projectile: {fileID: 1290574488088770355, guid: 371a454977a1c754e89d3fc969ea0502, type: 3}

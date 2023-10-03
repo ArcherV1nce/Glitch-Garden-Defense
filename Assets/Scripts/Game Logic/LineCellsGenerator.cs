@@ -15,7 +15,7 @@ public class LineCellsGenerator : MonoBehaviour
     private void Awake()
     {
         Setup();
-        RegenerateCells();
+        CheckChildCells();
     }
 
     private void OnValidate()
@@ -52,6 +52,40 @@ public class LineCellsGenerator : MonoBehaviour
         }
 
         _cells.Clear();
+    }
+
+    private void CheckChildCells()
+    {
+        _cells.Clear();
+        List<Cell> cells = GetComponentsInChildren<Cell>().ToList();
+        RegenerateCells();
+
+        if (cells.Count > 0)
+        {
+            List<Cell> cellsToDestroy = new();
+
+            for (int i = 0; i < _cellsCount; i++)
+            {
+                if (cells[i].IsFree)
+                {
+                    cellsToDestroy.Add(cells[i]);
+                }
+
+                else if (cells[i].IsFree == false)
+                {
+                    cellsToDestroy.Add(_cells[i]);
+                    _cells[i] = cells[i];
+                }
+            }
+
+            for (int i = cellsToDestroy.Count; i > 0; i--)
+            {
+                GameObject objectToDestroy = cellsToDestroy[i - 1].gameObject;
+                Destroy(objectToDestroy);
+            }
+
+            cellsToDestroy.Clear();
+        }
     }
 
     private void Setup()

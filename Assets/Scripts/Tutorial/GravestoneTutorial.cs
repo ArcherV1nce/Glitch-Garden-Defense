@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,8 +15,7 @@ public class GravestoneTutorial : TutorialSequence
     [SerializeField] private Button _continueButton;
     [SerializeField, Range(PauseDelayMin, PauseDelayMax)]
     private float _pauseDelay;
-    [SerializeField] private string _enemyDescription;
-    [SerializeField] private string _defenderDescription;
+    [SerializeField] private List<string> _description;
 
     private bool _paused;
     private bool _enemyDescriptionRead;
@@ -34,6 +34,7 @@ public class GravestoneTutorial : TutorialSequence
 
     protected override IEnumerator PlayTutorial()
     {
+        int descriptionId = 0;
         yield return new WaitForSecondsRealtime(_pauseDelay);
 
         Time.timeScale = TimescalePaused;
@@ -43,7 +44,7 @@ public class GravestoneTutorial : TutorialSequence
         yield return new WaitForEndOfFrame();
 
         _textUI.gameObject.SetActive(true);
-        _textUI.text = _enemyDescription;
+        _textUI.text = _description[descriptionId];
         _continueButton.gameObject.SetActive(true);
         _continueButton.onClick.AddListener(SetEnemyDescriptionRead);
         yield return new WaitForEndOfFrame();
@@ -55,7 +56,12 @@ public class GravestoneTutorial : TutorialSequence
                 yield return new WaitForEndOfFrame();
             }
 
-            _textUI.text = _defenderDescription;
+            if (descriptionId < _description.Capacity)
+            {
+                descriptionId++;
+            }
+
+            _textUI.text = _description[descriptionId];
             _continueButton.onClick.RemoveListener(SetEnemyDescriptionRead);
             _continueButton.gameObject.SetActive(false);
             yield return new WaitForEndOfFrame();
